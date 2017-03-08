@@ -10,6 +10,7 @@ Supported servers are apache & nginx. Requires PHP5+ & MySQL
 
 Dependencies are managed via composer.
 
+
 Clone repo & install dependencies: 
 ```sh
 $ git clone https://github.com/ErasmusPlus/platform.git
