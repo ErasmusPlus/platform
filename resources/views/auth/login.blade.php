@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+  <center><img src="http://www.4sustainable.eu/images/General/erasmus-logo.png" /></center>
+  <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -53,10 +55,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                                <a class="btn btn-danger" href="{{ route('register') }}">
+                                    Register (for testing)
+                                </a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+
+
                             </div>
                         </div>
                     </form>
