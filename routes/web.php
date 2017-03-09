@@ -22,3 +22,7 @@ Route::get('test', function () {
   ]);
     return View::make('test')->with('tasks', $tasks);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

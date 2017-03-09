@@ -33,10 +33,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="wrapper">
 
       <!-- Header -->
-      @include('_partials/header')
+      @include('layouts.header')
 
       <!-- Sidebar -->
-      @include('_partials/sidebar')
+      @include('layouts.sidebar')
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -54,14 +54,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </section>
 
         <!-- Main content -->
-        <section class="content">          
+        <section class="content">
           <!-- Your Page Content Here -->
           @yield('content')
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
       <!-- Footer -->
-      @include('_partials/footer')
+      @include('layouts.footer')
 
     </div><!-- ./wrapper -->
 
@@ -74,8 +74,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="{{ asset ("js/app.min.js") }}" type="text/javascript"></script>
 
-    <!-- Optionally, you can add Slimscroll and FastClick plugins. 
-          Both of these plugins are recommended to enhance the 
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+          Both of these plugins are recommended to enhance the
           user experience -->
   </body>
 </html>

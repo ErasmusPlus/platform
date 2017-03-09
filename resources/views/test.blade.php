@@ -1,4 +1,4 @@
-@extends('_partials/dashboard')
+@extends('layouts.dashboard')
 
 @section('content')
 <div class='row'>
