@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-	$tasks = collect([1, 2, 3]);
+  $tasks = collect([
+      ['name' => 'Task1', 'progress' => 40, 'color'=>'red'],
+      ['name' => 'Task2', 'progress' => 80, 'color'=>'green'],
+  ]);
     return View::make('test')->with('tasks', $tasks);
 });
