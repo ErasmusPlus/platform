@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test', function () {
+	$tasks = collect([1, 2, 3]);
+    return View::make('test')->with('tasks', $tasks);
+});
