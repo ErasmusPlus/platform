@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('_partials/dashboard')
 
 @section('content')
 <div class='row'>
