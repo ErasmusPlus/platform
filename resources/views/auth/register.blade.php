@@ -59,6 +59,34 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+						
+						<div class="form-group{{ $errors->has('Education') ? ' has-error' : '' }}">
+                            <label for="Education" class="col-md-4 control-label">Education</label>
+
+                            <div class="col-md-6">
+                                <input id="Education" type="text" class="form-control" name="Education" value="{{ old('Education') }}" required>
+
+                                @if ($errors->has('Education'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Education') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						
+						<div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+                            <label for="location" class="col-md-4 control-label">Location</label>
+
+                            <div class="col-md-6">
+                                <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}" required>
+
+                                @if ($errors->has('location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
