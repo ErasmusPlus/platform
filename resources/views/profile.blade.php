@@ -5,10 +5,24 @@
  <!-- Profile Image -->
           <div class="box box-primary ">
             <div class="box-body box-profile">
+			
+			
+		
 
-              <img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture">
+					<img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture">
 
-              <h3 class="profile-username text-center">{{ Auth::User()->name }}</h3>
+					
+				<!-- Button UploadImage -->
+						
+					<button type="button" class="btn-custom btn-info btn-lg" data-toggle="modal" data-target="#myModal">Upload</button>
+            	
+				<!-- Button UploadImage -->	
+				
+
+				
+
+				
+			  <h3 class="profile-username text-center">{{ Auth::User()->name }}</h3>
 
               <p class="text-muted text-center">{{ Auth::User()->education }}</p>
             </div>
@@ -55,4 +69,28 @@
             </div>
             <!-- /.box-body -->
           </div>
+		  
+		  				 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Upload image</h4>
+        </div>
+        <div class="modal-body">
+          <p>Image path:</p>
+		  {!! Form::open(array('url'=>'/upload','method'=>'POST', 'files'=>true)) !!}
+		   <h6>{!! Form::file('image') !!} </h6>
+        </div>
+        <div class="modal-footer">
+		{!! Form::submit('Upload File'); !!}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Modal -->
+		  
 @endsection
