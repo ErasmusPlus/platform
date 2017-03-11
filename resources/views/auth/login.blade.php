@@ -58,7 +58,7 @@
                                 <a class="btn btn-danger" href="{{ route('register') }}">
                                     Register (for testing)
                                 </a>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="#">
                                     Forgot Your Password?
                                 </a>
 

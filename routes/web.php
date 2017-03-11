@@ -15,18 +15,13 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('test', function () {
-  $tasks = collect([
-      ['name' => 'Task1', 'progress' => 40, 'color'=>'red'],
-      ['name' => 'Task2', 'progress' => 80, 'color'=>'green'],
-  ]);
-    return View::make('test')->with('tasks', $tasks);
-});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', 'Auth\LoginController@register')->name('register');
+Route::post('/register', 'Auth\LoginController@adduser')->name('adduser');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/login', 'Auth\LoginController@authenticate')->name('authenticate');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/profile', function () {
     return view('profile');
 });

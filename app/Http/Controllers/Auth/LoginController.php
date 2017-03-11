@@ -3,39 +3,63 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use View;
 use Session;
+use Request;
+use App\User;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
 
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function register()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+      return view('auth.register');
+    }
+
+    public function adduser()
+    {
+      $name = Request::input('name');
+      $email = Request::input('email');
+      $password = Request::input('password');
+      $education = Request::input('education');
+      $location = Request::input('location');
+
+      $user = new User();
+      $user->name = $name;
+      $user->email = $email;
+      $user->password = bcrypt($password);
+      $user->education = $education;
+      $user->location = $location;
+
+      if($user->save())
+      {
+        Auth::attempt(['email' => $email, 'password' => $password]);
+        return redirect()->route('home');
+      }
+      else
+        return redirect()->route('register')->withInput();
+
+    }
+
+    public function login()
+    {
+      //Redirect to home if user is authenticated
+      if(Auth::user())
+        return redirect()->route('home');
+      else
+        return view('auth.login');
+    }
+
+    public function authenticate()
+    {
+      $email = Request::input('email');
+      $password = Request::input('password');
+
+      if (Auth::attempt(['email' => $email, 'password' => $password]))
+        return redirect()->route('home');
+      else
+        return redirect()->route('login');
     }
 
     public function logout()
