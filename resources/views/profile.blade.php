@@ -5,14 +5,14 @@
  <!-- Profile Image -->
           <div class="box box-primary ">
             <div class="box-body box-profile">
-				
+
               <img class="profile-user-img img-responsive img-circle img-center" src="https://cdn4.iconfinder.com/data/icons/business-bicolor-1/512/checklist-512.png" alt="User profile picture">
 
               <h3 class="profile-username text-center">{{ Auth::User()->name }}</h3>
 
-              <p class="text-muted text-center">{{ Auth::User()->Education }} test</p>
+              <p class="text-muted text-center">{{ Auth::User()->education }}</p>
             </div>
-			
+
 
 <!-- about me box -->
 
@@ -20,13 +20,13 @@
 	<div class="box-header with-border">
 	<h3 class="box-title">About Me </h3>
 	</div>
-	
+
  <!-- /.box-header -->
             <div class="box-body">
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
-                {{ Auth::User()->Education }}
+                {{ Auth::User()->education }}
               </p>
 
               <hr>

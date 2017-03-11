@@ -59,26 +59,26 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-						
-						<div class="form-group{{ $errors->has('Education') ? ' has-error' : '' }}">
-                            <label for="Education" class="col-md-4 control-label">Education</label>
+
+						<div class="form-group{{ $errors->has('education') ? ' has-error' : '' }}">
+                            <label for="education" class="col-md-4 control-label">Education</label>
 
                             <div class="col-md-6">
-                                <input id="Education" type="text" class="form-control" name="Education" value="{{ old('Education') }}" required>
+                                <input id="education" type="text" class="form-control" name="education" value="{{ old('education') }}">
 
-                                @if ($errors->has('Education'))
+                                @if ($errors->has('education'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Education') }}</strong>
+                                        <strong>{{ $errors->first('education') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-						
+
 						<div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
                             <label for="location" class="col-md-4 control-label">Location</label>
 
                             <div class="col-md-6">
-                                <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}" required>
+                                <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}">
 
                                 @if ($errors->has('location'))
                                     <span class="help-block">
