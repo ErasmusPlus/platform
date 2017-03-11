@@ -24,4 +24,4 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
