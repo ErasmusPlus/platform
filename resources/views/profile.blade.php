@@ -6,7 +6,7 @@
           <div class="box box-primary ">
             <div class="box-body box-profile">
 
-              <img class="profile-user-img img-responsive img-circle img-center" src="https://cdn4.iconfinder.com/data/icons/business-bicolor-1/512/checklist-512.png" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture">
 
               <h3 class="profile-username text-center">{{ Auth::User()->name }}</h3>
 
