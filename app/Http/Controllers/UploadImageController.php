@@ -3,7 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
 
 class UploadImageController extends Controller
 {
@@ -24,9 +25,15 @@ class UploadImageController extends Controller
       echo '<br>';
    
      
-   
+	$name1=Auth::user()->email;
       //Move Uploaded File
       $destinationPath = 'uploads';
-      $file->move($destinationPath,$file->getClientOriginalName());
+      $file->move($destinationPath, $name1  );
+	  
+	  $photo_path = $destinationPath . "/" . $name1;
+	  
+	  Auth::user() -> photo = $photo_path ;
+	  Auth::user() -> save();
+	  return redirect()->route('profile');
     }
 }
