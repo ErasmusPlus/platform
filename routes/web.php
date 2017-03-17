@@ -28,4 +28,5 @@ Route::get('/profile', function () {
 
 Route::get('/upload','UploadImageController@index');
 Route::post('/upload','UploadImageController@upload');
+Route::post('/home','HomeController@postnews');
 
