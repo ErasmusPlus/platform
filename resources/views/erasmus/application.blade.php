@@ -122,7 +122,7 @@
 			   </div>
          {!! Form::close() !!}
               </form>
-            </div>
+            
             <!-- /.box-body -->
 
 
