@@ -2,7 +2,7 @@
 <header class="main-header">
 
   <!-- Logo -->
-  <a href="index2.html" class="logo"><b>Admin</b>LTE</a>
+  <a href="index2.html" class="logo"><b>Erasmus+</b> Platform</a>
 
   <!-- Header Navbar -->
   <nav class="navbar navbar-static-top" role="navigation">
@@ -114,9 +114,7 @@
           <ul class="dropdown-menu">
 
               <li><a href="{{ route('profile') }}">View profile</a></li>
-              <li><a href="#">Action 2</a></li>
-              <li><a href="#">Action 3</a></li>
-              <li><a href="#">Action 4</a></li>
+              <li><a href="#">Settings</a></li>
               <li class="divider"></li>
               <li><a href="{{ route('logout') }}">Logout</a></li>
 

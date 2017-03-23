@@ -32,13 +32,21 @@
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links-->
       <li class="{!! classActivePath('home') !!}"><a href="{{ route('home') }}"><span>Home</span></a></li>
-      <li class="treeview {!! classActiveSegment(1,['application']) !!}">
-        <a href="#"><span>Erasmus+</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <li class="treeview {!! classActiveSegment(1,['profile']) !!}">
+        <a href="#"><span>My Profile</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="{!! classActivePath('application') !!}"><a href="{{ route('erasmus.application') }}">Application</a></li>
-          <li><a href="#">Link in level 2</a></li>
+          <li class="{!! classActiveSegment(2,['grades']) !!}"><a href="{{ route('profile.grades') }}">Grades</a></li>
+          <li class="{!! classActiveSegment(2,['details']) !!}"><a href="{{ route('profile.details') }}">Personal Details</a></li>
+          <li class="{!! classActiveSegment(2,['ects']) !!}"><a href="{{ route('profile.ects') }}">ECTS</a></li>
         </ul>
       </li>
+      <li class="treeview {!! classActiveSegment(1,['erasmus']) !!}">
+        <a href="#"><span>Erasmus+</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Apply for Erasmus+</a></li>
+        </ul>
+      </li>
+      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Settings</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->

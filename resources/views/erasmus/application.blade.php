@@ -1,9 +1,8 @@
 @extends('layouts.dashboard')
-
+@php ( $title='Application' )
+@php ( $description='Apply for Erasmus+')
 
 @section('content')
-{{ $page_title='Apply for Erasmus+' }}
-
             <div class="box-header with-border">
 			<div class='col-md-6'>
               <h3 class="box-title">Personal:</h3>
