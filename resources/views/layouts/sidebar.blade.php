@@ -35,7 +35,7 @@
       <li class="treeview {!! classActiveSegment(1,['application']) !!}">
         <a href="#"><span>Erasmus+</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="{!! classActivePath('application') !!}"><a href="application">Application</a></li>
+          <li class="{!! classActivePath('application') !!}"><a href="{{ route('erasmus.application') }}">Application</a></li>
           <li><a href="#">Link in level 2</a></li>
         </ul>
       </li>

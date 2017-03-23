@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/application', function () {
     return view('application');
-});
+})->name('erasmus.application');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/register', 'Auth\LoginController@register')->name('register');
