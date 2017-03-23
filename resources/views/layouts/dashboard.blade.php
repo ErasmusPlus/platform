@@ -48,8 +48,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </h1>
           <!-- You can dynamically generate breadcrumbs here -->
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-            <li class="active">Here</li>
+          <li><a href=" {{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+
+          <?php
+           $path = app('request')->path();
+           $segments = explode("/", $path);
+           $len = count($segments);
+           $i=0;
+
+            foreach($segments as $segment)
+            {
+              if($segment != 'home')
+                if ($i != $len - 1)
+                  echo "<li><a href='".  $path = app('request')->root().'/'.$segment ."'>".ucfirst($segment)."</a></li>";
+                else
+                  echo '<li class="active">' .ucfirst($segment).'</li>';
+
+              $i++;
+            }
+
+            ?>
+
+
           </ol>
         </section>
 
