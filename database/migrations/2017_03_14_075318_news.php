@@ -15,7 +15,7 @@ class News extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->string('title');
-            $table->text('body'); 
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class News extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('news');
     }
 }
