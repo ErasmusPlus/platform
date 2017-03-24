@@ -16,6 +16,13 @@ if (typeof jQuery === "undefined") {
   throw new Error("AdminLTE requires jQuery");
 }
 
+
+$('.content-wrapper').slimScroll({
+    size: '8px',
+    height: window.innerHeight-35,
+    alwaysVisible: false
+    });
+
 /* AdminLTE
  *
  * @type Object
