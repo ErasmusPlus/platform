@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\news;
+use App\News;
 use Request;
+
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -23,11 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-		
+
 		$news_get=news::all();
         return view('home')->with('news_get',$news_get);
     }
-	
+
 	public function postnews()
 	{
 		$input = Request::all();
@@ -36,6 +38,6 @@ class HomeController extends Controller
 		$new->body = $input['body'];
 		$new-> save();
 		 return redirect('home');
-		
+
 	}
 }
