@@ -17,11 +17,16 @@ if (typeof jQuery === "undefined") {
 }
 
 
-$('.content-wrapper').slimScroll({
-    size: '8px',
-    height: window.innerHeight-35,
-    alwaysVisible: false
-    });
+var customScroll = $('.content-wrapper').slimScroll({
+    //size: '6px',
+    height: $(this).height()-20,
+    alwaysVisible: false,
+    keepFocus: true,
+});
+
+$( window ).resize(function() {
+  $('.content-wrapper').slimScroll({height: $(this).height()-20});
+});
 
 /* AdminLTE
  *
