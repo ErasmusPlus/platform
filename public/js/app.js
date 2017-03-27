@@ -19,13 +19,13 @@ if (typeof jQuery === "undefined") {
 
 var customScroll = $('.content-wrapper').slimScroll({
     //size: '6px',
-    height: $(this).height()-20,
+    height: $(this).height() - $(".main-footer").height() - 10,
     alwaysVisible: false,
     keepFocus: true,
 });
 
 $( window ).resize(function() {
-  $('.content-wrapper').slimScroll({height: $(this).height()-20});
+  $('.content-wrapper').slimScroll({height: $(this).height() - $(".main-footer").height() - 10 });
 });
 
 /* AdminLTE
