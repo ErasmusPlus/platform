@@ -4,8 +4,12 @@
       <?php
       //echo base_path();
       date_default_timezone_set('Europe/Athens');
-      $timestamp = filemtime(base_path()."/.git/index");
-      echo "Last update: ".date('d/m/Y H:i:s',$timestamp);
+
+      if(file_exists ( base_path()."/.git/index"))
+      {
+        $timestamp = filemtime(base_path()."/.git/index");
+        echo "Last update: ".date('d/m/Y H:i:s',$timestamp);
+      }
       ?>
     </div>
     <!-- Default to the left -->
