@@ -44,6 +44,7 @@
         <a href="#"><span>Erasmus+</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Apply for Erasmus+</a></li>
+		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">View my application</a></li>
         </ul>
       </li>
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Settings</span></a></li>

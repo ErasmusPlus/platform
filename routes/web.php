@@ -35,6 +35,10 @@ Route::get('/erasmus/application', function () {
     return view('erasmus.application');
 })->name('erasmus.application');
 
+Route::get('/erasmus/viewapplication','ViewApplicationController@index')->name('erasmus.viewapplication');
+
+
+
 
 //Generic routes
 Route::get('/home', 'HomeController@index')->name('home');
@@ -56,4 +60,4 @@ Route::get('/settings', function () {
 Route::get('/upload','UploadImageController@index');
 Route::post('/upload','UploadImageController@upload');
 Route::post('/home','HomeController@postnews');
-Route::post('/application','ApplicationController@index');
+Route::post('/erasmus/application','ApplicationController@index');
