@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Request;
 use App\application;
-
+use PDF;
 class ViewApplicationController extends Controller
 { 
  public function index()
@@ -15,4 +15,11 @@ class ViewApplicationController extends Controller
 			//$usern = 1;	
 		return view('erasmus.viewapplication')->with('appls',$appls);;
 	}
+	
+	    public function getPDF(){
+		
+		$pdf=PDF::loadView('pdftest');
+		return $pdf->download('pdftest.pdf');
+	}
+	
 }
