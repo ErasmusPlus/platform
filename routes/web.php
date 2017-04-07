@@ -36,7 +36,7 @@ Route::get('/erasmus/application', function () {
 })->name('erasmus.application');
 
 Route::get('/erasmus/viewapplication','ViewApplicationController@index')->name('erasmus.viewapplication');
-Route::get('/getpdf','ViewApplicationController@getPDF');
+Route::get('/erasmus/getpdf','ViewApplicationController@getPDF');
 
 
 

@@ -20,13 +20,13 @@
 				<div class='col-md-6'>
 				<div class="col-xs-8">
    				<div class="form-group">
-					{!! Form::label('name','Όνομα:') !!}	
-					{{  $appls->name }}					
+					{!! Form::label('name','Όνομα:') !!}
+					{{  $appls->name }}
 				</div>
-				
+
 				<div class="form-group">
-					{!! Form::label('lastname','Επίθετο:') !!}	
-					{{  $appls->lname }}					
+					{!! Form::label('lastname','Επίθετο:') !!}
+					{{  $appls->lname }}
 				</div>
 				<div class="form-group">
 					{!! Form::label('idnum','Αρ. Ταυτότητας:') !!}
@@ -116,12 +116,14 @@
 				{{  $appls->aboutme }}
 				<br>
 				<br>
-				<input type="submit" value="submit">
+              </form>
+         <form method="get" action="getpdf">
+    <button type="submit">Κενή Δήλωση PDF</button>
+</form>
 				</div>
 			   </div>
          {!! Form::close() !!}
-              </form>
-            
+
             <!-- /.box-body -->
 
 
