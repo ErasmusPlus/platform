@@ -51,8 +51,9 @@ class LoginController extends Controller
       {
         //Implement cas authentication here
         Cas::authenticate();
-        dd(Cas::user());
+        dd(Cas::getAttributes());
         //return redirect()->route('home');
+        Cas::logout();
       }
 
       if(Auth::user())
