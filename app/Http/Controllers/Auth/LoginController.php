@@ -52,9 +52,9 @@ class LoginController extends Controller
         //Implement cas authentication here
         Cas::authenticate();
         $attr = Cas::getAttributes();
-        Auth::user()->name = attr['cn'];
-        Auth::user()->email = attr['mail'];
-        Auth::user()->education = attr['GUStudentType'];
+        Auth::user()->name = $attr['cn'];
+        Auth::user()->email = $attr['mail'];
+        Auth::user()->education = $attr['GUStudentType'];
         return redirect()->route('home');
       }
 
