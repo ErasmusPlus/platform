@@ -49,7 +49,9 @@ class LoginController extends Controller
       if(env('AUTH_CAS', false))
       {
         //Implement cas authentication here
-        return redirect()->route('home');
+        include(base_path()."/cas/home.php");
+
+        //return redirect()->route('home');
       }
 
       if(Auth::user())
