@@ -45,6 +45,13 @@ class LoginController extends Controller
     public function login()
     {
       //Redirect to home if user is authenticated
+
+      if(env('AUTH_CAS', false))
+      {
+        //Implement cas authentication here
+        return redirect()->route('home');
+      }
+
       if(Auth::user())
         return redirect()->route('home');
       else
