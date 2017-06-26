@@ -124,5 +124,5 @@ return [
         |
         */
 
-        'cas_saml' => env('CAS_SAML', false)
+        'cas_saml' => env('CAS_SAML', true)
 ];
