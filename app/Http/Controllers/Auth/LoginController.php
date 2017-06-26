@@ -51,9 +51,11 @@ class LoginController extends Controller
       {
         //Implement cas authentication here
         Cas::authenticate();
-        dd(Cas::getAttributes());
-        //return redirect()->route('home');
-        Cas::logout();
+        $attr = Cas::getAttributes();
+        Auth::user()->name = attr['cn'];
+        Auth::user()->email = attr['mail'];
+        Auth::user()->education = attr['GUStudentType'];
+        return redirect()->route('home');
       }
 
       if(Auth::user())
@@ -76,6 +78,8 @@ class LoginController extends Controller
     public function logout()
     {
       Session::flush();
+      Cas::logout();
+
       return redirect()->route('login');
     }
 }
