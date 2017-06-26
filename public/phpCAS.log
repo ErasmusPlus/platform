@@ -1,0 +1,32 @@
+A9F8 .START (2017-06-26 23:19:24) phpCAS-1.3.5 ****************** [CAS.php:468]
+A9F8 .=> phpCAS::client('2.0', 'sso.uowm.gr', 443, '') [Sso.php:79]
+A9F8 .|    => CAS_Client::__construct('2.0', false, 'sso.uowm.gr', 443, '', true) [CAS.php:358]
+A9F8 .|    |    Starting a new session ds7s5fvf06c4bc99csc0ctutr0 [Client.php:932]
+A9F8 .|    |    Session is not authenticated [Client.php:938]
+A9F8 .|    <= ''
+A9F8 .<= ''
+A9F8 .=> phpCAS::setNoCasServerValidation() [Sso.php:98]
+A9F8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A9F8 .<= ''
+A9F8 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1276]
+A9F8 .|    Not a logout request [Client.php:1739]
+A9F8 .<= ''
+A9F8 .=> phpCAS::forceAuthentication() [Sso.php:146]
+A9F8 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A9F8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A9F8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A9F8 .|    |    |    |    no user found [Client.php:1635]
+A9F8 .|    |    |    <= false
+A9F8 .|    |    |    no ticket found [Client.php:1494]
+A9F8 .|    |    <= false
+A9F8 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1289]
+A9F8 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1656]
+A9F8 .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+A9F8 .|    |    |    |    |    Final URI: http://localhost/platform/public/ [Client.php:3548]
+A9F8 .|    |    |    |    <= 'http://localhost/platform/public/'
+A9F8 .|    |    |    <= 'https://sso.uowm.gr/login?service=http%3A%2F%2Flocalhost%2Fplatform%2Fpublic%2F'
+A9F8 .|    |    |    Redirect to : https://sso.uowm.gr/login?service=http%3A%2F%2Flocalhost%2Fplatform%2Fpublic%2F [Client.php:1663]
+A9F8 .|    |    |    exit()
+A9F8 .|    |    |    -
+A9F8 .|    |    -
+A9F8 .|    -

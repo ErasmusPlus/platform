@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use View;
 use Session;
 use Request;
+use Cas;
 use App\User;
 
 class LoginController extends Controller
@@ -49,8 +50,8 @@ class LoginController extends Controller
       if(env('AUTH_CAS', false))
       {
         //Implement cas authentication here
-        include(base_path()."/cas/home.php");
-
+        Cas::authenticate();
+        dd(Cas::user());
         //return redirect()->route('home');
       }
 
