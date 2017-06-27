@@ -231,6 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cas' => Subfission\Cas\CasServiceProvider::class,
+        'EGuard' => App\Classes\EGuard::class,
 		   // 'PDF' => Barryvdh\DomPDF\Facade::class,
         'Guzzle' => Kozz\Laravel\Facades\Guzzle::class,
     ],
