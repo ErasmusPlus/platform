@@ -10,6 +10,10 @@ use Request;
 use Cas;
 use App\User;
 
+use Illuminate\Auth\GenericUser;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserProviderInterface;
+
 class LoginController extends Controller
 {
 
