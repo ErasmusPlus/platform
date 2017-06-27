@@ -28,7 +28,7 @@ class EGuard
     	$user = 
     	[
     		'email' => $sso['mail'],
-    		'id' => $sso['mail'],
+    		'id' => $sso['GUStudentID'],
     		'fullname' => $sso['cn'],
     		'firstname' => $sso['givenName'],
     		'lastname' => $sso['sn'],
