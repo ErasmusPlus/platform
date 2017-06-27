@@ -58,7 +58,7 @@ class LoginController extends Controller
         //dd(cas()->user());
       }
 
-      if(Auth::user())
+      if(Auth::user() || cas()->user() )
         return redirect()->route('home');
       else
         return view('auth.login');
