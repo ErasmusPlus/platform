@@ -80,7 +80,7 @@ class LoginController extends Controller
     public function logout()
     {
       Session::flush();
-      Cas::logout();
+      cas()->logout();
 
       return redirect()->route('login');
     }
