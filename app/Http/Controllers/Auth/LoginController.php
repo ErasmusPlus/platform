@@ -56,8 +56,8 @@ class LoginController extends Controller
         //Implement cas authentication here
         cas()->authenticate();
 
-        $user = cas()->user();
-        Session()->put('current_user',Auth::user());
+        $user = cas()->getAttributes();
+        Session()->put('current_user', $user);
       }
 
       if(cas::user())
