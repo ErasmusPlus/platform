@@ -109,7 +109,7 @@
           <!-- Menu Toggle Button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs">{{ Auth::User()->name }}</span>
+            <span class="hidden-xs">{{ EGuard::user()['mail'] }}</span>
           </a>
           <ul class="dropdown-menu">
 

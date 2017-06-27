@@ -10,7 +10,7 @@
         <img src="{{ asset( Auth::User()->photo ) }}" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
-        <p>{{ Auth::User()->name }}</p>
+        <p>{{ EGuard::user()['cn'] }}</p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
