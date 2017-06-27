@@ -53,7 +53,13 @@ class LoginController extends Controller
         Cas::authenticate();
         $attr = Cas::getAttributes();
 
-        return redirect()->route('home');
+        $attributes = array(
+        'id' = 123,
+        'name' => $attr['cn'],
+        'password' => \Hash::make('test'),
+        'email' => $attr['mail'],
+          );
+        new GenericUser($attributes);
       }
 
       if(Auth::user())
