@@ -102,7 +102,7 @@ return [
     | CAS Logout URI
     |--------------------------------------------------------------------------
     */
-    'cas_logout_url'      => env('CAS_LOGOUT_URL', 'https://cas.myuniv.edu/cas/logout'),
+    'cas_logout_url'      => env('CAS_LOGOUT_URL', 'https://sso.uowm.gr/logout'),
 
     /*
     |--------------------------------------------------------------------------
