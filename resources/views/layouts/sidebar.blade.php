@@ -12,7 +12,7 @@
       <div class="pull-left info">
         <p>{{ EGuard::user()['cn'] }}</p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> {{ EGuard::user()['education'] }}</a>
+        <a href="#"><i class="fa fa-circle text-success"></i> {{ EGuard::user()['GUStudentType'] }}</a>
       </div>
     </div>
 
