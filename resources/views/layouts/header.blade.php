@@ -29,7 +29,7 @@
                   <a href="#">
                     <div class="pull-left">
                       <!-- User Image -->
-                      <img src="{{ asset( Auth::User()->photo ) }}" class="img-circle" alt="User Image"/>
+                      <img src="" class="img-circle" alt="User Image"/>
                     </div>
                     <!-- Message title and timestamp -->
                     <h4>
