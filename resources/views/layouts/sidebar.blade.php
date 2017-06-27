@@ -35,7 +35,7 @@
       <li class="treeview {!! classActiveSegment(1,['profile']) !!}">
         <a href="#"><span>Γενικά στοιχεία</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="{!! classActiveSegment(2,['grades']) !!}"><a href="{{ route('profile.grades') }}">Βαθμολογία</a></li>
+          <li class="{!! classActiveSegment(2,['grades']) !!}"><a href="{{ route('profile.grades') }}">Βαθμολογίες</a></li>
           <li class="{!! classActiveSegment(2,['details']) !!}"><a href="{{ route('profile.details') }}">Στοιχεία φοιτητή</a></li>
           <li class="{!! classActiveSegment(2,['ects']) !!}"><a href="{{ route('profile.ects') }}">ECTS</a></li>
         </ul>
@@ -47,7 +47,7 @@
 		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
         </ul>
       </li>
-      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυ</span></a></li>
+      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
