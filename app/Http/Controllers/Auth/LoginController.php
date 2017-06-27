@@ -54,7 +54,7 @@ class LoginController extends Controller
         $attr = Cas::getAttributes();
 
         $attributes = array(
-        'id' = 123,
+        'id' => 123,
         'name' => $attr['cn'],
         'password' => \Hash::make('test'),
         'email' => $attr['mail'],
