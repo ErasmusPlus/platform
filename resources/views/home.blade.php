@@ -5,8 +5,8 @@
 @section('content')
 <div class='row'>
   <div class='col-md-12'>
-  {{dd(EGuard::user()->email)}}
-  <h2>Welcome {{ EGuard::user()->mail }}
+  {{dd(\App\Classes\EGuard::user()->email)}}
+  <h2>Welcome {{ \App\Classes\EGuard::user()->mail }}
   <!-- Button UploadImage -->
 
 					<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add news</button>
