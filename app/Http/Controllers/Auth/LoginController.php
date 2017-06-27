@@ -54,16 +54,8 @@ class LoginController extends Controller
       if(env('AUTH_CAS', false))
       {
         //Implement cas authentication here
-        Cas::authenticate();
-        $attr = Cas::getAttributes();
-
-        $attributes = array(
-        'id' => 123,
-        'name' => $attr['cn'],
-        'password' => \Hash::make('test'),
-        'email' => $attr['mail'],
-          );
-        new GenericUser($attributes);
+        cas()->authenticate();
+        cas()->user();
       }
 
       if(Auth::user())

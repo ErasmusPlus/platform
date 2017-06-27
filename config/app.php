@@ -163,7 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
     	Collective\Html\HtmlServiceProvider::class,
-        Xavrsl\Cas\CasServiceProvider::class,
+        Subfission\Cas\CasServiceProvider::class,
     	//Barryvdh\DomPDF\serviceProvider::class,
         Kozz\Laravel\Providers\Guzzle::class,
         /*
@@ -230,7 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Cas'       => Xavrsl\Cas\Facades\Cas::class,
+        'Cas' => Subfission\Cas\CasServiceProvider::class,
 		   // 'PDF' => Barryvdh\DomPDF\Facade::class,
         'Guzzle' => Kozz\Laravel\Facades\Guzzle::class,
     ],
