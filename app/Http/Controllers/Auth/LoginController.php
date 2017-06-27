@@ -9,7 +9,7 @@ use Session;
 use Request;
 use Cas;
 use App\User;
-
+use App\Classes\EGuard;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserProviderInterface;
