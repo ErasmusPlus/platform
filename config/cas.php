@@ -34,7 +34,7 @@ return [
     | of the Laravel sessions when this is set to false.
     |--------------------------------------------------------------------------
     */
-    'cas_control_session' => env('CAS_CONTROL_SESSIONS', true),
+    'cas_control_session' => env('CAS_CONTROL_SESSIONS', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -87,7 +87,7 @@ return [
     | intermediaries, here is where you can.  Recommended to leave
     | this set with default (true).
     */
-    'cas_validate_cn'     => env('CAS_VALIDATE_CN', true),
+    'cas_validate_cn'     => env('CAS_VALIDATE_CN', false),
 
     /*
     |--------------------------------------------------------------------------
