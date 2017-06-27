@@ -12,7 +12,7 @@
       <div class="pull-left info">
         <p>{{ EGuard::user()['cn'] }}</p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <a href="#"><i class="fa fa-circle text-success"></i> {{ EGuard::user() }}</a>
       </div>
     </div>
 
@@ -31,23 +31,23 @@
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links-->
-      <li class="{!! classActivePath('home') !!}"><a href="{{ route('home') }}"><span>Home</span></a></li>
+      <li class="{!! classActivePath('home') !!}"><a href="{{ route('home') }}"><span>Αρχική</span></a></li>
       <li class="treeview {!! classActiveSegment(1,['profile']) !!}">
-        <a href="#"><span>My Profile</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <a href="#"><span>Γενικά στοιχεία</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="{!! classActiveSegment(2,['grades']) !!}"><a href="{{ route('profile.grades') }}">Grades</a></li>
-          <li class="{!! classActiveSegment(2,['details']) !!}"><a href="{{ route('profile.details') }}">Personal Details</a></li>
+          <li class="{!! classActiveSegment(2,['grades']) !!}"><a href="{{ route('profile.grades') }}">Βαθμολογία</a></li>
+          <li class="{!! classActiveSegment(2,['details']) !!}"><a href="{{ route('profile.details') }}">Στοιχεία φοιτητή</a></li>
           <li class="{!! classActiveSegment(2,['ects']) !!}"><a href="{{ route('profile.ects') }}">ECTS</a></li>
         </ul>
       </li>
       <li class="treeview {!! classActiveSegment(1,['erasmus']) !!}">
-        <a href="#"><span>Erasmus+</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <a href="#"><span>Αιτήσεις</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Apply for Erasmus+</a></li>
-		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">View my application</a></li>
+          <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Νέα αίτηση</a></li>
+		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
         </ul>
       </li>
-      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Settings</span></a></li>
+      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυ</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
