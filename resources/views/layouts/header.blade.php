@@ -2,7 +2,7 @@
 <header class="main-header">
 
   <!-- Logo -->
-  <a href="index2.html" class="logo"><b>Erasmus+</b> Platform</a>
+  <a href="#" class="logo"><b>Erasmus+</b> Platform</a>
 
   <!-- Header Navbar -->
   <nav class="navbar navbar-static-top" role="navigation">
@@ -113,10 +113,10 @@
           </a>
           <ul class="dropdown-menu">
 
-              <li><a href="{{ route('profile') }}">View profile</a></li>
-              <li><a href="#">Settings</a></li>
+              <li><a href="{{ route('profile') }}">Προφίλ</a></li>
+              <li><a href="#">Ρυθμίσεις</a></li>
               <li class="divider"></li>
-              <li><a href="{{ route('logout') }}">Logout</a></li>
+              <li><a href="{{ route('logout') }}">Αποσύνδεση</a></li>
 
 
           </ul>
