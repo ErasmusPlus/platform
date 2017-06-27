@@ -72,7 +72,30 @@ class LoginController extends Controller
       $password = Request::input('password');
 
       if (Auth::attempt(['email' => $email, 'password' => $password]))
+      {
+        //Simulate SSO attributes
+        $user = [
+          "uid" => "st0551@icte.uowm.gr",
+          "mail" => "st0551@icte.uowm.gr",
+          "eduPersonAffiliation" => "student",
+          "sn" => "ΤΣΙΚΤΣΙΡΗΣ",
+          "eduPersonPrimaryAffiliation" => "student",
+          "eduPersonOrgUnitDN" => "ou=371,ou=units,dc=uowm,dc=gr",
+          "cn" => "ΔΗΜΗΤΡΙΟΣ ΤΣΙΚΤΣΙΡΗΣ",
+          "GUStudentSemester" => "12",
+          "GUStudentDepartmentID" => "371",
+          "GUStudentType" => "undergraduate",
+          "GUStudentID" => "551",
+          "GUPersonID" => "0371/551",
+          "givenName" => "ΔΗΜΗΤΡΙΟΣ",
+          "authenticationMethod" => "gr.uoa.devel.cas.adaptors.ldap.BindLdapAuthenticationHandler",
+          "samlAuthenticationStatementAuthMethod" => "urn:oasis:names:tc:SAML:1.0:am:password",
+        ];
+
+        Session()->put('current_user', $user);
+
         return redirect()->route('home');
+      }
       else
         return redirect()->route('login');
     }
@@ -80,7 +103,9 @@ class LoginController extends Controller
     public function logout()
     {
       Session::flush();
-      cas()->logout();
+      EGuard::logout();
+      Auth::logout();
+      //cas()->logout();
 
       return redirect()->route('login');
     }

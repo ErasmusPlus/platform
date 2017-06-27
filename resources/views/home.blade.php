@@ -1,11 +1,11 @@
 @extends('layouts.dashboard')
-@php ( $title='Home' )
+@php ( $title='Αρχική' )
 @php ( $description='Landing page')
 
 @section('content')
 <div class='row'>
   <div class='col-md-12'>
-  <h2>Welcome {{ EGuard::user()['cn']}}
+  <h2>Welcome {{ EGuard::user()->fullname}}
   <!-- Button UploadImage -->
 
 					<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add news</button>
