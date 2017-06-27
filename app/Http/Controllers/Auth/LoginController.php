@@ -55,7 +55,7 @@ class LoginController extends Controller
       {
         //Implement cas authentication here
         cas()->authenticate();
-        cas()->user();
+       // cas()->user();
       }
 
       if(Auth::user())
