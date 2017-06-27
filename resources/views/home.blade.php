@@ -5,7 +5,7 @@
 @section('content')
 <div class='row'>
   <div class='col-md-12'>
-  {{dd(\App\Classes\EGuard::user()->cn)}}
+  {{dd(\App\Classes\EGuard::user()['cn'])}}
   <h2>Welcome {{ \App\Classes\EGuard::user()}}
   <!-- Button UploadImage -->
 
