@@ -13,7 +13,7 @@ use App\Classes\EGuard;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserProviderInterface;
-
+use phpCAS;
 class LoginController extends Controller
 {
 
