@@ -68,7 +68,7 @@ return [
     |
     | VALIDATING THE CAS SERVER IS CRUCIAL TO THE SECURITY OF THE CAS PROTOCOL
     */
-    'cas_validation'          => env('CAS_VALIDATION', ''),
+    'cas_validation'          => env('CAS_VALIDATION', 'ca'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     | Path to the CA certificate file.  For production use set
     | the CA certificate that is the issuer of the cert
     */
-    'cas_cert'                => env('CAS_CERT', asset('certs/AddTrustExternalRoot.pem')),
+    'cas_cert'                => env('CAS_CERT', base_path()."public/certs/AddTrustExternalRoot.pem"),
 
     /*
     |--------------------------------------------------------------------------
