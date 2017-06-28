@@ -11,7 +11,7 @@ class EGuard
 
     public static function user()
     {
-        phpCAS::forceAuthentication();
+        //phpCAS::forceAuthentication();
 
         if(phpCAS::isAuthenticated())
         {
