@@ -13,7 +13,7 @@ class EGuard
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
-        dd(cas()->getConfig());
+        //dd(cas()->getConfig());
 
     	$departmentFull = "";
 
