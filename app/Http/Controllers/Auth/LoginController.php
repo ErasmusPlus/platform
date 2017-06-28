@@ -84,6 +84,7 @@ class LoginController extends Controller
           "cn" => "ΔΗΜΗΤΡΙΟΣ ΤΣΙΚΤΣΙΡΗΣ",
           "GUStudentSemester" => "12",
           "GUStudentDepartmentID" => "371",
+          "ou" => "ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ",
           "GUStudentType" => "undergraduate",
           "GUStudentID" => "551",
           "GUPersonID" => "0371/551",

@@ -36,7 +36,7 @@ class EGuard
     		'type' => ucfirst($sso['GUStudentType']),
     		'semester' => $sso['GUStudentSemester'],
     		'departmentID' => $sso['GUStudentDepartmentID'],
-    		'departmentFull' => $departmentFull,
+    		'departmentFull' => $sso['ou'],
     	];
 
     	return (object)($user);
