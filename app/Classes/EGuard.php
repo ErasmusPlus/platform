@@ -22,7 +22,7 @@ class EGuard
             return dd("Not authorized");
         }
 
-        dd(cas()->getAttributes());
+        return dd(cas()->getAttributes());
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
