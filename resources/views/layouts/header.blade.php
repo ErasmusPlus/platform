@@ -2,7 +2,7 @@
 <header class="main-header">
 
   <!-- Logo -->
-  <a href="#" class="logo"><b>Erasmus+</b> Platform</a>
+  <a href="#" class="logo" style="padding:0px"><img src="{{asset('img/logo-sm-top.png')}}"></img></a>
 
   <!-- Header Navbar -->
   <nav class="navbar navbar-static-top" role="navigation">

@@ -1,16 +1,8 @@
 @extends('layouts.dashboard')
-@php ( $title='Application' )
-@php ( $description='Apply for Erasmus+')
+@php ( $title='Αίτηση' )
+@php ( $description='Αίτηση για Erasmus+')
 
 @section('content')
-            <div class="box-header with-border">
-			<div class='col-md-6'>
-              <h3 class="box-title">Personal:</h3>
-			 </div>
-            <div class='col-md-6'>
-              <h1 class="box-title">Education:</h1s>
-			 </div>
-			</div>
             <!-- /.box-header -->
             <div class="box-body">
 			  {!! Form::open() !!}
@@ -19,14 +11,6 @@
 				<div class="form-group">
 				<div class='col-md-6'>
 				<div class="col-xs-8">
-   				<div class="form-group">
-					{!! Form::label('name','Όνομα:') !!}
-					{!! Form::text('name',null, ['class' => 'form-control']) !!}
-				</div>
-				<div class="form-group">
-					{!! Form::label('lastname','Επίθετο:') !!}
-					{!! Form::text('lastname',null, ['class' => 'form-control']) !!}
-				</div>
 				<div class="form-group">
 					{!! Form::label('idnum','Αρ. Ταυτότητας:') !!}
 					{!! Form::text('idnum',null, ['class' => 'form-control']) !!}
@@ -69,18 +53,7 @@
 
 				<div class='col-md-6'>
 				<div class="col-xs-8">
-				 <div class="form-group">
-				{!! Form::label('typestudent','Τύπος φοιτητή:') !!} <br>
-				{{ Form::radio('typestudent', 'no') }} Πρόπτυχιακος <br>
-				{{ Form::radio('typestudent', 'no') }} Μέταπτυχιακός <br>
-				{{ Form::radio('typestudent', 'no') }} Υποψήφιος Διδάκτορας
-				</div>
 
-
-				 <div class="form-group">
-				{!! Form::label('yearun','Έτος σπουδών:') !!}
-				{!! Form::text('yearun',null, ['class' => 'form-control']) !!}
-				</div>
 				 <div class="form-group">
 				{!! Form::label('univ','Σχολή:') !!}
 				{!! Form::text('univ',null, ['class' => 'form-control']) !!}

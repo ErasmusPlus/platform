@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Auth;
+use Auth;
 use View;
 use Session;
 use Request;
 use App\User;
 use App\Classes\EGuard;
-use Illuminate\Auth\GenericUser;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\UserProviderInterface;
 use Cas;
+
 
 
 class LoginController extends Controller

@@ -4,6 +4,7 @@ namespace App\Classes;
 
 use Session;
 use Cas;
+use Auth;
 
 class EGuard
 {
@@ -13,12 +14,10 @@ class EGuard
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
-        
-        cas()->authenticate();
 
     	$departmentFull = "";
 
-		switch (cas()->getAttribute("GUStudentDepartmentID")) {
+		switch ($sso["GUStudentDepartmentID"]) {
 		    case "371":
 		        $departmentFull = "Μηχανικών Πληροφορικής & Τηλεπικοινωνιών";
 		        break;
@@ -28,15 +27,15 @@ class EGuard
 
     	$user = 
     	[
-    		'email' => cas()->getAttribute("mail"),
-    		'id' => cas()->getAttribute("GUStudentID"),
-    		'fullname' => cas()->getAttribute("cn"),
-    		'firstname' => cas()->getAttribute("givenName"),
-    		'lastname' => cas()->getAttribute("sn"),
-    		'education' => ucfirst(cas()->getAttribute("eduPersonAffiliation")),
-    		'type' => ucfirst(cas()->getAttribute("GUStudentType")),
-    		'semester' => cas()->getAttribute("GUStudentSemester"),
-    		'departmentID' => cas()->getAttribute("GUStudentDepartmentID"),
+    		'email' => $sso["mail"],
+    		'id' => $sso["GUStudentID"],
+    		'fullname' => $sso["cn"],
+    		'firstname' => $sso["givenName"],
+    		'lastname' => $sso["sn"],
+    		'education' => ucfirst($sso["eduPersonAffiliation"]),
+    		'type' => ucfirst($sso["GUStudentType"]),
+    		'semester' => $sso["GUStudentSemester"],
+    		'departmentID' => $sso["GUStudentDepartmentID"],
     		'departmentFull' => $departmentFull,
     	];
 
@@ -46,12 +45,13 @@ class EGuard
     public static function logout()
     {
     	Session()->forget('current_user');
+        cas()->logout();
     }
 
 
     public static function authenticated()
     {
-        if(cas()->isAuthenticated() || Auth::user())
+        if(Session()->get('current_user') || Auth::user())
             return true;
 
         return false; 
