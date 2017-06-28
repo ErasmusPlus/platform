@@ -13,7 +13,7 @@ class EGuard
         
 
 
-        cas()->client("S1", "sso.uowm.gr", "443", '');
+        cas()->client("S1", "http://sso.uowm.gr", "443", '');
         cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
         cas()->forceAuthentication();
 
@@ -21,7 +21,7 @@ class EGuard
         {
             return dd("Not authorized");
         }
-        
+
         dd(cas()->getAttributes());
     	$sso = Session()->get('current_user');
 
