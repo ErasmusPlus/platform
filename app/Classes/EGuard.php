@@ -11,15 +11,17 @@ class EGuard
     public static function user()
     {
         
+
+
+        cas()->client("S1", "sso.uowm.gr", "443", '');
+        cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
+        cas()->forceAuthentication();
+
         if(cas()->isAuthenticated())
         {
             return dd("Not authorized");
         }
         
-        cas()->client("S1", "sso.uowm.gr", "443", '');
-        cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
-        cas()->forceAuthentication();
-
         dd(cas()->getAttributes());
     	$sso = Session()->get('current_user');
 
