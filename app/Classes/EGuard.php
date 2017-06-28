@@ -4,6 +4,7 @@ namespace App\Classes;
 
 use Session;
 use Auth;
+use phpCAS;
 
 class EGuard
 {
