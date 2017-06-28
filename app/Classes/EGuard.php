@@ -24,6 +24,7 @@ class EGuard
 		        $departmentFull = "Άγνωστο";
 		}
 
+        //Store SSO attributes
     	$user = 
     	[
     		'email' => cas()->getAttribute("mail"),
@@ -44,6 +45,15 @@ class EGuard
     public static function logout()
     {
     	Session()->forget('current_user');
+    }
+
+    //Returns authentication status
+    public static function authenticated()
+    {
+        if(cas()->isAuthenticated() || Auth::user())
+            return true;
+
+        return false; 
     }
 }
 

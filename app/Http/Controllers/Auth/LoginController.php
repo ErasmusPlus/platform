@@ -60,7 +60,7 @@ class LoginController extends Controller
         Session()->put('current_user', $user);
       }
 
-      if(EGuard::user())
+      if(EGuard::authenticated())
         return redirect()->route('home');
       else
         return view('auth.login');
