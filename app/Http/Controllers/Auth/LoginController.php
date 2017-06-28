@@ -57,7 +57,7 @@ class LoginController extends Controller
       {
         //Implement cas authentication here
         //cas()->authenticate();
-        $cas_protocol  = phpCAS::SAML_VERSION_1_1;
+        $cas_protocol  = "S1";
         $cas_sso_server  = "sso.uowm.gr";
         $cas_port  = 443;
         $cas_cert  = base_path()."public/certs/AddTrustExternalRoot.pem";
