@@ -13,6 +13,8 @@ class EGuard
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
+        
+        cas()->authenticate();
 
     	$departmentFull = "";
 
