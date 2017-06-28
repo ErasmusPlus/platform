@@ -10,26 +10,21 @@ class EGuard
 
     public static function user()
     {
-        
+        phpCAS::forceAuthentication();
 
-
-        cas()->client("S1", "https://sso.uowm.gr", "443", '');
-        cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
-        cas()->forceAuthentication();
-
-        if(cas()->isAuthenticated())
+        if(phpCAS::isAuthenticated())
         {
             return dd("Not authorized");
         }
 
-        return dd(cas()->getAttributes());
+
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
 
     	$departmentFull = "";
 
-		switch (cas()->getAttribute("GUStudentDepartmentID")) {
+		switch (phpCAS::getAttribute("GUStudentDepartmentID")) {
 		    case "371":
 		        $departmentFull = "Μηχανικών Πληροφορικής & Τηλεπικοινωνιών";
 		        break;
@@ -40,15 +35,15 @@ class EGuard
         //Store SSO attributes
     	$user = 
     	[
-    		'email' => cas()->getAttribute("mail"),
-    		'id' => cas()->getAttribute("GUStudentID"),
-    		'fullname' => cas()->getAttribute("cn"),
-    		'firstname' => cas()->getAttribute("givenName"),
-    		'lastname' => cas()->getAttribute("sn"),
-    		'education' => ucfirst(cas()->getAttribute("eduPersonAffiliation")),
-    		'type' => ucfirst(cas()->getAttribute("GUStudentType")),
-    		'semester' => cas()->getAttribute("GUStudentSemester"),
-    		'departmentID' => cas()->getAttribute("GUStudentDepartmentID"),
+    		'email' => phpCAS::getAttribute("mail"),
+    		'id' => phpCAS::getAttribute("GUStudentID"),
+    		'fullname' => phpCAS::getAttribute("cn"),
+    		'firstname' => phpCAS::getAttribute("givenName"),
+    		'lastname' => phpCAS::getAttribute("sn"),
+    		'education' => ucfirst(phpCAS::getAttribute("eduPersonAffiliation")),
+    		'type' => ucfirst(phpCAS::getAttribute("GUStudentType")),
+    		'semester' => phpCAS::getAttribute("GUStudentSemester"),
+    		'departmentID' => phpCAS::getAttribute("GUStudentDepartmentID"),
     		'departmentFull' => $departmentFull,
     	];
 

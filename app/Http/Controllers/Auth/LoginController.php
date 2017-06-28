@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use View;
 use Session;
 use Request;
-use Cas;
 use App\User;
 use App\Classes\EGuard;
 use Illuminate\Auth\GenericUser;
@@ -63,14 +62,12 @@ class LoginController extends Controller
         $cas_cert  = base_path()."/public/certs/AddTrustExternalRoot.pem";
         $cas_logout_app_redirect_url = "http://83.212.103.229/erasmus";
 
-        //dd($cas_cert);
         phpCAS::client($cas_protocol, $cas_sso_server, $cas_port, '');
         phpCAS::setCasServerCACert($cas_cert);  
         phpCAS::handleLogoutRequests(true , array($cas_sso_server));
         phpCAS::forceAuthentication();
 
         $user = phpCAS::getAttributes();
-        dd($user);
         Session()->put('current_user', $user);
       }
 
