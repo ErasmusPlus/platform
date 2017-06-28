@@ -13,11 +13,10 @@ class EGuard
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
-        dd(cas()->getVersion());
 
     	$departmentFull = "";
 
-		switch ($sso['GUStudentDepartmentID']) {
+		switch (cas()->getAttribute("GUStudentDepartmentID")) {
 		    case "371":
 		        $departmentFull = "Μηχανικών Πληροφορικής & Τηλεπικοινωνιών";
 		        break;
@@ -27,16 +26,16 @@ class EGuard
 
     	$user = 
     	[
-    		'email' => $sso['mail'],
-    		'id' => $sso['GUStudentID'],
-    		'fullname' => $sso['cn'],
-    		'firstname' => $sso['givenName'],
-    		'lastname' => $sso['sn'],
-    		'education' => ucfirst($sso['eduPersonAffiliation']),
-    		'type' => ucfirst($sso['GUStudentType']),
-    		'semester' => $sso['GUStudentSemester'],
-    		'departmentID' => $sso['GUStudentDepartmentID'],
-    		'departmentFull' => cas()->getAttribute("ou"),
+    		'email' => cas()->getAttribute("mail"),
+    		'id' => cas()->getAttribute("GUStudentID"),
+    		'fullname' => cas()->getAttribute("cn"),
+    		'firstname' => cas()->getAttribute("givenName"),
+    		'lastname' => cas()->getAttribute("sn"),
+    		'education' => ucfirst(cas()->getAttribute("eduPersonAffiliation")),
+    		'type' => ucfirst(cas()->getAttribute("GUStudentType")),
+    		'semester' => cas()->getAttribute("GUStudentSemester"),
+    		'departmentID' => cas()->getAttribute("GUStudentDepartmentID"),
+    		'departmentFull' => $departmentFull,
     	];
 
     	return (object)($user);
