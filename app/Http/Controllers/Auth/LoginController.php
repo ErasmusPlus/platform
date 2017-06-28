@@ -12,7 +12,7 @@ use App\Classes\EGuard;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserProviderInterface;
-use phpCAS;
+use Cas;
 
 
 class LoginController extends Controller
@@ -55,7 +55,9 @@ class LoginController extends Controller
       if(env('AUTH_CAS', false))
       {
         //Implement cas authentication here
-        //cas()->authenticate();
+        cas()->authenticate();
+        $user = cas()->getAttributes();
+        /*
         $cas_protocol  = "S1";
         $cas_sso_server  = "sso.uowm.gr";
         $cas_port  = 443;
@@ -66,8 +68,10 @@ class LoginController extends Controller
         phpCAS::setCasServerCACert($cas_cert);  
         phpCAS::handleLogoutRequests(true , array($cas_sso_server));
         phpCAS::forceAuthentication();
-
+    
         $user = phpCAS::getAttributes();
+        */
+
         Session()->put('current_user', $user);
       }
 
