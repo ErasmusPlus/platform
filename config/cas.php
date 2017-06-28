@@ -68,7 +68,7 @@ return [
     |
     | VALIDATING THE CAS SERVER IS CRUCIAL TO THE SECURITY OF THE CAS PROTOCOL
     */
-    'cas_validation'          => env('CAS_VALIDATION', 'ca'),
+    'cas_validation'          => env('CAS_VALIDATION', 'self'),
 
     /*
     |--------------------------------------------------------------------------
@@ -87,7 +87,7 @@ return [
     | intermediaries, here is where you can.  Recommended to leave
     | this set with default (true).
     */
-    'cas_validate_cn'     => env('CAS_VALIDATE_CN', false),
+    'cas_validate_cn'     => env('CAS_VALIDATE_CN', true),
 
     /*
     |--------------------------------------------------------------------------
