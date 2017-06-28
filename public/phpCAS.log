@@ -30,3 +30,24 @@ A9F8 .|    |    |    exit()
 A9F8 .|    |    |    -
 A9F8 .|    |    -
 A9F8 .|    -
+6B68 .START (2017-06-28 07:45:13) phpCAS-1.3.4 ****************** [CAS.php:469]
+6B68 .Loaded configuration:
+6B68 .a:18:{s:12:"cas_hostname";s:11:"sso.uowm.gr";s:14:"cas_real_hosts";s:11:"sso.uowm.gr";s:16:"cas_session_name";s:7:"CASAuth";s:19:"cas_control_session";b:0;s:9:"cas_proxy";b:0;s:8:"cas_port";i:443;s:7:"cas_uri";s:0:"";s:14:"cas_validation";s:0:"";s:8:"cas_cert";s:0:"";s:15:"cas_validate_cn";b:1;s:13:"cas_login_url";s:0:"";s:14:"cas_logout_url";s:26:"https://sso.uowm.gr/logout";s:19:"cas_logout_redirect";s:0:"";s:17:"cas_redirect_path";s:0:"";s:15:"cas_enable_saml";b:1;s:9:"cas_debug";b:1;s:18:"cas_verbose_errors";b:0;s:14:"cas_masquerade";s:0:"";}
+6B68 .=> phpCAS::client('S1', 'sso.uowm.gr', 443, '', false) [CasManager.php:80]
+6B68 .|    => CAS_Client::__construct('S1', false, 'sso.uowm.gr', 443, '', false) [CAS.php:359]
+6B68 .|    |    Starting a new session go3b9p3f2vktd51hgb4srk57q2 [Client.php:906]
+6B68 .|    <= ''
+6B68 .<= ''
+6B68 .=> CAS_Client::handleLogoutRequests(true, array (  0 => 'sso.uowm.gr',)) [CAS.php:1258]
+6B68 .|    Not a logout request [Client.php:1701]
+6B68 .<= ''
+6B68 .=> phpCAS::setNoCasServerValidation() [CasManager.php:139]
+6B68 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1618]
+6B68 .<= ''
+6B68 .=> phpCAS::setServerLoginURL('') [CasManager.php:54]
+6B68 .<= ''
+6B68 .=> phpCAS::setServerLogoutURL('https://sso.uowm.gr/logout') [CasManager.php:62]
+6B68 .<= ''
+6B68 .=> phpCAS::error('CAS_OutOfSequenceBeforeAuthenticationCallException: An authentication call hasn\'t happened yet.') [CAS.php:1242]
+6B68 .|    CAS_OutOfSequenceBeforeAuthenticationCallException: An authentication call hasn't happened yet. in C:\xampp\htdocs\platform\vendor\subfission\cas\src\Subfission\Cas\CasManager.phpon line 204 [CAS.php:567]
+6B68 .<= ''
