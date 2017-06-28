@@ -87,7 +87,7 @@ return [
     | intermediaries, here is where you can.  Recommended to leave
     | this set with default (true).
     */
-    'cas_validate_cn'     => env('CAS_VALIDATE_CN', true),
+    'cas_validate_cn'     => env('CAS_VALIDATE_CN', false),
 
     /*
     |--------------------------------------------------------------------------
