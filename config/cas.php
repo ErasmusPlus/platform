@@ -77,7 +77,7 @@ return [
     | Path to the CA certificate file.  For production use set
     | the CA certificate that is the issuer of the cert
     */
-    'cas_cert'                => env('CAS_CERT', base_path()."public/certs/AddTrustExternalRoot.pem"),
+    'cas_cert'                => env('CAS_CERT', base_path()."/public/certs/AddTrustExternalRoot.pem"),
 
     /*
     |--------------------------------------------------------------------------
