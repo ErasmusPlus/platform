@@ -58,7 +58,7 @@ class EGuard
     //Returns authentication status
     public static function authenticated()
     {
-        if(cas()->isAuthenticated() || Auth::user())
+        if(phpCAS::isAuthenticated() || Auth::user())
             return true;
 
         return false; 
