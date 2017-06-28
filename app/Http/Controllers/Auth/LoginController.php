@@ -58,8 +58,9 @@ class LoginController extends Controller
         cas()->client("S1", "sso.uowm.gr", "443", '');
         cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
         cas()->forceAuthentication();
-        
+
         $user = cas()->getAttributes();
+        dd($user);
         Session()->put('current_user', $user);
       }
 
