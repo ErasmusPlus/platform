@@ -16,7 +16,7 @@ class EGuard
         cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
         cas()->forceAuthentication();
 
-        //dd(cas()->getAttributes());
+        dd(cas()->getAttributes());
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
