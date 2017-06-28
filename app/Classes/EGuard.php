@@ -10,6 +10,7 @@ class EGuard
 
     public static function user()
     {
+        cas()->authenticate();
     	$sso = Session()->get('current_user');
 
     	if(!$sso) return false;
