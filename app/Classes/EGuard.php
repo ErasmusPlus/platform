@@ -13,7 +13,7 @@ class EGuard
         
 
 
-        cas()->client("S1", "http://sso.uowm.gr", "443", '');
+        cas()->client("S1", "https://sso.uowm.gr", "443", '');
         cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
         cas()->forceAuthentication();
 
