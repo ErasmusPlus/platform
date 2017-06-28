@@ -14,6 +14,9 @@ use Illuminate\Auth\GenericUser;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserProviderInterface;
 use phpCAS;
+
+<?php namespace Subfission\Cas;
+
 class LoginController extends Controller
 {
 
