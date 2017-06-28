@@ -3,7 +3,7 @@
 namespace App\Classes;
 
 use Session;
-
+use Auth;
 
 class EGuard
 {
