@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-namespace Subfission\Cas;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use View;
@@ -15,7 +15,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserProviderInterface;
 use phpCAS;
 
-
+namespace Subfission\Cas;
 
 class LoginController extends Controller
 {
