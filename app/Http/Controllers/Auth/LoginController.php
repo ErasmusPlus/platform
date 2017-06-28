@@ -55,7 +55,7 @@ class LoginController extends Controller
       {
         //Implement cas authentication here
         //cas()->authenticate();
-        cas()->client("S1", "sso.uowm.gr", "443", '');
+        cas()->client("S1", "https://sso.uowm.gr", "443", '');
         cas()->setCasServerCACert(asset("certs/AddTrustExternalRoot.pem"));
         cas()->forceAuthentication();
 
