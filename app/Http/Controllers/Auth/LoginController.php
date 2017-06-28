@@ -54,9 +54,19 @@ class LoginController extends Controller
       if(env('AUTH_CAS', false))
       {
         //Implement cas authentication here
-        cas()->authenticate();
+        //cas()->authenticate();
+        $cas_protocol  = SAML_VERSION_1_1;
+        $cas_sso_server  = "sso.uowm.gr";
+        $cas_port  = 443;
+        $cas_cert  = base_path()."public/certs/AddTrustExternalRoot.pem";
+        $cas_logout_app_redirect_url = "http://83.212.103.229/erasmus";
 
-        $user = cas()->getAttributes();
+        phpCAS::client($cas_protocol, $cas_sso_server, $cas_port, '');
+        phpCAS::setCasServerCACert($cas_cert);  
+        phpCAS::handleLogoutRequests(true , array($cas_sso_server));
+        phpCAS::forceAuthentication();
+
+        $user = phpCAS::getAttributes();
         dd($user);
         Session()->put('current_user', $user);
       }
