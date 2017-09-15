@@ -24,7 +24,7 @@ Route::get('/view1/{aem}', function ($aem) {
 
   if($res->getStatusCode() == 200)
     echo $res->getBody(); // { "type": "User", ....
-});
+})->name('view1');
 
 //TODO: Implement authentication
 Route::get('/view2/{aem}', function ($aem) {
@@ -33,4 +33,4 @@ Route::get('/view2/{aem}', function ($aem) {
 
   if($res->getStatusCode() == 200)
     echo $res->getBody(); // { "type": "User", ....
-});
+})->name('view2');

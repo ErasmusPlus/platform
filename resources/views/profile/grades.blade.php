@@ -3,7 +3,7 @@
 @php ( $description='View Grades')
 @section('content')
 <div class='row'>
-
+{{$data}}
 
 </div><!-- /.row -->
 @endsection
