@@ -25,7 +25,7 @@ class EGuard
 		        $departmentFull = "Άγνωστο";
 		}
 
-    	$user = 
+    	$user =
     	[
     		'email' => $sso["mail"],
     		'id' => $sso["GUStudentID"],
@@ -54,7 +54,24 @@ class EGuard
         if(Session()->get('current_user') || Auth::user())
             return true;
 
-        return false; 
+        return false;
+    }
+
+
+    public static function getApiDetails()
+    {
+      $client = new \GuzzleHttp\Client();
+      //Get results from view1
+      $response1 = $client->get(route('view1',EGuard::user()->id));
+      $body1 = $response1->getBody()->getContents();
+
+      //Get results from view2
+      $response2 = $client->get(route('view2',EGuard::user()->id));
+      $body2 = $response2->getBody()->getContents();
+
+      //Merge results & return object
+      $stdata = array_merge(json_decode($body1,true), json_decode($body2,true));
+      return (object)$stdata;
     }
 }
 

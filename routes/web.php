@@ -16,13 +16,7 @@ Route::get('/','Auth\LoginController@login');
 
 //Profile routes for students
 Route::get('/profile/grades', function () {
-    $client = new Client();
-    $response = $client->get('/api/view1/551');
-
-    $body = $response->getBody()->getContents();
-    $data = json_decode($body);
-    dd($data);
-    return view('profile.grades',compact($data));
+  return view('profile.grades')->with("stdata",EGuard::getApiDetails());
 })->name('profile.grades');
 
 Route::get('/profile/details', function () {
@@ -30,11 +24,7 @@ Route::get('/profile/details', function () {
 })->name('profile.details');
 
 Route::get('/profile/ects', function () {
-  $client = new GuzzleHttp\Client();
-  $response = $client->get(route('view1',EGuard::user()->id));
-  $body = $response->getBody()->getContents();
-  $data = json_decode($body);
-    return view('profile.ects')->with("stdata",$data);
+    return view('profile.ects')->with("stdata",EGuard::getApiDetails());
 })->name('profile.ects');
 
 
