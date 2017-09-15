@@ -44,6 +44,7 @@
         <a href="#"><span>Αιτήσεις</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Νέα αίτηση</a></li>
+          <li class="{!! classActiveSegment(2,['application2']) !!}"><a href="{{ route('erasmus.application2') }}">Νέα αίτηση v2</a></li>
 		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
         </ul>
       </li>

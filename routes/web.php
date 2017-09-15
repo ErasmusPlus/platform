@@ -33,6 +33,12 @@ Route::get('/erasmus/application', function () {
     return view('erasmus.application');
 })->name('erasmus.application');
 
+
+Route::get('/erasmus/application2', function () {
+    return view('erasmus.application2')->with("stdata",EGuard::getApiDetails());
+})->name('erasmus.application2');
+
+
 Route::get('/erasmus/viewapplication','ViewApplicationController@index')->name('erasmus.viewapplication');
 Route::get('/erasmus/getpdf','ViewApplicationController@getPDF');
 

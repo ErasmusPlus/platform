@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     -->
     <link href="{{ asset("css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("css/custom.css")}}" rel="stylesheet" type="text/css" />
+    @yield('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -97,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ asset ("js/jquery.slimscroll.min.js") }}" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset ("js/app.js") }}" type="text/javascript"></script>
-
+    @yield('js')
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the
           user experience -->
