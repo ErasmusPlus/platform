@@ -25,3 +25,12 @@ Route::get('/view1/{aem}', function ($aem) {
   if($res->getStatusCode() == 200)
     echo $res->getBody(); // { "type": "User", ....
 });
+
+//TODO: Implement authentication
+Route::get('/view2/{aem}', function ($aem) {
+  $client = new GuzzleHttp\Client();
+  $res = $client->get(env('API_HOST')."view2.php?aem=$aem");
+
+  if($res->getStatusCode() == 200)
+    echo $res->getBody(); // { "type": "User", ....
+});
