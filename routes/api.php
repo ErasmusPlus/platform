@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//TODO: Implement authentication
+Route::get('/view1/{aem}', function ($aem) {
+  $client = new GuzzleHttp\Client();
+  $res = $client->get(env('API_HOST')."view1.php?aem=$aem");
+
+  if($res->getStatusCode() == 200)
+    echo $res->getBody(); // { "type": "User", ....
+});

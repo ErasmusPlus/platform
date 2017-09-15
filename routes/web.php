@@ -59,15 +59,3 @@ Route::get('/upload','UploadImageController@index');
 Route::post('/upload','UploadImageController@upload');
 Route::post('/home','HomeController@postnews');
 Route::post('/erasmus/application','ApplicationController@index');
-
-
-
-
-Route::get('/view1/{aem}', function (Request $request) {
-
-  $client = new GuzzleHttp\Client();
-  $res = $client->get(env('API_HOST')."view1.php", ['aem' => $aem]);
-  echo $res->getStatusCode(); // 200
-  echo $res->getBody(); // { "type": "User", ....
-
-});
