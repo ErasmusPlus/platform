@@ -86,7 +86,7 @@
               </div>
 
               <div class="row">
-                <h4><b>Διεύθυνση κατοικίας / ADDRESS</b></h4>
+                <h5><b>Διεύθυνση κατοικίας</b></h5>
                   <div class="col-md-3">
 
                   {!! Form::label('address_el','Οδός') !!}
@@ -144,7 +144,7 @@
 
               </div>
               <hr>
-              <a id="nexttab1" href="#tab2" class="btn btn-info pull-right" role="button">Επόμενη καρτέλα</a>
+              <a id="nexttab1" href="#tab2" class="btn btn-primary pull-right" role="button">Επόμενo</a>
             </div>
             </div>
             <div id="tab2" class="tab-pane fade">
@@ -162,7 +162,21 @@
                   {!! Form::text('email',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
                 </div>
               </div>
-
+              <h5>Ξένες γλώσσες και επίπεδο γλωσσομάθειας</h5>
+              <div class="row">
+                  <div class="col-md-6">
+        					{!! Form::label('langlevel1','a)') !!}
+        					{!! Form::text('langlevel1',$stdata->depname, ['class' => 'form-control pull-right', 'readonly'=>'readonly']) !!}
+        				</div>
+                <div class="col-md-2">
+        					{!! Form::label('langlevel2','b') !!}
+        					{!! Form::text('langlevel2',$stdata->curr_semester, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::label('langlevel3','c') !!}
+                  {!! Form::text('langlevel3',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
+                </div>
+              </div>
 
 
             </div>
