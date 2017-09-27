@@ -187,9 +187,12 @@ class LoginController extends Controller
         //
 
         $params = [];
-        $params['service'] = "http://83.202.103.229/erasmus/public/login";
+        $params['service'] = "http://83.212.103.229/erasmus/public/";
         $params['url'] = "https://sso.uowm.gr/logout";
         phpCAS::logout($params);
+        
+        EGuard::logout();
+        Auth::logout();
         //return redirect()->route('logout');
       }
 
