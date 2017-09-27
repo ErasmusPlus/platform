@@ -32,6 +32,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links-->
       <li class="{!! classActivePath('home') !!}"><a href="{{ route('home') }}"><span>Αρχική</span></a></li>
+      @if(EGuard::user()->type != 'Administrator')
       <li class="treeview {!! classActiveSegment(1,['profile']) !!}">
         <a href="#"><span>Γενικά στοιχεία</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
@@ -48,6 +49,7 @@
 		   <li class="{!! classActiveSegment(2,['viewapplication']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
         </ul>
       </li>
+      @endif
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
