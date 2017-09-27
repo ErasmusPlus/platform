@@ -181,13 +181,13 @@ class LoginController extends Controller
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
       EGuard::logout();
-      cas()->logout();
+      
 
 
       //Auth::logout();
 
 
 
-      return redirect()->route('login');
+      return cas()->logout();
     }
 }
