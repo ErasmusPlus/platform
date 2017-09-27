@@ -184,7 +184,12 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       {
-        phpCAS::logoutWithUrl('https://sso.uowm.gr/logout');
+        //
+        
+        $params = [];
+        $params['service'] = "";
+        $params['url'] = "https://sso.uowm.gr/logout";
+        phpCAS::logout($params);
         //return redirect()->route('logout');
       }
 
