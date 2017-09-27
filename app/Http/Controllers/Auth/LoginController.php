@@ -184,20 +184,12 @@ class LoginController extends Controller
       if(cas()->isAuthenticated())
       {
         cas()->logout();
-        logout();
+        return redirect()->route('logout');
       }
-
-
 
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
 
-
-
-
-
-
-
-      return redirect()->route('login');
+      return redirect()->route('/');
     }
 }
