@@ -74,7 +74,7 @@ class LoginController extends Controller
 
         Session()->put('current_user', $user);
 
-        
+
       }
 
       if(EGuard::authenticated())
@@ -175,7 +175,7 @@ class LoginController extends Controller
     public function logout()
     {
       //Auth::logout();
-
+      cas()->logout();
 
       Session::flush();
 
