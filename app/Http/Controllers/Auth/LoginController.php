@@ -11,6 +11,7 @@ use Request;
 use App\User;
 use App\Classes\EGuard;
 use Cas;
+use Cookie;
 
 
 
@@ -176,6 +177,7 @@ class LoginController extends Controller
     {
       //Auth::logout();
 
+      Cookie::queue(Cookie::forget('laravel_session'));
 
       Session::flush();
 
