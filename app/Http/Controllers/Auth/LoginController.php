@@ -181,12 +181,12 @@ class LoginController extends Controller
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
       EGuard::logout();
-      
 
 
-      //Auth::logout();
 
+      Auth::logout();
 
+      unset($_COOKIE['laravel_session']);
 
       return cas()->logout();
     }
