@@ -189,7 +189,7 @@ class LoginController extends Controller
       EGuard::logout();
       Auth::logout();
 
-      if(cas->isAuthenticated())
+      if(cas()->isAuthenticated())
       cas()->logout();
 
       return redirect()->route('login');
