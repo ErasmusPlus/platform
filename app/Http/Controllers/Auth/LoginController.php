@@ -74,10 +74,10 @@ class LoginController extends Controller
         */
 
         Session()->put('current_user', $user);
-
+		
 
       }
-
+//Cookie::queue(Cookie::forget('laravel_session'));
       if(EGuard::authenticated())
         return redirect()->route('home');
       else
@@ -177,10 +177,11 @@ class LoginController extends Controller
     {
       //Auth::logout();
 
-      //Cookie::queue(Cookie::forget('laravel_session'));
 
+	   
+	//$cookie = Cookie::forget('laravel_session');
       Session::flush();
-
+//Cookie::queue('laravel_session', null, -1);
 
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
@@ -191,7 +192,11 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       cas()->logout();
-
+  
+      Cookie::queue(Cookie::forget('laravel_session','/'));
+	   Cookie::queue(Cookie::forget('CASAuth','/'));
+	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/')); 
       return redirect()->route('login');
-    }
+	  }
+
 }
