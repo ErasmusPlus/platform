@@ -74,6 +74,7 @@ class LoginController extends Controller
 
         Session()->put('current_user', $user);
         cas()->logout();
+        dd(Session()->get('current_user'));
       }
 
       if(EGuard::authenticated())

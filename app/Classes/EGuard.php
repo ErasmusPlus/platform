@@ -45,18 +45,9 @@ class EGuard
     public static function logout()
     {
     	 Session()->forget('current_user');
-       cas()->logout();
     }
 
     public static function authenticated()
-    {
-        if(Session()->get('current_user') || Auth::user())
-            return true;
-
-        return false;
-    }
-
-    public static function admin_authenticated()
     {
         if(Session()->get('current_user') || Auth::user())
             return true;
