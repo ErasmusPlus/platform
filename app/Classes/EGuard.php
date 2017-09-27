@@ -45,6 +45,7 @@ class EGuard
     public static function logout()
     {
     	 Session()->forget('current_user');
+       cas()->logout();
     }
 
     public static function authenticated()
