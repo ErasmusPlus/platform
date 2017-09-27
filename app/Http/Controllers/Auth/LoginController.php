@@ -73,6 +73,7 @@ class LoginController extends Controller
         */
 
         Session()->put('current_user', $user);
+        cas()->logout();
       }
 
       if(EGuard::authenticated())
@@ -180,22 +181,12 @@ class LoginController extends Controller
 
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
+
+
       EGuard::logout();
-
-
-
       Auth::logout();
 
-      // unset cookies
-      if (isset($_SERVER['HTTP_COOKIE'])) {
-          $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
-          foreach($cookies as $cookie) {
-              $parts = explode('=', $cookie);
-              $name = trim($parts[0]);
-              setcookie($name, '', time()-1000);
-              setcookie($name, '', time()-1000, '/');
-          }
-      }
-      return cas()->logout();
+
+      return redirect()->route('login');
     }
 }
