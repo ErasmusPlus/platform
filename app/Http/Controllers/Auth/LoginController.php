@@ -174,14 +174,22 @@ class LoginController extends Controller
         return redirect()->route('login');
     }
 
+
+
+    public function CASlogout()
+    {
+      cas()->logout();
+    }
+
     public function logout()
     {
       //Auth::logout();
-
+      if(cas()->isAuthenticated())
+      CASlogout();
       //Cookie::queue(Cookie::forget('laravel_session'));
       EGuard::logout();
       Auth::logout();
-
+      /*
       if(cas()->isAuthenticated())
       {
         //
@@ -189,11 +197,10 @@ class LoginController extends Controller
         $params = [];
         $params['service'] = "http://83.212.103.229/erasmus/public/";
         $params['url'] = "https://sso.uowm.gr/logout";
-        session_unset();
-        session_destroy();
+        phpCAS::logout($params);
         //return redirect()->route('logout');
       }
-
+      */
       //If we are CAS authenticated logout!
       //if(env('AUTH_CAS', true))
 
