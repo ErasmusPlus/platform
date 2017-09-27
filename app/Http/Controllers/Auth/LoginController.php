@@ -64,10 +64,10 @@ class LoginController extends Controller
         $cas_logout_app_redirect_url = "http://83.212.103.229/erasmus";
 
         phpCAS::client($cas_protocol, $cas_sso_server, $cas_port, '');
-        phpCAS::setCasServerCACert($cas_cert);  
+        phpCAS::setCasServerCACert($cas_cert);
         phpCAS::handleLogoutRequests(true , array($cas_sso_server));
         phpCAS::forceAuthentication();
-    
+
         $user = phpCAS::getAttributes();
         */
 
@@ -78,6 +78,60 @@ class LoginController extends Controller
         return redirect()->route('home');
       else
         return view('auth.login');
+    }
+
+
+    public function admin_login()
+    {
+      //No CAS login for administrator
+
+      if(EGuard::authenticated())
+        return redirect()->route('home');
+      else
+        return view('auth.login_admin');
+    }
+
+    public function admin_authenticate()
+    {
+      $email = Request::input('email');
+      $password = Request::input('password');
+
+      if (Auth::attempt(['email' => $email, 'password' => $password]))
+      {
+
+        if(Auth::user()->role != 2)
+        {
+          Auth::logout();
+          return redirect()->route('admin_login');
+        }
+
+        //Simulate SSO attributes
+        $user = [
+          "uid" => Auth::user()->email,
+          "mail" => Auth::user()->email,
+          "eduPersonAffiliation" => "",
+          "sn" => "",
+          "eduPersonPrimaryAffiliation" => "",
+          "eduPersonOrgUnitDN" => "",
+          "cn" => Auth::user()->name,
+          "GUStudentSemester" => "12",
+          "GUStudentDepartmentID" => "371",
+          "ou" => "ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ",
+          "GUStudentType" => "administrator",
+          "GUStudentID" => "",
+          "GUPersonID" => "",
+          "givenName" => "",
+          "authenticationMethod" => "localdb",
+          "samlAuthenticationStatementAuthMethod" => "localdb",
+        ];
+
+        Session()->put('current_user', $user);
+
+        if(Auth::user())
+          return redirect()->route('home');
+      }
+      else
+        return redirect()->route('login');
     }
 
     public function authenticate()

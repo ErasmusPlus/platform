@@ -29,6 +29,11 @@ class HomeController extends Controller
         return view('home')->with('news_get',$news_get);
     }
 
+    public function logintype()
+    {
+        return view('logintype');
+    }
+
 	public function postnews()
 	{
 		$input = Request::all();

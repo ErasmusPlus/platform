@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','Auth\LoginController@login');
+Route::get('/','HomeController@logintype');
 
 
 //Profile routes for students
@@ -51,6 +51,9 @@ Route::post('/register', 'Auth\LoginController@adduser')->name('adduser');
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@authenticate')->name('authenticate');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/admin_login', 'Auth\LoginController@admin_login')->name('admin_login');
+Route::post('/admin_login', 'Auth\LoginController@admin_authenticate')->name('admin_authenticate');
 
 Route::get('/profile', function () {
     return view('profile');
