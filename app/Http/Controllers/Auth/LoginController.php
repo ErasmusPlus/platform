@@ -183,7 +183,7 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       {
-        phpCAS::logout()
+        phpCAS::logout();
         //return redirect()->route('logout');
       }
 
