@@ -177,7 +177,7 @@ class LoginController extends Controller
     {
       //Auth::logout();
 
-      Cookie::queue(Cookie::forget('laravel_session'));
+      //Cookie::queue(Cookie::forget('laravel_session'));
 
       Session::flush();
 
@@ -188,6 +188,8 @@ class LoginController extends Controller
 
       EGuard::logout();
       Auth::logout();
+
+      if(cas->isAuthenticated())
       cas()->logout();
 
       return redirect()->route('login');
