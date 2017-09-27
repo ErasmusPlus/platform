@@ -12,6 +12,7 @@ use App\User;
 use App\Classes\EGuard;
 use Cas;
 use Cookie;
+use phpCAS;
 
 
 
