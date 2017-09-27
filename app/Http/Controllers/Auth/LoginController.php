@@ -12,7 +12,6 @@ use App\User;
 use App\Classes\EGuard;
 use Cas;
 use Cookie;
-use phpCAS;
 
 
 
@@ -174,17 +173,9 @@ class LoginController extends Controller
         return redirect()->route('login');
     }
 
-
-
-    public function CASlogout()
-    {
-      cas()->logout();
-    }
-
     public function logout()
     {
       //Auth::logout();
-<<<<<<< HEAD
 
 
 	   
@@ -196,38 +187,15 @@ class LoginController extends Controller
       //if(env('AUTH_CAS', true))
 
 
-=======
-      if(cas()->isAuthenticated())
-      $this->CASlogout();
-      //Cookie::queue(Cookie::forget('laravel_session'));
-
->>>>>>> 64dbb40c4af65d59781f6e4a232390b1f3fe3ea4
       EGuard::logout();
       Auth::logout();
-      dd("D");
-      /*
+
       if(cas()->isAuthenticated())
-<<<<<<< HEAD
       cas()->logout();
   
       Cookie::queue(Cookie::forget('laravel_session','/'));
 	   Cookie::queue(Cookie::forget('CASAuth','/'));
 	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/')); 
-=======
-      {
-        //
-
-        $params = [];
-        $params['service'] = "http://83.212.103.229/erasmus/public/";
-        $params['url'] = "https://sso.uowm.gr/logout";
-        phpCAS::logout($params);
-        //return redirect()->route('logout');
-      }
-      */
-      //If we are CAS authenticated logout!
-      //if(env('AUTH_CAS', true))
-
->>>>>>> 64dbb40c4af65d59781f6e4a232390b1f3fe3ea4
       return redirect()->route('login');
 	  }
 
