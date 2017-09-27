@@ -175,7 +175,7 @@ class LoginController extends Controller
     public function logout()
     {
       //Auth::logout();
-      cas()->logout();
+
 
       Session::flush();
 
@@ -186,7 +186,7 @@ class LoginController extends Controller
 
       EGuard::logout();
       Auth::logout();
-
+      cas()->logout();
 
       return redirect()->route('login');
     }
