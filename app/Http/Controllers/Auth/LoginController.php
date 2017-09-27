@@ -179,7 +179,7 @@ class LoginController extends Controller
 
       //Cookie::queue(Cookie::forget('laravel_session'));
 
-      if(cas()->isAuthenticated())
+      while(cas()->isAuthenticated())
       cas()->logout();
 
 
