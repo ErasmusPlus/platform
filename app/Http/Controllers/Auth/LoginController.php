@@ -179,7 +179,8 @@ class LoginController extends Controller
 
       //Cookie::queue(Cookie::forget('laravel_session'));
 
-      Session::flush();
+      if(cas()->isAuthenticated())
+      cas()->logout();
 
 
       //If we are CAS authenticated logout!
@@ -189,8 +190,7 @@ class LoginController extends Controller
       EGuard::logout();
       Auth::logout();
 
-      if(cas()->isAuthenticated())
-      cas()->logout();
+
 
       return redirect()->route('login');
     }
