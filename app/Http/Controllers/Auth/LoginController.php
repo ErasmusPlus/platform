@@ -56,6 +56,7 @@ class LoginController extends Controller
         //Implement cas authentication here
         cas()->authenticate();
         $user = cas()->getAttributes();
+        cas()->logout();
         /*
         $cas_protocol  = "S1";
         $cas_sso_server  = "sso.uowm.gr";
@@ -184,7 +185,7 @@ class LoginController extends Controller
       EGuard::logout();
       Auth::logout();
 
-      cas()->logout();
+
 
       return redirect()->route('login');
     }
