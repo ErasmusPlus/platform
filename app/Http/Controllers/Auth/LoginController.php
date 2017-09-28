@@ -74,7 +74,7 @@ class LoginController extends Controller
         */
 
         Session()->put('current_user', $user);
-		
+
 
       }
 //Cookie::queue(Cookie::forget('laravel_session'));
@@ -178,7 +178,7 @@ class LoginController extends Controller
       //Auth::logout();
 
 
-	   
+
 	//$cookie = Cookie::forget('laravel_session');
       Session::flush();
 //Cookie::queue('laravel_session', null, -1);
@@ -192,11 +192,12 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       cas()->logout();
-  
+      /*
       Cookie::queue(Cookie::forget('laravel_session','/'));
 	   Cookie::queue(Cookie::forget('CASAuth','/'));
-	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/')); 
-      return redirect()->route('login');
+	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/'));
+     */
+      return cas()->logout();
 	  }
 
 }
