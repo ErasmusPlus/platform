@@ -101,8 +101,8 @@
                   {!! Form::text('city_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
-                  {!! Form::label('city_el','TK') !!}
-                  {!! Form::text('city_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::label('tk','TK') !!}
+                  {!! Form::text('tk',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('address_en','Address (με λατινικούς χαρακτήρες)') !!}
@@ -138,7 +138,7 @@
                 <div class="col-md-12">
                   {!! Form::label('insurance','Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό: ',['class'=>'pull-left', 'style'=>'padding-top:7px']) !!}
 <div class="col-md-4">
-                  {!! Form::text('email',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('insurance',null, ['class' => 'form-control']) !!}
                 </div>
                 </div>
 
@@ -158,8 +158,8 @@
         					{!! Form::text('semester',$stdata->curr_semester, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::label('email','Επίπεδο σπουδών') !!}
-                  {!! Form::text('email',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
+                  {!! Form::label('stlevel','Επίπεδο σπουδών') !!}
+                  {!! Form::text('stlevel',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
                 </div>
               </div>
               <br>
