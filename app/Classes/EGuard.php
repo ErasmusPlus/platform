@@ -50,7 +50,7 @@ class EGuard
 
     public static function authenticated()
     {
-        if(Session()->get('current_user'))
+        if(Session()->get('current_user') || Auth::user())
             return true;
 
         return false;
