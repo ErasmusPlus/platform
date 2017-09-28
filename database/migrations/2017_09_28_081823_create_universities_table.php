@@ -16,8 +16,8 @@ class CreateUniversitiesTable extends Migration
         Schema::create('universities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('lang')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('languages')->onDelete('set null');
+            $table->integer('lang_id')->unsigned()->nullable();
+            $table->foreign('lang_id')->references('id')->on('languages')->onDelete('set null');
             $table->timestamps();
         });
     }
