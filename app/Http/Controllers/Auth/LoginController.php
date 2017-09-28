@@ -89,7 +89,7 @@ class LoginController extends Controller
     {
       //No CAS login for administrator
 
-      if(Auth::check())
+      if(Session::has('current_user'))
         return redirect()->route('home');
       else
         return view('auth.login_admin');

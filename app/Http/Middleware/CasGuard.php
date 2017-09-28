@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Classes\EGuard;
+use Response;
 
 class CasGuard
 {
@@ -19,6 +20,6 @@ class CasGuard
         if(EGuard::authenticated())
           return $next($request);
         else
-          return redirect()->route('login');
+          return abort(403, 'Unauthorized');
     }
 }
