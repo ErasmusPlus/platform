@@ -15,7 +15,7 @@ class CasGuard
      */
     public function handle($request, Closure $next)
     {
-        if(if ($request->session()->has('current_user'))
+        if($request->session()->has('current_user'))
           return $next($request);
         else
           return redirect()->route('login');
