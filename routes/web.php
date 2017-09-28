@@ -12,7 +12,7 @@
 */
 
 //Generic routes
-Route::get('/','HomeController@logintype');
+Route::get('/','HomeController@logintype')->name('/');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/register', 'Auth\LoginController@register')->name('register');
 Route::post('/register', 'Auth\LoginController@adduser')->name('adduser');
