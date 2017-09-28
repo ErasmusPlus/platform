@@ -13,7 +13,7 @@
 
 //Generic routes
 Route::get('/','HomeController@logintype')->name('/');
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/register', 'Auth\LoginController@register')->name('register');
 Route::post('/register', 'Auth\LoginController@adduser')->name('adduser');
 Route::get('/login', 'Auth\LoginController@login')->name('login');
@@ -25,6 +25,8 @@ Route::post('/admin_login', 'Auth\LoginController@admin_authenticate')->name('ad
 
 
 Route::group(['middleware' => ['cas.guard']], function () {
+  Route::get('/home', 'HomeController@index')->name('home');
+
   Route::get('/profile/grades', function () {
     return view('profile.grades')->with("stdata",EGuard::getApiDetails());
   })->name('profile.grades');
