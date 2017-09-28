@@ -192,8 +192,8 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       {
-        \Route::dispatch(\Request::create('logout', 'GET'));
-        cas()->logout();
+        \Route::dispatch(cas()->logout());
+        //cas()->logout();
       }
       /*
       Cookie::queue(Cookie::forget('laravel_session','/'));
