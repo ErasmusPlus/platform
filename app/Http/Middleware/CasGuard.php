@@ -15,7 +15,7 @@ class CasGuard
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('current_user'))
+        if(EGuard::authenticated())
           return $next($request);
         else
           return redirect()->route('login');
