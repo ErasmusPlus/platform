@@ -162,29 +162,118 @@
                   {!! Form::text('email',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
                 </div>
               </div>
-              <h5>Ξένες γλώσσες και επίπεδο γλωσσομάθειας</h5>
+              <br>
+              <h5><b>Ξένες γλώσσες και επίπεδο γλωσσομάθειας:</b></h5>
               <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
         					{!! Form::label('langlevel1','a)') !!}
-        					{!! Form::text('langlevel1',$stdata->depname, ['class' => 'form-control pull-right', 'readonly'=>'readonly']) !!}
-        				</div>
-                <div class="col-md-2">
-        					{!! Form::label('langlevel2','b') !!}
-        					{!! Form::text('langlevel2',$stdata->curr_semester, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
+        					{!! Form::text('langlevel1',null, ['class' => 'form-control pull-right']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::label('langlevel3','c') !!}
-                  {!! Form::text('langlevel3',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
+        					{!! Form::label('langlevel2','b)') !!}
+        					{!! Form::text('langlevel2',null, ['class' => 'form-control']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::label('langlevel3','c)') !!}
+                  {!! Form::text('langlevel3',null , ['class' => 'form-control']) !!}
                 </div>
               </div>
+
+              <br>
+              <h5><b>Επιθυμώ να πραγματοποιήσω μια περίοδο σπουδών σε ένα απο τα παρακάτω Πανεπιστήμια με σειρά προτεραιότητας:</b></h5>
+              <div class="row">
+                  <div class="col-md-4">
+        					{!! Form::text('u1_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::text('u1_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+        				</div>
+                <div class="col-md-2">
+                  {!! Form::label('u1_semester','Χειμερινό') !!}
+                  {{ Form::radio('u1_semester', '1') }}
+                  {!! Form::label('u1_semester','Εαρινό') !!}
+                  {{ Form::radio('u1_semester', '2') }}
+                </div>
+                <div class="col-md-2">
+                  {!! Form::text('u1_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+        					{!! Form::text('u2_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::text('u2_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+        				</div>
+                <div class="col-md-2">
+                  {!! Form::label('u2_semester','Χειμερινό') !!}
+                  {{ Form::radio('u2_semester', '1') }}
+                  {!! Form::label('u2_semester','Εαρινό') !!}
+                  {{ Form::radio('u2_semester', '2') }}
+                </div>
+                <div class="col-md-2">
+                  {!! Form::text('u2_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+        					{!! Form::text('u3_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::text('u3_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+        				</div>
+                <div class="col-md-2">
+                  {!! Form::label('u3_semester','Χειμερινό') !!}
+                  {{ Form::radio('u3_semester', '1') }}
+                  {!! Form::label('u3_semester','Εαρινό') !!}
+                  {{ Form::radio('u3_semester', '2') }}
+                </div>
+                <div class="col-md-2">
+                  {!! Form::text('u3_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                </div>
+              </div>
+              <h5><i>**Σημειώνεται ότι η αιτούμενη υποτροφία μπορεί να είναι διάρκειας 3 (τριών) έως 12 (δώδεκα) μηνών</i></h5>
+              <hr>
+            {!! Form::checkbox('l1') !!}
+            {!! Form::label('l1','Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
+            <br>
+            {!! Form::checkbox('l2') !!}
+            {!! Form::label('l2','Είμαι άτομο με αναπηρίες, σύμφωνα με τον κατάλογο που χρησιμοποιεί η Ε.Μ') !!}
+            <br>
+            {!! Form::checkbox('l3') !!}
+            {!! Form::label('l3','Έχω συμπληρώσει το 25ο έτος της ηλικίας και το ατομικό μου εισόδημα δεν ξεπερνά τα 9.000Ε') !!}
+            <br>
+            {!! Form::checkbox('l4') !!}
+            {!! Form::label('l4','Δεν έχω συμπληρώσει το 25ο έτος της ηλικίας και προέρχομαι απο οικογένεια που το οικογενειακό εισόδημα δεν υπερβαίνει τις 9.000Ε κατά το πλέον πρόσφατο οικονομικό έτος') !!}
+            <br>
+            {!! Form::checkbox('l5') !!}
+            {!! Form::label('l5','Προέρχομαι απο πολύτεκνη οικογένεια (4 τέκνα και άνω τα οποία βρίσκονται σε κάποια βαθμίδα εκπαίδευσης) και το οικογενειακό και ατομικό μου εισόδημα δεν υπερβαίνει τις 22.000Ε κατά το πλέον πρόσφατο οικονομικό έτος.') !!}
+            <br>
+            {!! Form::checkbox('l6') !!}
+            {!! Form::label('l6','Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη') !!}
+
+            <hr>
+            <a id="nexttab2" href="#tab3" class="btn btn-primary pull-right" role="button">Επόμενo</a>
 
 
             </div>
             <div id="tab3" class="tab-pane fade">
+              <br>
+              <h4>
+                <b>Με την υποβολή της αίτησης μου δηλώνω υπεύθυνα ότι:</b></h4>
+
+                <h5>
+                α) Δεν έχω τύχει υποτροφίας Erasmus κατά τα προηγούμενα ακαδημαικά Έτη, η οποία αθροιζόμενη με το παρόν αίτημα μετακίνησής μου να υπερβαίνει τους 12 μήνες
+                <br>
+                β) Όλες οι πληροφορίες που παρέχονται είναι ακριβείς.
+
+              </h5>
+                <br>
 
 
 
-               {!! Form::submit() !!}
+
+               {!! Form::submit('Υποβολή αίτησης',array('class' => 'btn btn-primary')) !!}
             </div>
 				</div>
 			   </div>
