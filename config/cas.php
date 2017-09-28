@@ -111,7 +111,7 @@ return [
     | If your server supports redirection services, enter the redirect url
     | in this section.  If left blank, it will default to disabled.
     */
-    'cas_logout_redirect' => env('CAS_LOGOUT_REDIRECT', 'https://sso.uowm.gr/login'),
+    'cas_logout_redirect' => env('CAS_LOGOUT_REDIRECT', ''),
 
     /*
     |--------------------------------------------------------------------------
