@@ -192,7 +192,7 @@ class LoginController extends Controller
 
       if(cas()->isAuthenticated())
       {
-        Route::dispatch(cas()->logout());
+        \Route::dispatch(cas()->logout());
         //cas()->logout();
       }
       /*
