@@ -34,7 +34,7 @@ return [
     | of the Laravel sessions when this is set to false.
     |--------------------------------------------------------------------------
     */
-    'cas_control_session' => env('CAS_CONTROL_SESSIONS', true),
+    'cas_control_session' => env('CAS_CONTROL_SESSIONS', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |--------------------------------------------------------------------------
     | Empty is fine
     */
-    'cas_login_url'       => env('CAS_LOGIN_URL', ''),
+    'cas_login_url'       => env('CAS_LOGIN_URL', 'https://sso.uowm.gr/login'),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,7 +111,7 @@ return [
     | If your server supports redirection services, enter the redirect url
     | in this section.  If left blank, it will default to disabled.
     */
-    'cas_logout_redirect' => env('CAS_LOGOUT_REDIRECT', ''),
+    'cas_logout_redirect' => env('CAS_LOGOUT_REDIRECT', 'https://sso.uowm.gr/login'),
 
     /*
     |--------------------------------------------------------------------------
