@@ -176,7 +176,8 @@ class LoginController extends Controller
     public function logout()
     {
       //Auth::logout();
-
+      EGuard::logout();
+      Auth::logout();
 
 
 	//$cookie = Cookie::forget('laravel_session');
@@ -187,17 +188,16 @@ class LoginController extends Controller
       //if(env('AUTH_CAS', true))
 
 
-      EGuard::logout();
-      Auth::logout();
 
-      if(cas()->isAuthenticated())
-      cas()->logout();
+
+      //if(cas()->isAuthenticated())
+      //cas()->logout();
       /*
       Cookie::queue(Cookie::forget('laravel_session','/'));
 	   Cookie::queue(Cookie::forget('CASAuth','/'));
 	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/'));
      */
-      return redirect()->route('logout');
+      return redirect()->route('login');
 	  }
 
 }
