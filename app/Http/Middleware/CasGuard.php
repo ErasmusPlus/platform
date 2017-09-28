@@ -19,6 +19,6 @@ class CasGuard
         if($request->session()->has('current_user'))
           return $next($request);
         else
-          return redirect()->route('/');
+          return redirect()->route('login');
     }
 }
