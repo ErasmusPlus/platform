@@ -89,7 +89,7 @@ class LoginController extends Controller
     {
       //No CAS login for administrator
 
-      if(EGuard::authenticated())
+      if(Auth::user())
         return redirect()->route('home');
       else
         return view('auth.login_admin');
