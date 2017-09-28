@@ -197,7 +197,7 @@ class LoginController extends Controller
 	   Cookie::queue(Cookie::forget('CASAuth','/'));
 	   Cookie::queue(Cookie::forget('XSRF-TOKEN','/'));
      */
-      return cas()->logout();
+      return redirect()->route('/');
 	  }
 
 }
