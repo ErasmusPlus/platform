@@ -31,6 +31,10 @@ class HomeController extends Controller
 
     public function logintype()
     {
+
+      //if(cas()->isAuthenticated())
+      //  cas()->logout();
+
         return view('logintype');
     }
 

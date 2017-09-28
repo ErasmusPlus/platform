@@ -176,7 +176,7 @@ class LoginController extends Controller
     public function logout()
     {
       //Auth::logout();
-      
+
       EGuard::logout();
       Auth::logout();
 
@@ -191,8 +191,7 @@ class LoginController extends Controller
 
 
 
-      if(cas()->isAuthenticated())
-        cas()->logout();
+
         //\Route::dispatch(cas()->logout());
 
 
