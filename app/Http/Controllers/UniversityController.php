@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\news;
-use Request;
+use Illuminate\Http\Request;
 use App\Classes\Students;
+use App\University;
+use App\Language;
 
 class UniversityController extends Controller
 {
@@ -25,7 +26,54 @@ class UniversityController extends Controller
      */
     public function index()
     {
-        return view('university.index');
+        $universities = University::paginate(15);
+        $languages = Language::pluck('name', 'id');
+        return view('university.index')->with('universities',$universities)->with('languages',$languages);
+    }
+
+    public function new()
+    {
+        $languages = Language::pluck('name', 'id');
+        return view('university.new')->with('languages',$languages);
+    }
+
+    public function edit($id)
+    {
+        $university = University::findOrFail($id);
+        $languages = Language::pluck('name', 'id');
+        return view('university.edit')->with('languages',$languages)->with('university',$university);
+    }
+
+    public function delete($id)
+    {
+        $university = University::findOrFail($id);
+        $university -> delete();
+        
+        return redirect()->route('admin.university.index');
+    }
+
+    public function create(Request $request)
+    {
+
+      $university = new University();
+      $university -> name = $request->input('name');
+      $university -> lang_id = $request->input('lang_id');
+      //TODO: Handle failures here
+      $university -> save();
+
+      return redirect()->route('admin.university.index');
+    }
+
+    public function update(Request $request)
+    {
+
+      $university = University::findOrFail($request->input('id'));
+      $university -> name = $request->input('name');
+      $university -> lang_id = $request->input('lang_id');
+      //TODO: Handle failures here
+      $university -> save();
+
+      return redirect()->route('admin.university.index');
     }
 
 }

@@ -19,12 +19,12 @@ class NewsTableSeeder extends Seeder
 		  Whaa dont tink ill on me.
 		  Malediction',
       ]);
-	  
+
 	   DB::table('news')->insert([
           'title' => 'Bristleback here! Ha ha!',
           'body' => 'It s in the bag, mate. Yeah, go on, you see if it s not. Open it up and see if its not in there. Im telling you, its a lock, mate.',
       ]);
-	  
+
 	   DB::table('news')->insert([
           'title' => 'Zan karabos!!',
           'body' => 'Kar kor!
@@ -34,6 +34,6 @@ class NewsTableSeeder extends Seeder
 		  Karabos karakas!
 		  So sah zan!',
       ]);
-	  
+
     }
 }

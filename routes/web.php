@@ -69,5 +69,10 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::post('/erasmus/application','ApplicationController@index');
 
 
-  Route::get('/universities','UniversityController@index')->name('admin.university');
+  Route::get('/universities','UniversityController@index')->name('admin.university.index');
+  Route::get('/universities/new','UniversityController@new')->name('admin.university.new');
+  Route::post('/universities/new','UniversityController@create');
+  Route::get('/universities/edit/{id}','UniversityController@edit')->name('admin.university.edit');
+  Route::post('/universities/edit','UniversityController@update');
+  Route::get('/universities/delete/{id}','UniversityController@delete')->name('admin.university.delete');
 });
