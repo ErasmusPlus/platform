@@ -45,22 +45,33 @@ class CreateApplicationsTable extends Migration
             $table->string('semester');
             $table->string('stlevel');
 
-            $table->string('langlevel1');
-            $table->string('langlevel2');
-            $table->string('langlevel3');
+            $table->integer('lang_id1')->unsigned();
+            $table->foreign('lang_id1')->references('id')->on('languages')->onDelete('set null');
+            $table->smallInteger('langlevel1')->unsigned();
 
-            $table->string('u1_name');
+            $table->integer('lang_id2')->unsigned();
+            $table->foreign('lang_id2')->references('id')->on('languages')->onDelete('set null');
+            $table->smallInteger('langlevel2')->unsigned();
+
+            $table->integer('lang_id3')->unsigned();
+            $table->foreign('lang_id3')->references('id')->on('languages')->onDelete('set null');
+            $table->smallInteger('langlevel3')->unsigned();
+
+            $table->integer('u1_id')->unsigned();
+            $table->foreign('u1_id')->references('id')->on('universities')->onDelete('set null');
             $table->string('u1_studies');
             $table->string('u1_semester');
             $table->smallInteger('u1_months')->unsigned();
 
-            $table->string('u2_name');
+            $table->integer('u2_id')->unsigned();
+            $table->foreign('u2_id')->references('id')->on('universities')->onDelete('set null');
             $table->string('u2_studies');
             $table->string('u2_semester');
             $table->smallInteger('u2_months')->unsigned();
 
 
-            $table->string('u3_name');
+            $table->integer('u3_id')->unsigned();
+            $table->foreign('u3_id')->references('id')->on('universities')->onDelete('set null');
             $table->string('u3_studies');
             $table->string('u3_semester');
             $table->smallInteger('u3_months')->unsigned();
@@ -71,6 +82,15 @@ class CreateApplicationsTable extends Migration
             $table->boolean('l4');
             $table->boolean('l5');
             $table->boolean('l6');
+
+            $table->integer('spec_aem');
+            $table->integer('depID');
+            $table->integer('depname');
+            $table->float('ects_passed_total', 8, 2);
+            $table->integer('cources_passed_num');
+            $table->smallInteger('curr_semester');
+            $table->float('Avg', 5, 2);
+
 
             $table->timestamps();
         });
