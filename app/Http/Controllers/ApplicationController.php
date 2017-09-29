@@ -67,8 +67,8 @@ class ApplicationController extends Controller
 	  'city_el' =>'required|max:100|regex:/^[A-Z]+$/',
 	  'city_en' =>'required|max:100|regex:/^[A-Z]+$/',
 	  'tk' => 'numeric|required|max:6',
-	  'tel' => 'numeric|required|max:10'
-	  'mobtel' => 'numeric|required|max:12'
+	  'tel' => 'numeric|required|max:10',
+	  'mobtel' => 'numeric|required|max:12',
 	  'email' => 'required|max:50|regex:[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}',
 	  'instance' => 'required|max:50',
 	  ]);
