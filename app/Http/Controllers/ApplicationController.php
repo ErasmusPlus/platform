@@ -48,6 +48,32 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
       //TODO: Validation
+	  $validator = Validator::make($request->all(), [
+	  'surname_el' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'name_el' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'surname_en' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'name_en' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'fathersname'  => 'required|max:100|regex:/^[A-Z]+$/',
+	  'mothersname'  => 'required|max:100|regex:/^[A-Z]+$/',
+	  'age'  => 'required|numeric|max:100',
+	  'idno' => 'required|numeric|max:100',
+	  'birthplace' => 'required|max:100|regex:/^[A-Z]+$/',
+	  // birthdate ?
+	  'prefecture' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'citizenship' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'address_el' =>'required|max:100|regex:/^[A-Z]+$/',
+	  'address_en' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'no_el' => 'numeric|required|max:100',
+	  'city_el' =>'required|max:100|regex:/^[A-Z]+$/',
+	  'city_en' =>'required|max:100|regex:/^[A-Z]+$/',
+	  'tk' => 'numeric|required|max:6',
+	  'tel' => 'numeric|required|max:10'
+	  'mobtel' => 'numeric|required|max:12'
+	  'email' => 'required|max:50|regex:[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}',
+	  'instance' => 'required|max:50',
+	  ]);
+	  
+	  
 
       $application = new Application();
       //1st tab
