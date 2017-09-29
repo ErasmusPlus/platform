@@ -20,7 +20,7 @@
                 <li><a data-toggle="tab" href="#tab2">Στοιχεία ακαδημαικής δραστηριότητας υποψηφίου</a></li>
                 <li><a data-toggle="tab" href="#tab3">Υποβολή αιτήσεως</a></li>
               </ul>
-			  {!! Form::open() !!}
+			  {!! Form::open(array('action' => 'ApplicationController@store')) !!}
                 <!-- text input -->
 
                 <div class="tab-content">
@@ -90,7 +90,7 @@
                   <div class="col-md-3">
 
                   {!! Form::label('address_el','Οδός') !!}
-                  {!! Form::text('birthplace',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('address_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('nο_el','Αριθμός') !!}
