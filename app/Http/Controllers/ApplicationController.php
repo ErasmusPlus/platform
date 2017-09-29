@@ -7,6 +7,7 @@ use App\Classes\EGuard;
 use App\University;
 use App\Language;
 use App\Application;
+use Illuminate\Support\Facades\Validator;
 class ApplicationController extends Controller
 {
     /**
