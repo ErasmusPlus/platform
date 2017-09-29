@@ -131,7 +131,23 @@ class ApplicationController extends Controller
     {
       $applications = Application::where('spec_aem',EGuard::user()->id)->get();
 
-      return
+      $universities = University::pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+
+      $langlevel = [
+        1 => "A1",
+        2 => "A2",
+        3 => "B1",
+        4 => "B2",
+        5 => "C1",
+        6 => "C2"
+      ];
+
+      return view('erasmus.viewapplication') ->with("stdata",EGuard::getApiDetails())
+                                          ->with('universities',$universities)
+                                          ->with('languages',$languages)
+                                          ->with('langlevel',$langlevel)
+                                          ->with('applications',$applications);
     }
 
 }
