@@ -74,6 +74,9 @@ class ApplicationController extends Controller
 	  'instance' => 'required|max:50',
 	  ]);
 	  
+	  if ($validator->fails()){
+		  return redirect()->route('home');
+	  }
 	  
 
       $application = new Application();
