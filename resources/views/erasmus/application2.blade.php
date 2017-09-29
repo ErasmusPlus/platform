@@ -183,7 +183,7 @@
               <h5><b>Επιθυμώ να πραγματοποιήσω μια περίοδο σπουδών σε ένα απο τα παρακάτω Πανεπιστήμια με σειρά προτεραιότητας:</b></h5>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::text('u1_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u1_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
         				</div>
                 <div class="col-md-4">
                   {!! Form::text('u1_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
@@ -195,12 +195,12 @@
                   {{ Form::radio('u1_semester', '2') }}
                 </div>
                 <div class="col-md-2">
-                  {!! Form::text('u1_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                  {!! Form::number('u1_months',null, ['min' => '3','max' => '12' , 'class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::text('u2_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u2_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
         				</div>
                 <div class="col-md-4">
                   {!! Form::text('u2_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
@@ -217,7 +217,7 @@
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::text('u3_name',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u3_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
         				</div>
                 <div class="col-md-4">
                   {!! Form::text('u3_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
