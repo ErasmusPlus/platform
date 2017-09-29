@@ -72,4 +72,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::get('/universities/edit/{id}','UniversityController@edit')->name('admin.university.edit');
   Route::post('/universities/edit','UniversityController@update');
   Route::get('/universities/delete/{id}','UniversityController@delete')->name('admin.university.delete');
+
+
+  Route::get('/ranking','RankingController@index')->name('admin.ranking.index');
 });

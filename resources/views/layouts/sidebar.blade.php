@@ -52,6 +52,7 @@
       @endif
       @if(EGuard::user()->type == 'Administrator')
       <li class="{!! classActiveSegment(1,['universities']) !!}"><a href="{{ route('admin.university.index') }}"><span>Πανεπιστήμια Erasmus</span></a></li>
+      <li class="{!! classActiveSegment(1,['ranking']) !!}"><a href="{{ route('admin.ranking.index') }}"><span>Κατάταξη Erasmus</span></a></li>
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
       @endif
     </ul><!-- /.sidebar-menu -->
