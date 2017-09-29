@@ -50,7 +50,10 @@
         </ul>
       </li>
       @endif
+      @if(EGuard::user()->type == 'Administrator')
+      <li class="{!! classActivePath('universities') !!}"><a href="{{ route('admin.university') }}"><span>Πανεπιστήμια Erasmus</span></a></li>
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
+      @endif
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->

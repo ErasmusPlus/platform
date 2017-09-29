@@ -67,4 +67,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::post('/upload','UploadImageController@upload');
   Route::post('/home','HomeController@postnews');
   Route::post('/erasmus/application','ApplicationController@index');
+
+
+  Route::get('/universities','UniversityController@index')->name('admin.university');
 });
