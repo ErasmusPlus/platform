@@ -11,6 +11,10 @@
     <title>{{ config('app.name', 'Erasmus+') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
@@ -19,6 +23,7 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    @yield('css')
     <style>
     .vertical-center {
       min-height: 80%;  /* Fallback for browsers do NOT support vh unit */
@@ -28,6 +33,7 @@
       align-items: center;
     }
     </style>
+
 </head>
 <body>
 

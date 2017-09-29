@@ -2,6 +2,12 @@
 
 @section('css')
 <style>
+body {
+    background-image: url("{{asset('img/bg_root.jpg')}}");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media ( min-width: 768px ) {
     .grid-divider {
         position: relative;
@@ -26,23 +32,21 @@
 
 @section('content')
 <div class="container">
-  <div class="page-header">
-    <h3></h3>
-</div>
-<div class="row grid-divider">
+
+
 <div class="col-sm-8">
   <div class="col-padding">
     <h3></h3>
-    <p>[[ERASMUS LOGO]]</p>
+    <p></p>
   </div>
 </div>
 <div class="col-sm-4">
   <div class="col-padding">
-    <h3>Είσοδος ως: </h3>
-    <a href="{{route('admin_login')}}" class="btn btn-info btn-block" role="button">Ακαδημαϊκός</a>
-    <a href="{{route('login')}}" class="btn btn-info btn-block" role="button">Φοιτητής</a>
+    <h3><b>Είσοδος ως </b></h3>
+    <a href="{{route('admin_login')}}" class="btn btn-primary btn-block" role="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Ακαδημαϊκός</a>
+    <a href="{{route('login')}}" class="btn btn-primary btn-block" role="button"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Φοιτητής</a>
   </div>
 </div>
-</div>
+
 </div>
 @endsection
