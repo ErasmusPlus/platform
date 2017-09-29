@@ -126,4 +126,12 @@ class ApplicationController extends Controller
       return redirect()->route('home');
     }
 
+
+    public function view()
+    {
+      $applications = Application::where('spec_aem',EGuard::user()->id)->get();
+
+      return
+    }
+
 }
