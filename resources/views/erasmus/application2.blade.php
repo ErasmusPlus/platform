@@ -166,17 +166,35 @@
               <h5><b>Ξένες γλώσσες και επίπεδο γλωσσομάθειας:</b></h5>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::label('langlevel1','a)') !!}
-        					{!! Form::text('langlevel1',null, ['class' => 'form-control pull-right']) !!}
+                    <div class="col-md-8">
+                      {!! Form::label('lang_id1','Γλώσσα') !!}
+          					  {!! Form::select('lang_id1',$languages,null, ['class' => 'form-control pull-right', 'placeholder' => "Επιλέξτε πρώτη γλώσσα"]) !!}
+                    </div>
+                    <div class="col-md-4">
+                      {!! Form::label('langlevel1','Επίπεδο') !!}
+                      {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
+                    </div>
         				</div>
-                <div class="col-md-4">
-        					{!! Form::label('langlevel2','b)') !!}
-        					{!! Form::text('langlevel2',null, ['class' => 'form-control']) !!}
+                  <div class="col-md-4">
+                    <div class="col-md-8">
+                      {!! Form::label('lang_id2','Γλώσσα') !!}
+          					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε δεύτερη γλώσσα"]) !!}
+                    </div>
+                    <div class="col-md-4">
+                      {!! Form::label('langlevel2','Επίπεδο') !!}
+                      {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
+                    </div>
         				</div>
-                <div class="col-md-4">
-                  {!! Form::label('langlevel3','c)') !!}
-                  {!! Form::text('langlevel3',null , ['class' => 'form-control']) !!}
-                </div>
+                  <div class="col-md-4">
+                    <div class="col-md-8">
+                      {!! Form::label('lang_id3','Γλώσσα') !!}
+          					  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}
+                    </div>
+                    <div class="col-md-4">
+                      {!! Form::label('langlevel3','Επίπεδο') !!}
+                      {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
+                    </div>
+        				</div>
               </div>
 
               <br>

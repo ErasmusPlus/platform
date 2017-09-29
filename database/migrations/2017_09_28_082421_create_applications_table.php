@@ -45,36 +45,36 @@ class CreateApplicationsTable extends Migration
             $table->string('semester');
             $table->string('stlevel');
 
-            $table->integer('lang_id1')->unsigned();
+            $table->integer('lang_id1')->unsigned()->nullable();
             $table->foreign('lang_id1')->references('id')->on('languages')->onDelete('set null');
-            $table->smallInteger('langlevel1')->unsigned();
+            $table->smallInteger('langlevel1')->unsigned()->nullable();
 
-            $table->integer('lang_id2')->unsigned();
+            $table->integer('lang_id2')->unsigned()->nullable();
             $table->foreign('lang_id2')->references('id')->on('languages')->onDelete('set null');
-            $table->smallInteger('langlevel2')->unsigned();
+            $table->smallInteger('langlevel2')->unsigned()->nullable();
 
-            $table->integer('lang_id3')->unsigned();
+            $table->integer('lang_id3')->unsigned()->nullable();
             $table->foreign('lang_id3')->references('id')->on('languages')->onDelete('set null');
-            $table->smallInteger('langlevel3')->unsigned();
+            $table->smallInteger('langlevel3')->unsigned()->nullable();
 
-            $table->integer('u1_id')->unsigned();
+            $table->integer('u1_id')->unsigned()->nullable();
             $table->foreign('u1_id')->references('id')->on('universities')->onDelete('set null');
-            $table->string('u1_studies');
-            $table->string('u1_semester');
-            $table->smallInteger('u1_months')->unsigned();
+            $table->string('u1_studies')->nullable();
+            $table->string('u1_semester')->nullable();
+            $table->smallInteger('u1_months')->unsigned()->nullable();
 
-            $table->integer('u2_id')->unsigned();
+            $table->integer('u2_id')->unsigned()->nullable();
             $table->foreign('u2_id')->references('id')->on('universities')->onDelete('set null');
-            $table->string('u2_studies');
-            $table->string('u2_semester');
-            $table->smallInteger('u2_months')->unsigned();
+            $table->string('u2_studies')->nullable();
+            $table->string('u2_semester')->nullable();
+            $table->smallInteger('u2_months')->unsigned()->nullable();
 
 
-            $table->integer('u3_id')->unsigned();
+            $table->integer('u3_id')->unsigned()->nullable();
             $table->foreign('u3_id')->references('id')->on('universities')->onDelete('set null');
-            $table->string('u3_studies');
-            $table->string('u3_semester');
-            $table->smallInteger('u3_months')->unsigned();
+            $table->string('u3_studies')->nullable();
+            $table->string('u3_semester')->nullable();
+            $table->smallInteger('u3_months')->unsigned()->nullable();
 
             $table->boolean('l1');
             $table->boolean('l2');
@@ -85,7 +85,7 @@ class CreateApplicationsTable extends Migration
 
             $table->integer('spec_aem');
             $table->integer('depID');
-            $table->integer('depname');
+            $table->string('depname');
             $table->float('ects_passed_total', 8, 2);
             $table->integer('cources_passed_num');
             $table->smallInteger('curr_semester');
