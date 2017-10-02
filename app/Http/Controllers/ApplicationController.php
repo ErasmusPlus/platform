@@ -64,7 +64,7 @@ class ApplicationController extends Controller
 	  'citizenship' => 'required',
 	  'address_el' =>'required',
 	  'address_en' => 'required',
-	  'no_el' => 'numeric|required',
+	  'nο_el' => 'numeric|required',
 	  'city_el' =>'required',
 	  'city_en' =>'required',
 	  'tk' => 'numeric|required',
