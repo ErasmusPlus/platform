@@ -25,7 +25,7 @@
                       <td>{{$universities[$application->u1_id]}}</td>
                       <td>{{$application->created_at}}</td>
                       <td>
-                        <a href="{{route('admin.university.edit',$application->id)}}" class="btn btn-primary btn-xs btn-block" role="button">Προβολή</a>
+                        <a href="{{route('erasmus.viewappid',$application->id)}}" class="btn btn-primary btn-xs btn-block" role="button">Προβολή</a>
                       </td>
                     </tr>
                     @endforeach

@@ -39,7 +39,7 @@
         <ul class="treeview-menu">
           <li class="{!! classActiveSegment(2,['application']) !!}"><a href="{{ route('erasmus.application') }}">Νέα αίτηση</a></li>
           <li class="{!! classActiveSegment(2,['application2']) !!}"><a href="{{ route('erasmus.application2') }}">Νέα αίτηση v2</a></li>
-		   <li class="{!! classActiveSegment(2,['view_applications']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
+		   <li class="{!! classActiveSegment(2,['view_applications','view_application']) !!}"><a href="{{ route('erasmus.viewapplication') }}">Προβολή αιτήσεων</a></li>
         </ul>
       </li>
       @endif

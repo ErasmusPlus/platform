@@ -179,4 +179,10 @@ class ApplicationController extends Controller
                                           ->with('applications',$applications);
     }
 
+
+    public function view_appid($id)
+    {
+      return view('erasmus.viewapplicationid');
+    }
+
 }
