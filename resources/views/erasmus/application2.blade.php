@@ -13,9 +13,17 @@
 
 
 @section('content')
-@if($errors->any())
-<h4>{{$errors->first()}}</h4>
-@endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="nav nav-tabs">
