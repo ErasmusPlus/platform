@@ -13,6 +13,9 @@
         {{ Form::label('Όνομα πανεπιστημίου') }}
         {{ Form::text('name',null,array('class' => 'form-control')) }}
 
+        {{ Form::label('Μέγιστος αριθμός εισακτέων') }}
+        {{ Form::number('cap',null,array('class' => 'form-control')) }}
+
         {{ Form::label('Γλώσσα') }}
         {{ Form::select('lang_id',$languages,$university->lang_id,array('class' => 'form-control')) }}
 

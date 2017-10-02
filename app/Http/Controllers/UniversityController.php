@@ -48,7 +48,7 @@ class UniversityController extends Controller
     {
         $university = University::findOrFail($id);
         $university -> delete();
-        
+
         return redirect()->route('admin.university.index');
     }
 
@@ -57,6 +57,7 @@ class UniversityController extends Controller
 
       $university = new University();
       $university -> name = $request->input('name');
+      $university -> cap = $request->input('cap');
       $university -> lang_id = $request->input('lang_id');
       //TODO: Handle failures here
       $university -> save();
@@ -69,6 +70,7 @@ class UniversityController extends Controller
 
       $university = University::findOrFail($request->input('id'));
       $university -> name = $request->input('name');
+      $university -> cap = $request->input('cap');
       $university -> lang_id = $request->input('lang_id');
       //TODO: Handle failures here
       $university -> save();

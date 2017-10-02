@@ -21,6 +21,7 @@
                       <th>Όνομα</th>
                       <th>Γλώσσα</th>
                       <th>Ενεργό</th>
+                      <th>Εισακτέοι</th>
                       <th>Ημ/νία</th>
                       <th width="160px">Ενέργειες</th>
                     </tr>
@@ -31,6 +32,7 @@
                       <td>{{$university->name}}</td>
                       <td>{{$languages[$university->lang_id]}}</td>
                       <td><span class="label label-success">NAI</span></td>
+                      <td>{{$university->cap}}</td>
                       <td>{{$university->updated_at}}</td>
                       <td>
                         <a href="{{route('admin.university.edit',$university->id)}}" class="btn btn-primary btn-xs" role="button">Επεξεργασία</a>
