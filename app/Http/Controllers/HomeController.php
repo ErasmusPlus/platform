@@ -38,6 +38,7 @@ class HomeController extends Controller
         return view('logintype');
     }
 
+
 	public function postnews()
 	{
 		$input = Request::all();
@@ -48,4 +49,7 @@ class HomeController extends Controller
 		 return redirect('home');
 
 	}
+
+
+
 }

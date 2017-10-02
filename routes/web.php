@@ -31,9 +31,9 @@ Route::group(['middleware' => ['cas.guard']], function () {
     return view('profile.grades')->with("stdata",EGuard::getApiDetails());
   })->name('profile.grades');
 
-  Route::get('/profile/details', function () {
+  Route::get('student_details', function () {
       return view('profile.details');
-  })->name('profile.details');
+  })->name('details');
 
   Route::get('/profile/ects', function () {
       return view('profile.ects')->with("stdata",EGuard::getApiDetails());

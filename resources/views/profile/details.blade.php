@@ -2,10 +2,15 @@
 @php ( $title='Στοιχεία φοιτητή' )
 @php ( $description='')
 @section('content')
+
+<?php
+  $stdata = EGuard::getApiDetails();
+?>
+
 <div class='row'>
 
 <!-- /.box -->
-<div class='col-md-4'>
+<div class='col-md-6'>
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">{{EGuard::user()->fullname}}</h3>
@@ -23,7 +28,7 @@
                 </tr>
                 <tr>
                   <td>Εξάμηνο</td>
-                  <td>{{EGuard::user()->semester}}</td>
+                  <td>{{$stdata->curr_semester}}</td>
                 </tr>
                 <tr>
                   <td>Όνομα</td>
@@ -41,15 +46,54 @@
                   <td>Τύπος</td>
                   <td>{{EGuard::user()->type}}</td>
                 </tr>
-                <tr>
-                  <td>Τμήμα</td>
-                  <td>{{EGuard::user()->departmentFull}}</td>
-                </tr>
+
+
+
               </table>
+
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
+        <div class='col-md-6'>
+                  <div class="box">
+                    <div class="box-header">
+                      <h3 class="box-title"></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                      <table class="table table-condensed">
+                        <tr>
+                          <td>Αριθμός Τμήματος</td>
+                          <td>{{$stdata->depID}}</td>
+                        </tr>
+                        <tr>
+                          <td>Περιγραφή Τμήματος</td>
+                          <td>{{$stdata->depname}}</td>
+                        </tr>
+                        <tr>
+                          <td>ECTS</td>
+                          <td>{{$stdata->ects_passed_total}}</td>
+                        </tr>
+                        <tr>
+                          <td>Σύνολο περασμένων μαθημάτων</td>
+                          <td>{{$stdata->cources_passed_num}}</td>
+                        </tr>
+                        <tr>
+                          <td>Μέσος Όρος</td>
+                          <td>{{$stdata->Avg}}</td>
+                        </tr>
+
+
+                      </table>
+
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+                </div>
 </div><!-- /.row -->
+<hr>
+<h4><center>Έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus+</center></h4>
 @endsection
