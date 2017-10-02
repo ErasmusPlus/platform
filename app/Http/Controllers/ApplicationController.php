@@ -57,7 +57,7 @@ class ApplicationController extends Controller
 	  'fathersname'  => 'required',
 	  'mothersname'  => 'required',
 	  'age'  => 'required|numeric',
-	  'idno' => 'required|numeric',
+	  'idno' => 'required',
 	  'birthplace' => 'required',
 	  // birthdate ?
 	  'prefecture' => 'required',
@@ -68,10 +68,9 @@ class ApplicationController extends Controller
 	  'city_el' =>'required',
 	  'city_en' =>'required',
 	  'tk' => 'numeric|required',
-	  'tel' => 'numeric|required',
-	  'mobtel' => 'numeric|required',
+	  'tel' => 'required',
+	  'mobtel' => 'required',
 	  'email' => 'required',
-	  'instance' => 'required',
 	  ]);
 
 	  if ($validator->fails()){

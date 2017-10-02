@@ -69,7 +69,7 @@
         				</div>
                 <div class="col-md-1">
                   {!! Form::label('age','Ηλικία/Age') !!}
-                  {!! Form::text('age',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('age',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('idno','Αριθμός Δελτίου Ταυτότητας/I.D. No') !!}
@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('nο_el','Αριθμός') !!}
-                  {!! Form::text('nο_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('nο_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_el','Πόλη') !!}
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('tk','TK') !!}
-                  {!! Form::text('tk',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('tk',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('address_en','Address (με λατινικούς χαρακτήρες)') !!}
