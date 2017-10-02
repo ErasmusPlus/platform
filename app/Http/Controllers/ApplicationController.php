@@ -50,34 +50,34 @@ class ApplicationController extends Controller
     {
       //TODO: Validation
 	  $validator = Validator::make($request->all(), [
-	  'surname_el' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'name_el' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'surname_en' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'name_en' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'fathersname'  => 'required|max:100|regex:/^[A-Z]+$/',
-	  'mothersname'  => 'required|max:100|regex:/^[A-Z]+$/',
+	  'surname_el' => 'required|max:100',
+	  'name_el' => 'required|max:100',
+	  'surname_en' => 'required|max:100',
+	  'name_en' => 'required|max:100',
+	  'fathersname'  => 'required|max:100',
+	  'mothersname'  => 'required|max:100',
 	  'age'  => 'required|numeric|max:100',
 	  'idno' => 'required|numeric|max:100',
-	  'birthplace' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'birthplace' => 'required|max:100',
 	  // birthdate ?
-	  'prefecture' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'citizenship' => 'required|max:100|regex:/^[A-Z]+$/',
-	  'address_el' =>'required|max:100|regex:/^[A-Z]+$/',
-	  'address_en' => 'required|max:100|regex:/^[A-Z]+$/',
+	  'prefecture' => 'required|max:100',
+	  'citizenship' => 'required|max:100',
+	  'address_el' =>'required|max:100',
+	  'address_en' => 'required|max:100',
 	  'no_el' => 'numeric|required|max:100',
-	  'city_el' =>'required|max:100|regex:/^[A-Z]+$/',
-	  'city_en' =>'required|max:100|regex:/^[A-Z]+$/',
+	  'city_el' =>'required|max:100',
+	  'city_en' =>'required|max:100',
 	  'tk' => 'numeric|required|max:6',
 	  'tel' => 'numeric|required|max:10',
 	  'mobtel' => 'numeric|required|max:12',
-	  'email' => 'required|max:50|regex:[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}',
+	  'email' => 'required|max:50',
 	  'instance' => 'required|max:50',
 	  ]);
-	  
+
 	  if ($validator->fails()){
 		  return redirect()->route('home');
 	  }
-	  
+
 
       $application = new Application();
       //1st tab
