@@ -18,9 +18,11 @@
 
         {{ Form::label('Γλώσσα') }}
         {{ Form::select('lang_id',$languages,$university->lang_id,array('class' => 'form-control')) }}
-
-
         <br>
+        {!! Form::checkbox('active') !!}
+        {!! Form::label('active','Ενεργό πανεπιστήμιο') !!}
+
+        <hr>
       {{ Form::submit('Ενημέρωση εγγραφής',array('class' => 'btn btn-primary')) }}
 
       <!-- /.box-body -->

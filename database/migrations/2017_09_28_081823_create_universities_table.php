@@ -19,6 +19,7 @@ class CreateUniversitiesTable extends Migration
             $table->smallInteger('cap')->nullable();
             $table->integer('lang_id')->unsigned()->nullable();
             $table->foreign('lang_id')->references('id')->on('languages')->onDelete('set null');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
