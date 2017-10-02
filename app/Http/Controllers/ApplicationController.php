@@ -75,7 +75,7 @@ class ApplicationController extends Controller
 	  ]);
 
 	  if ($validator->fails()){
-		  return redirect()->back()->withErrors($request->messages())->withInput();
+		  return redirect()->back()->withErrors($validator)->withInput();
 	  }
 
 
