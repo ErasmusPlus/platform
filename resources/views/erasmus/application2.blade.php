@@ -13,6 +13,9 @@
 
 
 @section('content')
+@if($errors->any())
+<h4>{{$errors->first()}}</h4>
+@endif
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="nav nav-tabs">

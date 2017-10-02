@@ -75,7 +75,7 @@ class ApplicationController extends Controller
 	  ]);
 
 	  if ($validator->fails()){
-		  return redirect()->route('home');
+		  return redirect()->back()->withErrors($request->messages())->withInput();
 	  }
 
 
