@@ -187,4 +187,10 @@
  
 </div>
 
+<table>
+    @foreach($applicationv as $app)
+        <tr><td>{{$app->surname_en}} - {{$app->surname_el}}</td></tr>
+    @endforeach
+</table>
+
 @endsection
