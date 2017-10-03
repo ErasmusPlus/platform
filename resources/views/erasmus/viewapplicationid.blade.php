@@ -150,32 +150,6 @@
 				</div>
 	
 				<div class="col-xl-10">
-	
-						<div class="form-group">
-				{!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}
-				
-				<table>
-					<tr>
-						<th> Ξένη Γλώσσα </th>
-						<th> Επίπεδο Γλωσσομάθειας </th>					
-					</tr>
-					<tr>
-						<th>{{$app->lang_id1}}</th>
-						<th>{{$app->langlevel1}}</th>
-					</tr>
-					<tr>
-						<th>{{$app->lang_id2}}</th>
-						<th>{{$app->langlevel2}}</th>
-					</tr>
-					<tr>
-						<th>{{$app->lang_id3}}</th>
-						<th>{{$app->langlevel3}}</th>
-					</tr>
-				
-				</table>
-				
-				
-				</div>	
 				
 				<div class="form-group">
 				{!! Form::label(' 		Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS: ') !!}
@@ -201,9 +175,37 @@
 				
 				<div class="form-group">
 				{!! Form::label(' Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη:') !!}
-				</div>	
+				</div>
+
+				
 	
 </div>
+
+				<div class="form-group">
+				{!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}
+				
+				<table>
+					<tr>
+						<th> Ξένη Γλώσσα </th>
+						<th> Επίπεδο Γλωσσομάθειας </th>					
+					</tr>
+					<tr>
+						<th>{{$app->lang_id1}}</th>
+						<th>{{$app->langlevel1}}</th>
+					</tr>
+					<tr>
+						<th>{{$app->lang_id2}}</th>
+						<th>{{$app->langlevel2}}</th>
+					</tr>
+					<tr>
+						<th>{{$app->lang_id3}}</th>
+						<th>{{$app->langlevel3}}</th>
+					</tr>
+				
+				</table>
+				
+				
+				</div>	
 				
 
 			
