@@ -95,55 +95,79 @@
 				
 				<div class="form-group">
 				{!! Form::label('Όνομα:') !!}
+				{{$app->name_el}}
 				</div>
 				
 				<div class="form-group">
 				{!! Form::label('Name (όπως αναγράφεται στο διαβατήριό σας):') !!}
+				{{$app->name_en}}
 				</div>
 				
 				<div class="form-group">
 				{!! Form::label('Όνομα μητρός/Mother\'s Name:') !!}
+				{{$app->mothersname}}
 				</div>
 				
 				<div class="form-group">
 				{!! Form::label('Ηλικία/Age:') !!}
+				{{$app->age}}
 				</div>
 								
 				<div class="form-group">
 				{!! Form::label('Ημερομηνία γεννήσεως/Birth of Birth:') !!}
+				{{$app->birthdate}}
 				</div>
 				
 				<div class="form-group">
 				{!! Form::label('Υπηκοότητα/Citizenship:') !!}
-				</div>
-
-				
-				<div class="form-group">
-				{!! Form::label('Αριθμός:') !!}
-				</div>	
+				{{$app->citizenship}}
+				</div>			
 				
 					<div class="form-group">
 				{!! Form::label('Πόλη:') !!}
+				{{$app->city_el}}
+				{{$app->name_en}}
 				</div>	
 				
-					<div class="form-group">
-				{!! Form::label('TK:') !!}
-				</div>	
+				
 				
 					<div class="form-group">
 				{!! Form::label('Address (με λατινικούς χαρακτήρες):') !!}
+				{{$app->name_el}}
+				{{$app->name_en}}
 				</div>	
 
-					<div class="form-group">
-				{!! Form::label('City:') !!}
-				</div>	
+					
 				
 					<div class="form-group">
 				{!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
+				{{$app->insurance}}
 				</div>	
 				
 						<div class="form-group">
 				{!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}
+				
+				<table>
+					<tr>
+						<th> Ξένη Γλώσσα </th>
+						<th> Επίπεδο Γλωσσομάθειας </th>					
+					</tr>
+					<tr>
+						<th>{{$app->lang_id1}}</th>
+						<th>{{$app->langlevel1}}</th>
+					</tr>
+					<tr>
+						<th>{{$app->lang_id2}}</th>
+						<th>{{$app->langlevel2}}</th>
+					</tr>
+					<tr>
+						<th>{{$app->lang_id3}}</th>
+						<th>{{$app->langlevel3}}</th>
+					</tr>
+				
+				</table>
+				
+				
 				</div>	
 				
 				</div>
