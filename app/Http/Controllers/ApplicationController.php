@@ -178,7 +178,7 @@ class ApplicationController extends Controller
 
     public function view_appid($id)
     {
-		$appv = Application::find($id);
+		$appv = Application::where('id',$id)->get();
       return view('erasmus.viewapplicationid')->with('appv',$appv);
     }
 
