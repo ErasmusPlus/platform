@@ -144,6 +144,13 @@
 				{{$app->insurance}}
 				</div>	
 				
+	
+				
+				</div>
+				</div>
+	
+				<div class="col-xl-10">
+	
 						<div class="form-group">
 				{!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}
 				
@@ -170,11 +177,6 @@
 				
 				</div>	
 				
-				</div>
-				</div>
-	
-				<div class="col-xl-10">
-	
 				<div class="form-group">
 				{!! Form::label(' 		Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS: ') !!}
 				</div>	
