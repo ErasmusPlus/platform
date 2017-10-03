@@ -181,32 +181,35 @@
 	
 </div>
 
-				<div class="form-group">
-				<div class="form-group"> {!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}</div>
-				<hr>
-				
-				<table>
-					<tr>
-						<th> Ξένη Γλώσσα </th>
-						<th> Επίπεδο Γλωσσομάθειας </th>					
-					</tr>
-					<tr>
-						<th>{{$app->lang_id1}}</th>
-						<th>{{$app->langlevel1}}</th>
-					</tr>
-					<tr>
-						<th>{{$app->lang_id2}}</th>
-						<th>{{$app->langlevel2}}</th>
-					</tr>
-					<tr>
-						<th>{{$app->lang_id3}}</th>
-						<th>{{$app->langlevel3}}</th>
-					</tr>
-				
-				</table>
-				
-				
-				</div>	
+				<div class="container">
+  <h2>Ξένες γλώσσες και επίπεδο γλωσσομάθειας</h2>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ξένη Γλώσσα</th>
+        <th>Επίπεδο Γλωσσομάθειας</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{$app->lang_id1}}</td>
+		<td>{{$app->langlevel1}}</td>
+     
+      </tr>
+      <tr>
+           <td>{{$app->lang_id2}}</td>
+		<td>{{$app->langlevel2}}</td>
+       
+      </tr>
+      <tr>
+          <td>{{$app->lang_id3}}</td>
+		<td>{{$app->langlevel3}}</td>
+  
+      </tr>
+    </tbody>
+  </table>
+</div>
 				
 
 			
