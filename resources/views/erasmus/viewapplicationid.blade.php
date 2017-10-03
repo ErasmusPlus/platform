@@ -15,9 +15,11 @@
 
 
  <div class="panel panel-info">
+   {!! Form::open() !!}
+    @foreach($appv as $app)
      <div class="panel-heading">Αίτηση με αριθμό </div>
 		<div class="panel-body">
-			  {!! Form::open() !!}
+			
                 <!-- text input -->
 
 				<div class="form-group">
@@ -27,11 +29,11 @@
 				
 				<div class="form-group">
 					{!! Form::label('Επώνυμο:') !!}
-					
+					{{$app->surname_el}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Surname (όπως αναγράφεται στο διαβατήριό σας):') !!}
-			
+				{{$app->surname_en}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Όνομα πατρός/Father\'s Name:') !!}
@@ -182,16 +184,9 @@
 
 
 </div>
- 
+  @endforeach
 
  
 </div>
-<table>
 
-    @foreach($appv as $app)
-        <tr><td>{{$app->surname_el}} - {{$app->name_en}}</td></tr>
-    @endforeach
-	
-	
-</table>
 @endsection
