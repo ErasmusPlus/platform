@@ -187,10 +187,4 @@
  
 </div>
 
-<table>
-    @foreach($applicationv as $app)
-        <tr><td>{{$app->name}} - {{$lead->created_at}}</td></tr>
-    @endforeach
-</table>
-
 @endsection
