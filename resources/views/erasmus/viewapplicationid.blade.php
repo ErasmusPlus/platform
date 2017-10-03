@@ -28,15 +28,15 @@
 				<div class="col-xs-8">
 				
 				<div class="form-group">
-				<p class="bg-primary">	{!! Form::label('Επώνυμο:') !!} </p>
+					{!! Form::label('Επώνυμο:') !!}
 					{{$app->surname_el}}
 				</div>
 				<div class="form-group">
-				<p class="bg-primary"> {!! Form::label('Surname (όπως αναγράφεται στο διαβατήριό σας):') !!} </p>
+				{!! Form::label('Surname (όπως αναγράφεται στο διαβατήριό σας):') !!}
 				{{$app->surname_en}}
 				</div>
 				<div class="form-group">
-				<p class="bg-primary"> {!! Form::label('Όνομα πατρός/Father\'s Name:') !!} </p>
+				{!! Form::label('Όνομα πατρός/Father\'s Name:') !!}
 				
 				</div>
 				<div class="form-group">
