@@ -182,7 +182,8 @@
 </div>
 
 				<div class="form-group">
-				{!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}
+				<div class="form-group"> {!! Form::label('Ξένες γλώσσες και επίπεδο γλωσσομάθειας:') !!}</div>
+				<hr>
 				
 				<table>
 					<tr>
