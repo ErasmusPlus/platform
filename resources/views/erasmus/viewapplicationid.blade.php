@@ -37,35 +37,36 @@
 				</div>
 				<div class="form-group">
 				{!! Form::label('Όνομα πατρός/Father\'s Name:') !!}
-				
+				{{$app->fathersname}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Τόπος Γεννήσεως/Place of Birth:') !!}
-			
+				{{$app->birthplace}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('numstreet','Οδός-Αριθμός:') !!}
-			
+				{{$app->address_el}}
+				{{$app->nο_el}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('postalcode','ΤΚ:') !!}
-				
+				{{$app->tk}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('tel','Τηλέφωνο:') !!}
-			
+				{{$app->tel}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('mobile','Κινητό:') !!}
+				{{$app->mobtel}}
 				</div>
 				
-					<div class="form-group">
-				{!! Form::label('Τόπος Γεννήσεως/Place of Birth:') !!}
-				</div>
+				
 				
 				
 				<div class="form-group">
 				{!! Form::label('Νομός/Prefecture:') !!}
+				{{$app->prefecture}}
 				</div>
 				
 					<div class="form-group">
@@ -75,6 +76,7 @@
 				
 					<div class="form-group">
 				{!! Form::label('Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS:') !!}
+				{{$app->publictel}}
 				</div>
 				
 
