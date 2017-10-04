@@ -184,13 +184,20 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel1','Επίπεδο') !!}
                       {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-                    </div>
+						  {!! Form::file('image') !!}
+					</div>
+					
+					  <div class="col-md-4">
+						  {!! Form::file('image') !!}
+					</div>
+					
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
                       {!! Form::label('lang_id2','Γλώσσα') !!}
           					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε δεύτερη γλώσσα"]) !!}
-                    </div>
+                    
+					</div>
                     <div class="col-md-4">
                       {!! Form::label('langlevel2','Επίπεδο') !!}
                       {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
