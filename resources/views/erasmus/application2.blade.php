@@ -188,7 +188,7 @@
 					</div>
 					
 					  <div class="col-md-4">
-						  {!! Form::file('image') !!}
+						  {!! Form::file('image',['class'=>'input-group-btn fa fa-picture-o']) !!}
 					</div>
 					
         				</div>
