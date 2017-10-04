@@ -60,7 +60,7 @@ class EGuard
     {
       $client = new \GuzzleHttp\Client();
       //Get results from view1
-      $response1 = $client->get(route('view1',EGuard::user()->id)->where('depid',EGuard::user()->departmentID));
+      $response1 = $client->get(route('view1',EGuard::user()->id));
       $body1 = $response1->getBody()->getContents();
 
       //Get results from view2
