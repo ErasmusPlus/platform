@@ -188,7 +188,7 @@
 					</div>
 					
 					  <div class="col-md-2">
-						  {!! Form::file('image',['class'=>'glyphicon glyphicon-search']) !!}
+						  {!! Form::file('image',['class'=>'glyphicon glyphicon-search','style="display: none;"']) !!}
 					</div>
 					
         				</div>
