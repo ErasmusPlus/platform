@@ -184,11 +184,11 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel1','Επίπεδο') !!}
                       {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-						  {!! Form::file('image') !!}
+						
 					</div>
 					
-					  <div class="col-md-4">
-						  {!! Form::file('image',['class'=>'input-group-btn fa fa-picture-o']) !!}
+					  <div class="col-md-2">
+						  {!! Form::file('image',['class'=>'glyphicon glyphicon-search']) !!}
 					</div>
 					
         				</div>
