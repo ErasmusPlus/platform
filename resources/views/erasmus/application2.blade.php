@@ -240,7 +240,9 @@
         				</div>
 						
 						
-					  <div class="col-md-4">	
+			
+</div>
+						  <div class="col-md-4">	
 					  
 					   <div class="col-md-8">
 						  {!! Form::label('langlevel3','Αντίγραφο πιστοποιητικού') !!}
@@ -258,9 +260,7 @@
 						
 						
 						
-						</div>
-</div>
-						
+						</div>		
               </div>
 
               <br>
