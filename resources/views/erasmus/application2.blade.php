@@ -25,7 +25,7 @@
 }
 
 .upload-btn-wrapper input[type=file] {
-  font-size: 100px;
+  font-size: 50px;
   position: absolute;
   left: 0;
   top: 0;
