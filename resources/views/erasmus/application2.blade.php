@@ -245,13 +245,15 @@
 					   <div class="col-md-8">
 						  {!! Form::label('langlevel3','Αντίγραφο πιστοποιητικού') !!}
 					   </div>
-						<div class="col-md-4">
+						<div class="col-md-1">
 						
 						<div class="upload-btn-wrapper">
 						<button class="btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 						</button>
 						<input type="file" name="myfile" />
 						</div>
+						
+						
 						</div>
 						
 						
