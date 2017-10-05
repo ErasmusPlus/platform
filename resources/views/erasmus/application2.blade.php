@@ -7,6 +7,31 @@
 .row{
   padding-top:10px;
 }
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 </style>
 @endsection
 
@@ -213,6 +238,27 @@
                       {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
                     </div>
         				</div>
+						
+						
+					  <div class="col-md-4">	
+					  
+					   <div class="col-md-8">
+						  {!! Form::label('langlevel3','Αντίγραφο πιστοποιητικού') !!}
+					   </div>
+						<div class="col-md-4">
+						
+						<div class="upload-btn-wrapper">
+						<button class="btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+						<input type="file" name="myfile" />
+						</div>
+						</div>
+						
+						
+						
+						</div>
+</div>
+						
               </div>
 
               <br>
