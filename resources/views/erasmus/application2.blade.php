@@ -20,7 +20,7 @@
   background-color: white;
   padding: 8px 20px;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 10px;
   font-weight: bold;
 }
 
