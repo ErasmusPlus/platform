@@ -214,10 +214,11 @@
 			<div class="container">
   <h2>Πανεπιστήμια:</h2>            
   <table class="table">
- 
+ <col width="300">
+ <col width="300">
+
     <thead>
       <tr>
-	  
         <th>Όνομα Πανεπιστημίου</th>
         <th>Τομέας σπουδών</th>
 		<th> Εξάμηνο </th>
