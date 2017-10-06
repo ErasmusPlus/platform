@@ -22,7 +22,7 @@
 			
                 <!-- text input -->
 
-				<div class="form-group">
+				<div class="container">
 				
 				<div class='col-md-6'>
 				<div class="col-xs-8">
@@ -214,6 +214,8 @@
 			<div class="container">
   <h2>Πανεπιστήμια:</h2>            
   <table class="table">
+   <col width="100">
+	<col width="80">
     <thead>
       <tr>
         <th>Όνομα Πανεπιστημίου</th>
@@ -240,7 +242,6 @@
 		<td>{{$app->u3_studies}}</td>
 		<td>{{$app->u3_semester}}</td>
 		<td>{{$app->u3_months}}</td>
-  
       </tr>
     </tbody>
   </table>
