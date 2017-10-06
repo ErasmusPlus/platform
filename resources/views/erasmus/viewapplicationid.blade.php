@@ -217,6 +217,7 @@
   <table class="table">
 	<col width="250">
 	<col width="250">
+	<col width="150">
     <thead>
       <tr>
         <th>Όνομα Πανεπιστημίου</th>
