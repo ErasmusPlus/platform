@@ -214,8 +214,10 @@
 			<div class="container">
   <h2>Πανεπιστήμια:</h2>            
   <table class="table">
-   <col width="100">
-	<col width="80">
+   <col width="250">
+	<col width="250">
+	<col width="50">
+	<col width="50">
     <thead>
       <tr>
         <th>Όνομα Πανεπιστημίου</th>
