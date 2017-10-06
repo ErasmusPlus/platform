@@ -210,6 +210,43 @@
     </tbody>
   </table>
 </div>
+
+
+<div class="container">
+  <h2>Πανεπιστήμια:</h2>            
+  <table class="table">
+	<col width="250">
+	<col width="250">
+    <thead>
+      <tr>
+        <th>Όνομα Πανεπιστημίου</th>
+        <th>Τομέας σπουδών</th>
+		<th> Εξάμηνο </th>
+		<th> Μήνες </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{$app->u1_id}}</td>
+		<td>{{$app->u1_studies}}</td>
+		<td>{{$app->u1_semester}}</td>
+		<td>{{$app->u1_months}}</td>
+      </tr>
+      <tr>
+        <td>{{$app->u2_id}}</td>
+		<td>{{$app->u2_studies}}</td>
+		<td>{{$app->u2_semester}}</td>
+		<td>{{$app->u2_months}}</td>
+      </tr>
+      <tr>
+		<td>{{$app->u3_id}}</td>
+		<td>{{$app->u3_studies}}</td>
+		<td>{{$app->u3_semester}}</td>
+		<td>{{$app->u3_months}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 				
 
 			
