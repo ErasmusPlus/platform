@@ -153,6 +153,7 @@
 				
 				<div class="form-group">
 				{!! Form::label(' 		Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS: ') !!}
+				{{$app->publictel== true ? 'NAI':'OXI' }}
 				</div>	
 
 				<div class="form-group">
@@ -217,7 +218,6 @@
   <table class="table">
 	<col width="250">
 	<col width="250">
-	<col width="150">
     <thead>
       <tr>
         <th>Όνομα Πανεπιστημίου</th>
