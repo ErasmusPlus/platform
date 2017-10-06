@@ -128,12 +128,12 @@ class ApplicationController extends Controller
       $application -> u3_semester = $request->input('u3_semester');
       $application -> u3_months = $request->input('u3_months');
 
-      $application -> ul1 = ($request->input('l1') == true ? 0:1);
-      $application -> ul2 = ($request->input('l2') == true ? 0:1);
-      $application -> ul3 = ($request->input('l3') == true ? 0:1);
-      $application -> ul4 = ($request->input('l4') == true ? 0:1);
-      $application -> ul5 = ($request->input('l5') == true ? 0:1);
-      $application -> ul6 = ($request->input('l6') == true ? 0:1);
+      $application -> l1 = ($request->input('l1') == true ? 0:1);
+      $application -> l2 = ($request->input('l2') == true ? 0:1);
+      $application -> l3 = ($request->input('l3') == true ? 0:1);
+      $application -> l4 = ($request->input('l4') == true ? 0:1);
+      $application -> l5 = ($request->input('l5') == true ? 0:1);
+      $application -> l6 = ($request->input('l6') == true ? 0:1);
 
       //Fill API info
       $stdata = EGuard::getApiDetails();

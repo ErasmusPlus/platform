@@ -76,12 +76,12 @@ class CreateApplicationsTable extends Migration
             $table->string('u3_semester')->nullable();
             $table->smallInteger('u3_months')->unsigned()->nullable();
 
-            $table->boolean('ul1');
-            $table->boolean('ul2');
-            $table->boolean('ul3');
-            $table->boolean('ul4');
-            $table->boolean('ul5');
-            $table->boolean('ul6');
+            $table->boolean('l1');
+            $table->boolean('l2');
+            $table->boolean('l3');
+            $table->boolean('l4');
+            $table->boolean('l5');
+            $table->boolean('l6');
 
             $table->integer('spec_aem');
             $table->integer('depID');
