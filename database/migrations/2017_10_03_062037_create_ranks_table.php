@@ -21,6 +21,8 @@ class CreateRanksTable extends Migration
             $table->foreign('app_id')->references('id')->on('applications')->onDelete('set null');
             $table->decimal('pts',5,2)->nullable();
             $table->smallInteger('year');
+            $table->smallInteger('priority')->nullable();
+            $table->boolean('sorted')->default('false');
             $table->timestamps();
         });
     }
