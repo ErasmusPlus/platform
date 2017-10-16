@@ -69,7 +69,7 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
-	 'certficatelang' => 'required',
+	'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
@@ -147,18 +147,19 @@ class ApplicationController extends Controller
       $application -> curr_semester = $stdata -> curr_semester;
       $application -> Avg = $stdata -> Avg;
 
-	  //request filesize
-	  $certficatelang1 = $request->file('certficatelang');
-	  //$certficatelang2 = $request->file('certficatelang');
-	  //$certficatelang3 = $request->file('certficatelang');
-     
-	$fname= $stdata -> spec_aem;
-      //Move Uploaded File
-      $destinationPath = 'uploads';
-      $certficatelang1->move($destinationPath, $fname  );
+	  //request file
 	  
-	  $cert_path = $destinationPath . "/" . $fname;
+	   $destinationPath = public_path().'uploads';
+	   
+	  $certficatelang1 = $request->file('certficatelang1');
+	 // $certficatelang2 = $request->file('certficatelang2');
+	 // $certficatelang3 = $request->file('certficatelang3');
+     
+	  $certname1= $stdata -> spec_aem . "01";       
+      $certficatelang1->move($destinationPath, $certname1  );	  
+	  $cert_path = $destinationPath . "/" . $certname1;
 
+	  
 
 
 
