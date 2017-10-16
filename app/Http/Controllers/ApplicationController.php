@@ -151,7 +151,7 @@ class ApplicationController extends Controller
 	  
 	   //$destinationPath = public_path(). '/' . 'uploads';
 	   
-	  $certficatelang1 = $request->file('certficatelang1');
+	  $certficatelang1 = $request->file('certficatelang');
 	 // $certficatelang2 = $request->file('certficatelang2');
 	 // $certficatelang3 = $request->file('certficatelang3');
      
