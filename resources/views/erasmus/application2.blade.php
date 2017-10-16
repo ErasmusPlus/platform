@@ -20,12 +20,12 @@
   background-color: white;
   padding: 8px 20px;
   border-radius: 8px;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .upload-btn-wrapper input[type=file] {
-  font-size: 50px;
+  font-size: 100px;
   position: absolute;
   left: 0;
   top: 0;
@@ -236,7 +236,14 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel3','Επίπεδο') !!}
                       {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-                    </div>
+                    
+						<div class="upload-btn-wrapper">
+							<button class="btn">Upload a file</button>
+							<input type="file" name="certficatelang" />
+						</div>
+						
+						
+					</div>
         				</div>
 						
 						

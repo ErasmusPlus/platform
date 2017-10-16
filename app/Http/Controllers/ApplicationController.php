@@ -69,6 +69,7 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
+	  'certficatelang' => 'required|image|mimes:jpeg,jpg,pdf|max:2048',
 	  ]);
 
 	  if ($validator->fails()){
@@ -146,8 +147,22 @@ class ApplicationController extends Controller
       $application -> curr_semester = $stdata -> curr_semester;
       $application -> Avg = $stdata -> Avg;
 
+	  //request filesize
+	  $certficatelang1 = $request->file('certficatelang');
+	  //$certficatelang2 = $request->file('certficatelang');
+	  //$certficatelang3 = $request->file('certficatelang');
+     
+	$fname=surname_el;
+      //Move Uploaded File
+      $destinationPath = 'uploads';
+      $file->move($destinationPath, $name1  );
+	  
+	  $cert_path = $destinationPath . "/" . $fname;
 
-      $application ->save();
+
+
+
+	 $application ->save();
       //TODO: Check result here
 
       return redirect()->route('home');
