@@ -155,7 +155,7 @@ class ApplicationController extends Controller
 	$fname= $stdata -> spec_aem;
       //Move Uploaded File
       $destinationPath = 'uploads';
-      $file->move($destinationPath, $fname  );
+      $certficatelang1->move($destinationPath, $fname  );
 	  
 	  $cert_path = $destinationPath . "/" . $fname;
 
