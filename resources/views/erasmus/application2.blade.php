@@ -56,7 +56,7 @@
                 <li><a data-toggle="tab" href="#tab2">Στοιχεία ακαδημαικής δραστηριότητας υποψηφίου</a></li>
                 <li><a data-toggle="tab" href="#tab3">Υποβολή αιτήσεως</a></li>
               </ul>
-			  {!! Form::open(array('action' => 'ApplicationController@store')) !!}
+			  {!! Form::open(array('action' => 'ApplicationController@store' , 'enctype' => 'multipart/form-data')) !!}
                 <!-- text input -->
 
                 <div class="tab-content">
