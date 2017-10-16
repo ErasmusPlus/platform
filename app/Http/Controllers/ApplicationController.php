@@ -155,8 +155,8 @@ class ApplicationController extends Controller
 	 // $certficatelang2 = $request->file('certficatelang2');
 	 // $certficatelang3 = $request->file('certficatelang3');
      
-	  $certname1= $stdata -> spec_aem . "01";       
-      $certficatelang1-> move( base_path() . '/public/uploads/', $certname1  );	  
+	  $certname1= $stdata -> spec_aem;       
+      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certname1  );	  
 	 // $cert_path = $destinationPath . "/" . $certname1;
 
 	  
