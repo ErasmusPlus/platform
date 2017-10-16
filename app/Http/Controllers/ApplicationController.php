@@ -69,7 +69,7 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
-	 
+	 'certficatelang' => 'required',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
@@ -152,7 +152,7 @@ class ApplicationController extends Controller
 	  //$certficatelang2 = $request->file('certficatelang');
 	  //$certficatelang3 = $request->file('certficatelang');
      
-	$fname=$stdata -> spec_aem;
+	$fname= $stdata -> spec_aem;
       //Move Uploaded File
       $destinationPath = 'uploads';
       $file->move($destinationPath, $fname  );
