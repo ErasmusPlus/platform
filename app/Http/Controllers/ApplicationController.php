@@ -152,10 +152,10 @@ class ApplicationController extends Controller
 	  //$certficatelang2 = $request->file('certficatelang');
 	  //$certficatelang3 = $request->file('certficatelang');
      
-	$fname=surname_el;
+	$fname=getClientOriginalName();
       //Move Uploaded File
       $destinationPath = 'uploads';
-      $file->move($destinationPath, $name1  );
+      $file->move($destinationPath, $fname  );
 	  
 	  $cert_path = $destinationPath . "/" . $fname;
 
