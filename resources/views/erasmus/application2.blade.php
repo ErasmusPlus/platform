@@ -209,13 +209,14 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel1','Επίπεδο') !!}
                       {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
+						<div class="upload-btn-wrapper">
+							<button class="btn">Upload a file</button>
+							<input type="file" name="certficatelang1" />
+						</div>
 						
-					</div>
-					
-					  <div class="col-md-2">
-						  {!! Form::file('image',['class'=>'glyphicon glyphicon-search','style="display: none;"']) !!}
-					</div>
-					
+						
+						
+					</div>										
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
@@ -226,20 +227,26 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel2','Επίπεδο') !!}
                       {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-                    </div>
+                    
+						<div class="upload-btn-wrapper">
+							<button class="btn">Upload a file</button>
+							<input type="file" name="certficatelang2" />
+						</div>
+					
+					</div>
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
                       {!! Form::label('lang_id3','Γλώσσα') !!}
-          					  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}
-                    </div>
+          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}                   														
+					</div>
                     <div class="col-md-4">
                       {!! Form::label('langlevel3','Επίπεδο') !!}
                       {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
                     
 						<div class="upload-btn-wrapper">
 							<button class="btn">Upload a file</button>
-							<input type="file" name="certficatelang" />
+							<input type="file" name="certficatelang3" />
 						</div>
 						
 						

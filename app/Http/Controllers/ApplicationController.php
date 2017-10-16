@@ -69,7 +69,9 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
-	
+		'certficatelang1' => 'required|mimes:jpeg,jpg,pdf|max:2048',
+		'certficatelang2' => 'required|mimes:jpeg,jpg,pdf|max:2048',
+		'certficatelang3' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
@@ -151,15 +153,20 @@ class ApplicationController extends Controller
 	  
 	   //$destinationPath = public_path(). '/' . 'uploads';
 	   
-	  $certficatelang1 = $request->file('certficatelang');
-	 // $certficatelang2 = $request->file('certficatelang2');
-	 // $certficatelang3 = $request->file('certficatelang3');
+	  $certficatelang1 = $request->file('certficatelang1');
+	  $certficatelang2 = $request->file('certficatelang2');
+	  $certficatelang3 = $request->file('certficatelang3');
      
-	  $certname1= "asdasd";       
+	 // $certname1= "asdasd";       
       $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang1->getClientOriginalName()  );	  
 	 // $cert_path = $destinationPath . "/" . $certname1;
 
-	  
+	  //$certname2= "asdasd";       
+      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang2->getClientOriginalName()  );	  
+
+	 // $certname3= "asdasd";       
+      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang3->getClientOriginalName()  );	  
+
 
 
 
