@@ -69,7 +69,7 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
-	'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
+	
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
