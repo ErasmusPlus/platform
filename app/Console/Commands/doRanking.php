@@ -84,13 +84,14 @@ class doRanking extends Command
       return 0;
     }
 
+
     public function assign($uni_id, $priority)
     {
       $this->info("Invoked assign($uni_id,$priority)");
       $current_year = date("Y");
+
       //Check if cap exceeds
       $total_cap = University::findOrFail($uni_id)->first()->cap;
-
 
       $current_cap = Rank::whereYear('created_at', $current_year)->where('assigned', $uni_id)->where('uni_id',$uni_id)->where('priority',$priority)->count();
       $this->info("Current cap: $current_cap/$total_cap");
@@ -100,13 +101,13 @@ class doRanking extends Command
         return 0;
       }
 
-
       $ranks = Rank::whereYear('created_at', $current_year)->where('assigned', 0)->where('uni_id',$uni_id)->where('priority',$priority)->orderBy('pts','DESC')->take($total_cap-$current_cap)->get();
       $this->info("Got unassigned ranks: ".$ranks->count());
       foreach($ranks as $rank)
       {
 
         $current_cap = Rank::whereYear('created_at', $current_year)->where('assigned', $uni_id)->where('uni_id', $uni_id)->where('priority',$priority)->count();
+
         $this->info("Current ap: $current_cap/$total_cap");
         if($current_cap >= $total_cap)
           return 0;
@@ -293,162 +294,10 @@ class doRanking extends Command
 
         }
 
-
         foreach($universities as $university)  $this->assign($university->id, 1);
         foreach($universities as $university)  $this->assign($university->id, 2);
         foreach($universities as $university)  $this->assign($university->id, 3);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         return 0;
-        /*$this->info('Displaying results...');
-        $final_ranking = array(0,0);
-
-        $applications = Application::whereYear('created_at', $current_year)->get();
-        foreach($applications as $application)
-        {
-          $ranks = Rank::where('app_id', $application->id)->where('priority', 1)->get();
-
-        }
-
-        $ranks = Rank::where('priority', 1)->get();
-        */
-
-        $ranks = [];
-        $ranks2 = [];
-        $ranks3 = [];
-        /*
-          === Sorting (1st pass) ===
-          Foreach university we sort applications by rank according to their first priority selection
-        */
-        foreach($universities as $university)
-        {
-          $ranks[$university->id] = Rank::whereYear('created_at', $current_year)->where('sorted',false)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->get();
-        }
-
-        /*
-          === Sorting (2nd pass) ===
-          According to the previous results we limit the list to the university cap (sorted by ranking), then we move the rest to unsorted
-        */
-
-        $unsorted = new Collection();
-
-        foreach($universities as $university)
-        {
-          $university->cap = 1;
-          $total = count($ranks[$university->id]);
-
-          if($university->cap <= $total);
-          {
-            $ranks[$university->id] = Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->take($university->cap)->get();
-            Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->take($university->cap)->update(['sorted' => true]);
-
-            foreach($ranks[$university->id] as $lrank)
-            Rank::whereYear('created_at', $current_year)->where('app_id',$lrank->app_id)->update(['sorted' => true]);
-
-            $unsorted = Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->skip($university->cap)->take($total)->get();
-            foreach($unsorted as $u)
-            {
-              $u -> sorted = false;
-              $u -> save();
-            }
-
-          }
-        }
-
-        /*
-          === Sorting (3rd pass) ===
-          Foreach unsorted we repeat the same procedure with increased priority
-        */
-
-        //$unsorted = Rank::where('sorted',false)->where('priority',2)->get();
-
-        foreach($universities as $university)
-        {
-          $ranks2[$university->id] = Rank::whereYear('created_at', $current_year)->where('sorted',false)->where('uni_id',$university->id)->where('priority',2)->orderBy('pts','DESC')->get();
-        }
-
-        /*
-          === Sorting (2nd pass) ===
-          According to the previous results we limit the list to the university cap (sorted by ranking), then we move the rest to unsorted
-        */
-
-        $unsorted = new Collection();
-
-        foreach($universities as $university)
-        {
-          $university->cap = 1;
-          $total = count($ranks2[$university->id]);
-
-          if($university->cap <= $total);
-          {
-            $ranks2[$university->id] = Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',2)->orderBy('pts','DESC')->take($university->cap - count($rank))->get();
-            dd($ranks2[$university->id]);
-            Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',2)->orderBy('pts','DESC')->take($university->cap - count($rank))->update(['sorted' => true]);
-
-            foreach($ranks2[$university->id] as $lrank)
-            Rank::whereYear('created_at', $current_year)->where('app_id',$lrank->app_id)->update(['sorted' => true]);
-
-            $unsorted = Rank::whereYear('created_at', $current_year)->where('uni_id',$university->id)->where('priority',2)->orderBy('pts','DESC')->skip($university->cap)->take($total)->get();
-            foreach($unsorted as $u)
-            {
-              $u -> sorted = false;
-              $u -> save();
-            }
-
-          }
-        }
-        dd($ranks2[1]);
-        //echo $ranks[1];
-        /*
-        foreach($universities as $university)
-        {
-            $this->info("Displaying results for $university->name");
-
-            $l1ranks = Rank::where('year',2017)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->take($university->cap)->get();
-            if($l1ranks->count() < $university->cap)
-            {
-              $l2ranks = Rank::where('year',2017)->where('uni_id',$university->id)->where('priority',2)->orderBy('pts','DESC')->take($university->cap - $l1ranks->count())->get();
-              $l1ranks->merge($l2ranks);
-            }
-            elseif($l1ranks->count() >= $university->cap)
-            {
-             Rank::where('year',2017)->where('uni_id',$university->id)->where('priority',1)->orderBy('pts','DESC')->skip($l1ranks->count())->take(18446744073709551615)->update(['priority' => 0]);
-            }
-
-            if($l1ranks->count() < $university->cap)
-            {
-              $l3ranks = Rank::where('year',2017)->where('uni_id',$university->id)->where('priority',3)->orderBy('pts','DESC')->take($university->cap - $l1ranks->count())->get();
-              $l1ranks->merge($l3ranks);
-            }
-
-            $ranks = $l1ranks;
-
-            foreach($ranks as $rank)
-              $this->info($rank->pts);
-        }
-        */
-
     }
 }
