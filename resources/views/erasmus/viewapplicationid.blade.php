@@ -1,22 +1,12 @@
 @extends('layouts.dashboard')
-@php ( $title='Αιτήσεις' )
-@php ( $description='Οι αιτήσεις σας για το Erasmus+')
+@php ( $title='Αίτηση #'.$application->id )
+@php ( $description='Λεπτομέρειες αίτησης')
 
 @section('content')
-
-<div class='row'>
-  <div class='col-md-12'>
-              <div class="box">
-                  TODO: Application details here
-                </div>
-  </div>
-</div>
-
 
 
  <div class="panel panel-info">
    {!! Form::open() !!}
-     <div class="panel-heading">Αίτηση με αριθμό </div>
 		<div class="panel-body">
 
                 <!-- text input -->
@@ -222,6 +212,7 @@
 	<col width="250">
     <thead>
       <tr>
+        <th>Επιλογή</th>
         <th>Όνομα Πανεπιστημίου</th>
         <th>Τομέας σπουδών</th>
 		<th> Εξάμηνο </th>
@@ -230,18 +221,21 @@
     </thead>
     <tbody>
       <tr>
+        <td>1η</td>
         <td>{{$universities[$application->u1_id]}}</td>
 		<td>{{$application->u1_studies}}</td>
 		<td>{{$application->u1_semester}}</td>
 		<td>{{$application->u1_months}}</td>
       </tr>
       <tr>
+        <td>2η</td>
         <td>{{$universities[$application->u2_id]}}</td>
 		<td>{{$application->u2_studies}}</td>
 		<td>{{$application->u2_semester}}</td>
 		<td>{{$application->u2_months}}</td>
       </tr>
       <tr>
+        <td>3η</td>
 		<td>{{$universities[$application->u3_id]}}</td>
 		<td>{{$application->u3_studies}}</td>
 		<td>{{$application->u3_semester}}</td>
