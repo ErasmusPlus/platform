@@ -231,19 +231,19 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{$university[$app->u1_id]}}</td>
+        <td>{{$universities[$app->u1_id]}}</td>
 		<td>{{$app->u1_studies}}</td>
 		<td>{{$app->u1_semester}}</td>
 		<td>{{$app->u1_months}}</td>
       </tr>
       <tr>
-        <td>{{$university[$app->u2_id]}}</td>
+        <td>{{$universities[$app->u2_id]}}</td>
 		<td>{{$app->u2_studies}}</td>
 		<td>{{$app->u2_semester}}</td>
 		<td>{{$app->u2_months}}</td>
       </tr>
       <tr>
-		<td>{{$university[$app->u3_id]}}</td>
+		<td>{{$universities[$app->u3_id]}}</td>
 		<td>{{$app->u3_studies}}</td>
 		<td>{{$app->u3_semester}}</td>
 		<td>{{$app->u3_months}}</td>
