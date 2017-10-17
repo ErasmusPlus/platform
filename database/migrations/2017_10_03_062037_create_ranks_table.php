@@ -22,7 +22,6 @@ class CreateRanksTable extends Migration
             $table->decimal('pts',5,2)->nullable();
             $table->smallInteger('year');
             $table->smallInteger('priority')->nullable();
-            $table->boolean('sorted')->default('false');
             $table->integer('assigned')->nullable();
             $table->timestamps();
         });
