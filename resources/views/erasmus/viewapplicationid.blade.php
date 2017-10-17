@@ -18,11 +18,7 @@
 
 				<div class="form-group">
 					{!! Form::label('Επώνυμο:') !!}
-					{{$application->surname_el}}
-				</div>
-				<div class="form-group">
-				{!! Form::label('Surname (όπως αναγράφεται στο διαβατήριό σας):') !!}
-				{{$application->surname_en}}
+					{{$application->surname_el}} / {{$application->surname_en}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Όνομα πατρός/Father\'s Name:') !!}
@@ -58,10 +54,6 @@
 				{{$application->prefecture}}
 				</div>
 
-					<div class="form-group">
-				{!! Form::label('Οδός:') !!}
-        {{$application->address}}
-				</div>
 
 
 
@@ -77,12 +69,7 @@
 
 				<div class="form-group">
 				{!! Form::label('Όνομα:') !!}
-				{{$application->name_el}}
-				</div>
-
-				<div class="form-group">
-				{!! Form::label('Name (όπως αναγράφεται στο διαβατήριό σας):') !!}
-				{{$application->name_en}}
+				{{$application->name_el}} / {{$application->name_en}}
 				</div>
 
 				<div class="form-group">
@@ -114,21 +101,21 @@
 
 					<div class="form-group">
 				{!! Form::label('Address (με λατινικούς χαρακτήρες):') !!}
-				{{$application->name_en}}
+				{{$application->address_en}}
 				</div>
 
 
 
-					<div class="form-group">
-				{!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
-				{{$application->insurance}}
-				</div>
+
 
 
 
 				</div>
 				</div>
-
+        <div class="form-group">
+      {!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
+      {{$application->insurance}}
+      </div>
 				<br></br>
 
 				<div class="container">
