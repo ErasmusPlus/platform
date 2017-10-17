@@ -181,8 +181,21 @@ class ApplicationController extends Controller
 
     public function view_appid($id)
     {
+      $universities = University::pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+      $langlevel = [
+        1 => "B1",
+        2 => "B2",
+        3 => "C1",
+        4 => "C2"
+      ];
+
 		  $appv = Application::where('id',$id)->get();
-      return view('erasmus.viewapplicationid')->with('appv',$appv);
+
+      return view('erasmus.viewapplicationid')->with('appv',$appv)
+                                              ->with('universities',$universities)
+                                              ->with('languages',$languages)
+                                              ->with('langlevel',$langlevel);
     }
 
 }
