@@ -44,6 +44,14 @@
       </li>
       @endif
       @if(EGuard::user()->type == 'Administrator')
+      <li class="treeview {!! classActiveSegment(1,['applications']) !!}">
+        <a href="#"><span>Αιτήσεις</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="{!! classActiveSegment(2,['unconfirmed']) !!}"><a href="{{ route('admin.applications.unconfirmed') }}">Προς επιβεβαίωση</a></li>
+          <li class="{!! classActiveSegment(2,['confirmed']) !!}"><a href="{{ route('admin.applications.confirmed') }}">Εγκεκριμένες</a></li>
+        </ul>
+      </li>
+
       <li class="{!! classActiveSegment(1,['universities']) !!}"><a href="{{ route('admin.university.index') }}"><span>Πανεπιστήμια Erasmus</span></a></li>
       <li class="{!! classActiveSegment(1,['ranking']) !!}"><a href="{{ route('admin.ranking.index') }}"><span>Αποτελέσματα Κατάταξης</span></a></li>
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
