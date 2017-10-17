@@ -32,14 +32,40 @@ class ApplicationController extends Controller
     {
       $applications = Application::whereYear('created_at', '=', date('Y'))->where('confirmed',false)->get();
 
-      return view('admin.application.index')->with('applications',$applications);
+      $universities = University::pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+
+      $langlevel = [
+        1 => "B1",
+        2 => "B2",
+        3 => "C1",
+        4 => "C2"
+      ];
+
+      return view('admin.application.index')->with('applications',$applications)
+                                            ->with('universities',$universities)
+                                            ->with('languages',$languages)
+                                            ->with('langlevel',$langlevel);
     }
 
     public function confirmed()
     {
+      $universities = University::pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+
+      $langlevel = [
+        1 => "B1",
+        2 => "B2",
+        3 => "C1",
+        4 => "C2"
+      ];
+
       $applications = Application::whereYear('created_at', '=', date('Y'))->where('confirmed',true)->get();
 
-      return view('admin.application.index')->with('applications',$applications);
+      return view('admin.application.index')->with('applications',$applications)
+                                            ->with('universities',$universities)
+                                            ->with('languages',$languages)
+                                            ->with('langlevel',$langlevel);
     }
 
 }
