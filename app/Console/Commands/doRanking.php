@@ -7,6 +7,7 @@ use App\Application;
 use App\university;
 use App\Rank;
 use Illuminate\Database\Eloquent\Collection;
+use DB;
 
 class doRanking extends Command
 {
@@ -136,6 +137,10 @@ class doRanking extends Command
 
         $this->info("do:Ranking job started");
 
+        $this->info("Resetting table for debugging");
+        DB::table('ranks')->delete();
+
+
         $current_year = date("Y");
 
         $this->info("Retrieving all student applications for ".$current_year);
@@ -201,7 +206,8 @@ class doRanking extends Command
               $rank -> pts = $current_pts;
               $rank -> year = $current_year;
               $rank -> priority = 1;
-              //$rank -> save();
+              $rank -> assigned = 0;
+              $rank -> save();
             }
 
             $this->info("[$university->id] Retrieving all student applications for $current_year (2nd pass)");
@@ -245,7 +251,8 @@ class doRanking extends Command
               $rank -> pts = $current_pts;
               $rank -> year = $current_year;
               $rank -> priority = 2;
-              //$rank -> save();
+              $rank -> assigned = 0;
+              $rank -> save();
             }
 
             $this->info("[$university->id] Retrieving all student applications for $current_year (3rd pass)");
@@ -289,7 +296,8 @@ class doRanking extends Command
               $rank -> pts = $current_pts;
               $rank -> year = $current_year;
               $rank -> priority = 3;
-              //$rank -> save();
+              $rank -> assigned = 0;
+              $rank -> save();
             }
 
         }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Classes\EGuard;
 use App\Application;
+use App\Rank;
+use App\University;
 
 class RankingController extends Controller
 {
@@ -24,7 +26,9 @@ class RankingController extends Controller
      */
     public function index()
     {
-        return view('erasmus.ranking');
+        $ranks = Rank::groupBy('app_id')->having('year', date('Y'))->get();
+        $universities = University::all();
+        return view('erasmus.ranking')->with('ranks', $ranks)->with('universities',$universities);
     }
 
 }
