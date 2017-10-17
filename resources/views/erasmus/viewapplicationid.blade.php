@@ -60,6 +60,7 @@
 
 					<div class="form-group">
 				{!! Form::label('Οδός:') !!}
+        {{$application->address}}
 				</div>
 
 
@@ -107,14 +108,12 @@
 					<div class="form-group">
 				{!! Form::label('Πόλη:') !!}
 				{{$application->city_el}}
-				{{$application->name_en}}
 				</div>
 
 
 
 					<div class="form-group">
 				{!! Form::label('Address (με λατινικούς χαρακτήρες):') !!}
-				{{$application->name_el}}
 				{{$application->name_en}}
 				</div>
 
