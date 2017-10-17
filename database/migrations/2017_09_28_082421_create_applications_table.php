@@ -91,6 +91,8 @@ class CreateApplicationsTable extends Migration
             $table->smallInteger('curr_semester');
             $table->float('Avg', 5, 2);
 
+            $table->smallInteger('additional_pts');
+            $table->boolean('confirmed');
 
             $table->timestamps();
         });
