@@ -190,9 +190,9 @@ class ApplicationController extends Controller
         4 => "C2"
       ];
 
-		  $appv = Application::findOrFail($id)->first();
+		  $application = Application::findOrFail($id)->first();
 
-      return view('erasmus.viewapplicationid')->with('app',$appv)
+      return view('erasmus.viewapplicationid')->with('$application',$application)
                                               ->with('universities',$universities)
                                               ->with('languages',$languages)
                                               ->with('langlevel',$langlevel);

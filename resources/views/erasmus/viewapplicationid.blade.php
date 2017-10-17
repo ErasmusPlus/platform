@@ -28,36 +28,36 @@
 
 				<div class="form-group">
 					{!! Form::label('Επώνυμο:') !!}
-					{{$app->surname_el}}
+					{{$application->surname_el}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Surname (όπως αναγράφεται στο διαβατήριό σας):') !!}
-				{{$app->surname_en}}
+				{{$application->surname_en}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Όνομα πατρός/Father\'s Name:') !!}
-				{{$app->fathersname}}
+				{{$application->fathersname}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('Τόπος Γεννήσεως/Place of Birth:') !!}
-				{{$app->birthplace}}
+				{{$application->birthplace}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('numstreet','Οδός-Αριθμός:') !!}
-				{{$app->address_el}}
-				{{$app->nο_el}}
+				{{$application->address_el}}
+				{{$application->nο_el}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('postalcode','ΤΚ:') !!}
-				{{$app->tk}}
+				{{$application->tk}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('tel','Τηλέφωνο:') !!}
-				{{$app->tel}}
+				{{$application->tel}}
 				</div>
 				<div class="form-group">
 				{!! Form::label('mobile','Κινητό:') !!}
-				{{$app->mobtel}}
+				{{$application->mobtel}}
 				</div>
 
 
@@ -65,7 +65,7 @@
 
 				<div class="form-group">
 				{!! Form::label('Νομός/Prefecture:') !!}
-				{{$app->prefecture}}
+				{{$application->prefecture}}
 				</div>
 
 					<div class="form-group">
@@ -86,53 +86,53 @@
 
 				<div class="form-group">
 				{!! Form::label('Όνομα:') !!}
-				{{$app->name_el}}
+				{{$application->name_el}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label('Name (όπως αναγράφεται στο διαβατήριό σας):') !!}
-				{{$app->name_en}}
+				{{$application->name_en}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label('Όνομα μητρός/Mother\'s Name:') !!}
-				{{$app->mothersname}}
+				{{$application->mothersname}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label('Ηλικία/Age:') !!}
-				{{$app->age}}
+				{{$application->age}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label('Ημερομηνία γεννήσεως/Birth of Birth:') !!}
-				{{$app->birthdate}}
+				{{$application->birthdate}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label('Υπηκοότητα/Citizenship:') !!}
-				{{$app->citizenship}}
+				{{$application->citizenship}}
 				</div>
 
 					<div class="form-group">
 				{!! Form::label('Πόλη:') !!}
-				{{$app->city_el}}
-				{{$app->name_en}}
+				{{$application->city_el}}
+				{{$application->name_en}}
 				</div>
 
 
 
 					<div class="form-group">
 				{!! Form::label('Address (με λατινικούς χαρακτήρες):') !!}
-				{{$app->name_el}}
-				{{$app->name_en}}
+				{{$application->name_el}}
+				{{$application->name_en}}
 				</div>
 
 
 
 					<div class="form-group">
 				{!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
-				{{$app->insurance}}
+				{{$application->insurance}}
 				</div>
 
 
@@ -145,39 +145,39 @@
 				<div class="container">
 				<div class="form-group">
 				{!! Form::label('Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS:') !!}
-				{{$app->publictel}}
+				{{$application->publictel}}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label(' 		Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS: ') !!}
-				{{$app->l1== true ? 'NAI':'OXI' }}
+				{{$application->l1== true ? 'NAI':'OXI' }}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label(' Είμαι άτομο με αναπηρίες, σύμφωνα με τον κατάλογο που χρησιμοποιεί η Ε.Μ: ') !!}
-				{{$app->l2== true ? 'NAI':'OXI' }}
+				{{$application->l2== true ? 'NAI':'OXI' }}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label(' Έχω συμπληρώσει το 25ο έτος της ηλικίας και το ατομικό μου εισόδημα δεν ξεπερνά τα 9.000Ε: ') !!}
-				{{$app->l3== true ? 'NAI':'OXI' }}
+				{{$application->l3== true ? 'NAI':'OXI' }}
 				</div>
 
 
 				<div class="form-group">
 				<p>{!! Form::label(' Δεν έχω συμπληρώσει το 25ο έτος της ηλικίας και προέρχομαι απο οικογένεια που το οικογενειακό εισόδημα δεν υπερβαίνει τις 9.000Ε κατά το πλέον πρόσφατο οικονομικό έτος:') !!}</p>
-				{{$app->l4== true ? 'NAI':'OXI' }}
+				{{$application->l4== true ? 'NAI':'OXI' }}
 				</div>
 
 
 				<div class="form-group">
 				{!! Form::label('Προέρχομαι απο πολύτεκνη οικογένεια (4 τέκνα και άνω τα οποία βρίσκονται σε κάποια βαθμίδα εκπαίδευσης) και το οικογενειακό και ατομικό μου εισόδημα δεν υπερβαίνει τις 22.000Ε κατά το πλέον πρόσφατο οικονομικό έτος:') !!}
-				{{$app->l5== true ? 'NAI':'OXI' }}
+				{{$application->l5== true ? 'NAI':'OXI' }}
 				</div>
 
 				<div class="form-group">
 				{!! Form::label(' Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη:') !!}
-				{{$app->l6 == true ? 'NAI':'OXI' }}
+				{{$application->l6 == true ? 'NAI':'OXI' }}
 				</div>
 
 				</div>
@@ -196,18 +196,18 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{$languages[$app->lang_id1]}}</td>
-		<td>{{$langlevel[$app->langlevel1]}}</td>
+        <td>{{$languages[$application->lang_id1]}}</td>
+		<td>{{$langlevel[$application->langlevel1]}}</td>
 
       </tr>
       <tr>
-        <td>{{$languages[$app->lang_id1]}}</td>
-		<td>{{$langlevel[$app->langlevel1]}}</td>
+        <td>{{$languages[$application->lang_id1]}}</td>
+		<td>{{$langlevel[$application->langlevel1]}}</td>
 
       </tr>
       <tr>
-        <td>{{$languages[$app->lang_id1]}}</td>
-		<td>{{$langlevel[$app->langlevel1]}}</td>
+        <td>{{$languages[$application->lang_id1]}}</td>
+		<td>{{$langlevel[$application->langlevel1]}}</td>
 
       </tr>
     </tbody>
@@ -230,22 +230,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{$universities[$app->u1_id]}}</td>
-		<td>{{$app->u1_studies}}</td>
-		<td>{{$app->u1_semester}}</td>
-		<td>{{$app->u1_months}}</td>
+        <td>{{$universities[$application->u1_id]}}</td>
+		<td>{{$application->u1_studies}}</td>
+		<td>{{$application->u1_semester}}</td>
+		<td>{{$application->u1_months}}</td>
       </tr>
       <tr>
-        <td>{{$universities[$app->u2_id]}}</td>
-		<td>{{$app->u2_studies}}</td>
-		<td>{{$app->u2_semester}}</td>
-		<td>{{$app->u2_months}}</td>
+        <td>{{$universities[$application->u2_id]}}</td>
+		<td>{{$application->u2_studies}}</td>
+		<td>{{$application->u2_semester}}</td>
+		<td>{{$application->u2_months}}</td>
       </tr>
       <tr>
-		<td>{{$universities[$app->u3_id]}}</td>
-		<td>{{$app->u3_studies}}</td>
-		<td>{{$app->u3_semester}}</td>
-		<td>{{$app->u3_months}}</td>
+		<td>{{$universities[$application->u3_id]}}</td>
+		<td>{{$application->u3_studies}}</td>
+		<td>{{$application->u3_semester}}</td>
+		<td>{{$application->u3_months}}</td>
       </tr>
     </tbody>
   </table>
