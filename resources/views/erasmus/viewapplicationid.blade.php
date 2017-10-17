@@ -112,13 +112,15 @@
 
 				</div>
 				</div>
-        <div class="form-group">
-      {!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
-      {{$application->insurance}}
-      </div>
+
 				<br></br>
 
 				<div class="container">
+          <div class="form-group">
+        {!! Form::label('Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό:') !!}
+        {{$application->insurance}}
+        </div>
+        
 				<div class="form-group">
 				{!! Form::label('Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS:') !!}
 				{{$application->publictel}}
