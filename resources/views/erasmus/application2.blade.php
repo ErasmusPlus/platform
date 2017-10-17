@@ -14,15 +14,7 @@
   display: inline-block;
 }
 
-.btn {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
+
 
 .upload-btn-wrapper input[type=file] {
   font-size: 100px;
@@ -54,7 +46,8 @@
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#tab1">Ατομικά στοιχεία υποψηφίου</a></li>
                 <li><a data-toggle="tab" href="#tab2">Στοιχεία ακαδημαικής δραστηριότητας υποψηφίου</a></li>
-                <li><a data-toggle="tab" href="#tab3">Υποβολή αιτήσεως</a></li>
+                <li><a data-toggle="tab" href="#tab3">Δικαιολογητικά</a></li>
+                <li><a data-toggle="tab" href="#tab4">Υποβολή αιτήσεως</a></li>
               </ul>
 			  {!! Form::open(array('action' => ('ApplicationController@store') , 'files' => true)) !!}
                 <!-- text input -->
@@ -209,58 +202,41 @@
                     <div class="col-md-4">
                       {!! Form::label('langlevel1','Επίπεδο') !!}
                       {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-						<div class="upload-btn-wrapper">
-							<button class="btn">Upload a file</button>
-							<input type="file" name="certficatelang1" />
-						</div>
-						
-						
-						
-					</div>										
+					          </div>
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
                       {!! Form::label('lang_id2','Γλώσσα') !!}
           					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε δεύτερη γλώσσα"]) !!}
-                    
-					</div>
+					          </div>
                     <div class="col-md-4">
                       {!! Form::label('langlevel2','Επίπεδο') !!}
                       {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-                    
-						<div class="upload-btn-wrapper">
-							<button class="btn">Upload a file</button>
-							<input type="file" name="certficatelang2" />
-						</div>
-					
-					</div>
+					          </div>
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
                       {!! Form::label('lang_id3','Γλώσσα') !!}
-          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}                   														
+          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}
 					</div>
                     <div class="col-md-4">
                       {!! Form::label('langlevel3','Επίπεδο') !!}
                       {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-                    
-						<div class="upload-btn-wrapper">
-							<button class="btn">Upload a file</button>
-							<input type="file" name="certficatelang3" />
-						</div>
-						
-						
+
+
+
+
 					</div>
         				</div>
-						
-						
-			
-</div>
-	
-              
 
-	
-			  
+
+
+</div>
+
+
+
+
+
               <br>
               <h5><b>Επιθυμώ να πραγματοποιήσω μια περίοδο σπουδών σε ένα απο τα παρακάτω Πανεπιστήμια με σειρά προτεραιότητας:</b></h5>
               <div class="row">
@@ -325,10 +301,10 @@
             {!! Form::checkbox('l3') !!}
             {!! Form::label('l3','Έχω συμπληρώσει το 25ο έτος της ηλικίας και το ατομικό μου εισόδημα δεν ξεπερνά τα 9.000Ε') !!}
             <br>
-			
+
 		   {!! Form::checkbox('l4') !!}
             {!! Form::label('l4','Δεν έχω συμπληρώσει το 25ο έτος της ηλικίας και προέρχομαι απο οικογένεια που το οικογενειακό εισόδημα δεν υπερβαίνει τις 9.000Ε κατά το πλέον πρόσφατο οικονομικό έτος') !!}
-			
+
 		   <br>
             {!! Form::checkbox('l5') !!}
             {!! Form::label('l5','Προέρχομαι απο πολύτεκνη οικογένεια (4 τέκνα και άνω τα οποία βρίσκονται σε κάποια βαθμίδα εκπαίδευσης) και το οικογενειακό και ατομικό μου εισόδημα δεν υπερβαίνει τις 22.000Ε κατά το πλέον πρόσφατο οικονομικό έτος.') !!}
@@ -343,8 +319,32 @@
             </div>
             <div id="tab3" class="tab-pane fade">
               <br>
-              <h4>
-                <b>Με την υποβολή της αίτησης μου δηλώνω υπεύθυνα ότι:</b></h4>
+            <h4><b>Δικαιολογητικά υποβολής αίτησης</b></h4>
+              <h5>
+                Για την αξιολόγηση της αιτήσεως σας απαιτούνται τα ακόλουθα πιστοποιητικά:
+                <br><br>
+                α) Σύντομο βιογραφικό σημείωμα
+                <br>
+                β) Αντίγραφα πιστοιποιητικών γλωσσομάθειας
+                <br>
+                γ) Οποιαδήποτε βεβαίωση/πιστοποιητικό (αντίγραφο) για απόδειξη εμπειρίας ή συμμετοχής σε συνέδρια, θερινά σχολεία, προγράμματα επιμόρφωσης
+            </h5>
+            <br>
+            Συγκεντρώστε τα δικαιολογητικά σας σε ενα αρχείο συμπίεσης (zip) και επιλέξτε το.
+        			<div class="row">
+        				<div class="col-md-12">
+        					<input type="file" name="documents"  />
+        				</div>
+        			</div>
+
+
+
+              <a id="nexttab3" href="#tab4" class="btn btn-primary pull-right" role="button">Επόμενo</a>
+            </div>
+
+            <div id="tab4" class="tab-pane fade">
+              <br>
+              <h4><b>Με την υποβολή της αίτησης μου δηλώνω υπεύθυνα ότι:</b></h4>
 
                 <h5>
                 α) Δεν έχω τύχει υποτροφίας Erasmus κατά τα προηγούμενα ακαδημαικά Έτη, η οποία αθροιζόμενη με το παρόν αίτημα μετακίνησής μου να υπερβαίνει τους 12 μήνες
@@ -359,6 +359,8 @@
 
                {!! Form::submit('Υποβολή αίτησης',array('class' => 'btn btn-primary')) !!}
             </div>
+
+
 				</div>
 			   </div>
          {!! Form::close() !!}

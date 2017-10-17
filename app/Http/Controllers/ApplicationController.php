@@ -69,9 +69,7 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
-		'certficatelang1' => 'required|mimes:jpeg,jpg,pdf|max:2048',
-		'certficatelang2' => 'required|mimes:jpeg,jpg,pdf|max:2048',
-		'certficatelang3' => 'required|mimes:jpeg,jpg,pdf|max:2048',
+		'documents' => 'required|mimes:zip|max:8192',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
@@ -149,28 +147,10 @@ class ApplicationController extends Controller
       $application -> curr_semester = $stdata -> curr_semester;
       $application -> Avg = $stdata -> Avg;
 
-	  //request file
-	  
-	   //$destinationPath = public_path(). '/' . 'uploads';
-	   
-	  $certficatelang1 = $request->file('certficatelang1');
-	  $certficatelang2 = $request->file('certficatelang2');
-	  $certficatelang3 = $request->file('certficatelang3');
-     
-	 // $certname1= "asdasd";       
-      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang1->getClientOriginalName()  );	  
-	 // $cert_path = $destinationPath . "/" . $certname1;
+      $application ->save();
 
-	  //$certname2= "asdasd";       
-      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang2->getClientOriginalName()  );	  
+      $request->file('documents')->storeAs('documents', $application->id.".zip");
 
-	 // $certname3= "asdasd";       
-      $certficatelang1-> move( base_path() . 'erasmus/public/uploads/', $certficatelang3->getClientOriginalName()  );	  
-
-
-
-
-	 $application ->save();
       //TODO: Check result here
 
       return redirect()->route('home');
@@ -201,7 +181,7 @@ class ApplicationController extends Controller
 
     public function view_appid($id)
     {
-		$appv = Application::where('id',$id)->get();
+		  $appv = Application::where('id',$id)->get();
       return view('erasmus.viewapplicationid')->with('appv',$appv);
     }
 
