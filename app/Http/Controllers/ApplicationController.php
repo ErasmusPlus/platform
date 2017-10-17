@@ -27,20 +27,27 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $universities = University::pluck('name', 'id');
-        $languages = Language::pluck('name', 'id');
+        if(EGuard::isEligible())
+        {
+          $universities = University::pluck('name', 'id');
+          $languages = Language::pluck('name', 'id');
 
-        $langlevel = [
-          1 => "B1",
-          2 => "B2",
-          3 => "C1",
-          4 => "C2"
-        ];
+          $langlevel = [
+            1 => "B1",
+            2 => "B2",
+            3 => "C1",
+            4 => "C2"
+          ];
 
-        return view('erasmus.application2') ->with("stdata",EGuard::getApiDetails())
-                                            ->with('universities',$universities)
-                                            ->with('languages',$languages)
-                                            ->with('langlevel',$langlevel);
+          return view('erasmus.application2') ->with("stdata",EGuard::getApiDetails())
+                                              ->with('universities',$universities)
+                                              ->with('languages',$languages)
+                                              ->with('langlevel',$langlevel);
+        }
+        else
+        {
+          return "NOT ELIGIBLE";
+        }
     }
 
 

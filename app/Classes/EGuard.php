@@ -15,16 +15,6 @@ class EGuard
 
       	if(!$sso) return false;
 
-      	$departmentFull = "";
-
-  		switch ($sso["GUStudentDepartmentID"]) {
-  		    case "371":
-  		        $departmentFull = "Μηχανικών Πληροφορικής & Τηλεπικοινωνιών";
-  		        break;
-  		    default:
-  		        $departmentFull = "Άγνωστο";
-  		}
-
       	$user =
       	[
       		'email' => $sso["mail"],
@@ -45,7 +35,6 @@ class EGuard
     public static function logout()
     {
     	 Session()->forget('current_user');
-       //cas()->logout();
     }
 
     public static function authenticated()
@@ -56,6 +45,9 @@ class EGuard
         return false;
     }
 
+    /*
+      Fetch data from API & merge them
+    */
     public static function getApiDetails()
     {
       $client = new \GuzzleHttp\Client();
@@ -70,6 +62,20 @@ class EGuard
       //Merge results & return object
       $stdata = array_merge(json_decode($body1,true), json_decode($body2,true));
       return (object)$stdata;
+    }
+
+    /*
+      Check if currently logged-in user is eligible to make an application for Erasmus+
+    */
+    public static function isEligible()
+    {
+      $stdata = EGuard::getApiDetails();
+
+      if($stdata->curr_semester == 2 && $stdata->cources_passed_num < 4) return false;
+      if($stdata->curr_semester > 2 && $stdata->cources_passed_num < 8) return false;
+      if($stdata->Avg < 6) return false;
+
+      return true;
     }
 }
 
