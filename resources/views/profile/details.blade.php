@@ -95,5 +95,9 @@
                 </div>
 </div><!-- /.row -->
 <hr>
+@if(EGuard::isEligible())
 <h4><center>Έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus+</center></h4>
+@else
+<h4><center>Δεν έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus+</center></h4>
+@endif
 @endsection
