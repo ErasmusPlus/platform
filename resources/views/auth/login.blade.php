@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-  <center><img src="http://www.4sustainable.eu/images/General/erasmus-logo.png" /></center>
+  <center><img src="{{asset('img/erasmus-logo.png')}}" /></center>
   <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Πιστοποίηση χωρίς CAS</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -52,17 +52,9 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary ">
                                     Login
                                 </button>
-                                <a class="btn btn-danger" href="{{ route('register') }}">
-                                    Register (for testing)
-                                </a>
-                                <a class="btn btn-link" href="#">
-                                    Forgot Your Password?
-                                </a>
-
-
                             </div>
                         </div>
                     </form>

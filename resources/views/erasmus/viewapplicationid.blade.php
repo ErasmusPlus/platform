@@ -256,5 +256,10 @@
 
 
 </div>
+@if(EGuard::user()->type == 'Administrator')
 
+
+
+
+@endif
 @endsection
