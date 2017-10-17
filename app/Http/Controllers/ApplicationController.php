@@ -190,7 +190,7 @@ class ApplicationController extends Controller
         4 => "C2"
       ];
 
-		  $appv = Application::where('id',$id)->get();
+		  $appv = Application::findOrFail($id)->first();
 
       return view('erasmus.viewapplicationid')->with('appv',$appv)
                                               ->with('universities',$universities)

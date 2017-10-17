@@ -16,7 +16,6 @@
 
  <div class="panel panel-info">
    {!! Form::open() !!}
-    @foreach($appv as $app)
      <div class="panel-heading">Αίτηση με αριθμό </div>
 		<div class="panel-body">
 
@@ -259,7 +258,7 @@
 
 
 </div>
-  @endforeach
+
 
 
 </div>
