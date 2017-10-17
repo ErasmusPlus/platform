@@ -192,7 +192,7 @@ class ApplicationController extends Controller
 
 		  $application = Application::findOrFail($id)->first();
 
-      return view('erasmus.viewapplicationid')->with('$application',$application)
+      return view('erasmus.viewapplicationid')->with('application',$application)
                                               ->with('universities',$universities)
                                               ->with('languages',$languages)
                                               ->with('langlevel',$langlevel);
