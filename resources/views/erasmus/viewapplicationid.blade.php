@@ -247,7 +247,7 @@ font-weight: bold;
 @if(EGuard::user()->type == 'Administrator')
 <div class='row'>
     <div class="col-md-12">
-    <a href="{{storage_path('app/documents/'.$application->id.'.zip')}}">Μεταφόρτωση επισυναπτόμενων εγγράφων</a>
+    <a href="{{URL::to('/').'/..'.Storage::url('app/documents/'.$application->id.'.zip')}}">Μεταφόρτωση επισυναπτόμενων εγγράφων</a>
   </div>
 </div>
 @endif
