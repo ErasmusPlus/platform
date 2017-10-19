@@ -188,19 +188,26 @@ font-weight: bold;
         <th>Επίπεδο Γλωσσομάθειας</th>
       </tr>
     </thead>
+
     <tbody>
+      @if($application->lang_id1)
       <tr>
           <td>{{$languages[$application->lang_id1]}}</td>
 		      <td>{{$langlevel[$application->langlevel1]}}</td>
       </tr>
+      @endif
+      @if($application->lang_id2)
       <tr>
           <td>{{$languages[$application->lang_id2]}}</td>
 		      <td>{{$langlevel[$application->langlevel2]}}</td>
       </tr>
+      @endif
+      @if($application->lang_id3)
       <tr>
           <td>{{$languages[$application->lang_id3]}}</td>
 		      <td>{{$langlevel[$application->langlevel3]}}</td>
       </tr>
+      @endif
     </tbody>
   </table>
 
@@ -217,6 +224,7 @@ font-weight: bold;
       </tr>
     </thead>
     <tbody>
+      @if($application->u1_id)
       <tr>
         <td>1η</td>
         <td>{{$universities[$application->u1_id]}}</td>
@@ -224,6 +232,8 @@ font-weight: bold;
     		<td>{{$application->u1_semester}}</td>
     		<td>{{$application->u1_months}}</td>
       </tr>
+      @endif
+      @if($application->u2_id)
       <tr>
         <td>2η</td>
         <td>{{$universities[$application->u2_id]}}</td>
@@ -231,6 +241,8 @@ font-weight: bold;
     		<td>{{$application->u2_semester}}</td>
     		<td>{{$application->u2_months}}</td>
       </tr>
+      @endif
+      @if($application->u3_id)
       <tr>
         <td>3η</td>
     		<td>{{$universities[$application->u3_id]}}</td>
@@ -238,6 +250,7 @@ font-weight: bold;
     		<td>{{$application->u3_semester}}</td>
     		<td>{{$application->u3_months}}</td>
       </tr>
+      @endif
     </tbody>
   </table>
 
