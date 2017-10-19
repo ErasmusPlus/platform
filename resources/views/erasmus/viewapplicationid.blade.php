@@ -194,12 +194,12 @@ font-weight: bold;
 		      <td>{{$langlevel[$application->langlevel1]}}</td>
       </tr>
       <tr>
-          <td>{{$languages[$application->lang_id1]}}</td>
-		      <td>{{$langlevel[$application->langlevel1]}}</td>
+          <td>{{$languages[$application->lang_id2]}}</td>
+		      <td>{{$langlevel[$application->langlevel2]}}</td>
       </tr>
       <tr>
-          <td>{{$languages[$application->lang_id1]}}</td>
-		      <td>{{$langlevel[$application->langlevel1]}}</td>
+          <td>{{$languages[$application->lang_id3]}}</td>
+		      <td>{{$langlevel[$application->langlevel3]}}</td>
       </tr>
     </tbody>
   </table>
