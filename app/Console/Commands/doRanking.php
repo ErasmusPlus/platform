@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Application;
-use App\university;
+use App\University;
 use App\Rank;
 use Illuminate\Database\Eloquent\Collection;
 use DB;
