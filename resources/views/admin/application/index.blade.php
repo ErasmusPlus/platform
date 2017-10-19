@@ -17,7 +17,7 @@
                       <th width="80px">Ενέργειες</th>
                     </tr>
 
-                    @foreach($applications as $application)
+                    @forelse($applications as $application)
                     <tr>
                       <td>{{$application->id}}</td>
                       <td>{{$application->depname}}</td>
@@ -27,7 +27,9 @@
                         <a href="{{route('erasmus.viewappid',$application->id)}}" class="btn btn-primary btn-xs btn-block" role="button">Προβολή</a>
                       </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr><td colspan=4>Δεν βρέθηκαν αιτήσεις</td></tr>
+                    @endforelse
                   </tbody></table>
                 </div>
                 <!-- /.box-body -->
