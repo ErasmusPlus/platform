@@ -71,6 +71,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
 
   Route::get('/applications/unconfirmed','Admin\ApplicationController@unconfirmed')->name('admin.applications.unconfirmed');
   Route::get('/applications/confirmed','Admin\ApplicationController@confirmed')->name('admin.applications.confirmed');
+  Route::post('/applications/verify','Admin\ApplicationController@verify');
 
   Route::get('/universities','UniversityController@index')->name('admin.university.index');
   Route::get('/universities/new','UniversityController@new')->name('admin.university.new');

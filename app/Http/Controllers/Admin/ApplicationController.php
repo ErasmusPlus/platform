@@ -68,4 +68,16 @@ class ApplicationController extends Controller
                                             ->with('langlevel',$langlevel);
     }
 
+
+
+    public function verify(Request $request)
+    {
+      $application = Application::findOrFail($request->input('id'));
+      $application -> additional_pts = $request->input('additional_pts');
+      $application -> confirmed = true;
+      $application -> save();
+
+      return redirect()->back();
+    }
+
 }
