@@ -45,6 +45,8 @@ Route::group(['middleware' => ['cas.guard']], function () {
       return view('erasmus.application');
   })->name('erasmus.application');
 
+  Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.appsuccess');
+
   Route::get('/erasmus/application2', 'ApplicationController@index')->name('erasmus.application2');
   Route::post('/erasmus/application2', 'ApplicationController@store');
 

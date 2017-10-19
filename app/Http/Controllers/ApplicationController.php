@@ -160,7 +160,7 @@ class ApplicationController extends Controller
 
       //TODO: Check result here
 
-      return redirect()->route('home');
+      return redirect()->route('erasmus.success');
     }
 
 

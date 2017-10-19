@@ -29,6 +29,13 @@ class HomeController extends Controller
         return view('home')->with('news_get',$news_get);
     }
 
+
+    public function success()
+    {
+        return view('erasmus.success');
+    }
+
+
     public function logintype()
     {
 
