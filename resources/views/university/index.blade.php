@@ -33,7 +33,7 @@
                       <td>{{$languages[$university->lang_id]}}</td>
                       <td><span class="label label-success">NAI</span></td>
                       <td>{{$university->cap}}</td>
-                      <td>{{$university->updated_at}}</td>
+                      <td>{{$university->updated_at->format('d/m/Y H:i:s')}}</td>
                       <td>
                         <a href="{{route('admin.university.edit',$university->id)}}" class="btn btn-primary btn-xs" role="button">Επεξεργασία</a>
                         <a href="{{route('admin.university.delete',$university->id)}}" class="btn btn-danger btn-xs" role="button">Διαγραφή</a>

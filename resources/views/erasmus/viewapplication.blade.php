@@ -23,7 +23,7 @@
                       <td>{{$application->id}}</td>
                       <td>{{$application->depname}}</td>
                       <td>{{$universities[$application->u1_id]}}</td>
-                      <td>{{$application->created_at}}</td>
+                      <td>{{$application->created_at->format('d/m/Y H:i:s')}}</td>
                       <td>
                         <a href="{{route('erasmus.viewappid',$application->id)}}" class="btn btn-primary btn-xs btn-block" role="button">Προβολή</a>
                       </td>
