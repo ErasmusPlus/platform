@@ -25,7 +25,7 @@ class EGuard
       		'education' => ucfirst($sso["eduPersonAffiliation"]),
       		'type' => ucfirst($sso["GUStudentType"]),
       		'semester' => $sso["GUStudentSemester"],
-      		'departmentID' => $sso["GUStudentDepartmentID"],
+      		'departmentID' => 604,
       	];
 
       	return (object)($user);
@@ -51,15 +51,15 @@ class EGuard
     {
       $client = new \GuzzleHttp\Client();
       //Get results from view1
-      $response1 = $client->get(route('view1',EGuard::user()->id));
+      $response1 = $client->get(route('view1',['aem'=>EGuard::user()->id,'depID'=>EGuard::user()->departmentID]));
       $body1 = $response1->getBody()->getContents();
-
       //Get results from view2
-      $response2 = $client->get(route('view2',EGuard::user()->id));
+      $response2 = $client->get(route('view2',['aem'=>EGuard::user()->id,'depID'=>EGuard::user()->departmentID]));
       $body2 = $response2->getBody()->getContents();
-
+      
       //Merge results & return object
       $stdata = array_merge(json_decode($body1,true), json_decode($body2,true));
+      //dd($stdata);
       return (object)$stdata;
     }
 
