@@ -39,7 +39,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
       return view('profile.ects')->with("stdata",EGuard::getApiDetails());
   })->name('profile.ects');
 
-  Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.appsuccess');
+  Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.success');
 
   Route::get('/erasmus/application2', 'ApplicationController@index')->name('erasmus.application2');
   Route::post('/erasmus/application2', 'ApplicationController@store');

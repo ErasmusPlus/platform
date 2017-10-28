@@ -16,7 +16,7 @@ class AddAmkaToApplication extends Migration
       Schema::table('applications', function (Blueprint $table) {
         $table->string('amka');
         $table->string('iddate');
-        $table->string('idnum');
+        $table->string('idloc');
       });
     }
 
@@ -30,7 +30,7 @@ class AddAmkaToApplication extends Migration
       Schema::table('applications', function (Blueprint $table) {
         $table->dropColumn('amka');
         $table->dropColumn('iddate');
-        $table->dropColumn('idnum');
+        $table->dropColumn('idloc');
       });
     }
 }
