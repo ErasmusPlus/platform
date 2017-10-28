@@ -39,12 +39,6 @@ Route::group(['middleware' => ['cas.guard']], function () {
       return view('profile.ects')->with("stdata",EGuard::getApiDetails());
   })->name('profile.ects');
 
-
-  //Erasmus routes for students
-  Route::get('/erasmus/application', function () {
-      return view('erasmus.application');
-  })->name('erasmus.application');
-
   Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.appsuccess');
 
   Route::get('/erasmus/application2', 'ApplicationController@index')->name('erasmus.application2');
