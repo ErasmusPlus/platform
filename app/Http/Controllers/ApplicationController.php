@@ -8,6 +8,7 @@ use App\University;
 use App\Language;
 use App\Application;
 use Illuminate\Support\Facades\Validator;
+
 class ApplicationController extends Controller
 {
     /**
@@ -76,6 +77,9 @@ class ApplicationController extends Controller
 	  'tel' => 'required',
 	  'mobtel' => 'required',
 	  'email' => 'required',
+    'iddate' => 'required',
+    'idloc' => 'required',
+    'amka' => 'required',
 		'documents' => 'required|mimes:zip|max:8192',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
@@ -94,6 +98,9 @@ class ApplicationController extends Controller
       $application -> mothersname = $request ->input('mothersname');
       $application -> age = $request ->input('age');
       $application -> idno = $request ->input('idno');
+      $application -> iddate = $request ->input('iddate');
+      $application -> idloc = $request ->input('idloc');
+      $application -> amka = $request ->input('amka');
       $application -> birthplace = $request ->input('birthplace');
       $application -> birthdate = $request ->input('birthdate');
       $application -> prefecture = $request ->input('prefecture');

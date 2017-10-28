@@ -94,7 +94,20 @@
                   {!! Form::text('idno',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
-
+              <div class="row">
+                <div class="col-md-4">
+        					{!! Form::label('iddate','Ημ/νία έκδοσης ταυτότητας') !!}
+        					{!! Form::text('iddate',null, ['class' => 'form-control']) !!}
+        				</div>
+                <div class="col-md-4">
+                  {!! Form::label('idloc','Αρχή Έκδοσης ταυτότητας') !!}
+                  {!! Form::text('idloc',null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="col-md-4">
+                  {!! Form::label('amka','ΑΜΚΑ') !!}
+                  {!! Form::text('amka',null, ['class' => 'form-control']) !!}
+                </div>
+              </div>
               <div class="row">
                   <div class="col-md-4">
         					{!! Form::label('birthplace','Τόπος Γεννήσεως/Place of Birth') !!}
@@ -156,6 +169,7 @@
                   {!! Form::text('email',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
+
               <div class="row">
                   <div class="col-md-12">
                     {!! Form::checkbox('publictel') !!}
