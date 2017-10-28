@@ -67,6 +67,11 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::get('/applications/confirmed','Admin\ApplicationController@confirmed')->name('admin.applications.confirmed');
   Route::post('/applications/verify','Admin\ApplicationController@verify');
 
+  Route::get('/users/index','Superadmin\UserController@index')->name('superadmin.settings.users_index');
+  Route::get('/ranking/settings','Superadmin\RankingController@index')->name('superadmin.settings.ranking');
+  Route::get('/statistics','Superadmin\StatisticsController@index')->name('superadmin.statistics');
+
+
   Route::get('/universities','UniversityController@index')->name('admin.university.index');
   Route::get('/universities/new','UniversityController@new')->name('admin.university.new');
   Route::post('/universities/new','UniversityController@create');

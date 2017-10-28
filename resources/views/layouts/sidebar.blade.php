@@ -32,7 +32,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links-->
       <li class="{!! classActivePath('home') !!}"><a href="{{ route('home') }}"><span>Αρχική</span></a></li>
-      @if(EGuard::user()->type != 'Administrator')
+      @if(EGuard::user()->type != 'Administrator' && EGuard::user()->type != 'Superadmin')
       <li class="{!! classActivePath('student_details') !!}"><a href="{{ route('details') }}"><span>Στοιχεία φοιτητή</span></a></li>
       <li class="treeview {!! classActiveSegment(1,['erasmus']) !!}">
         <a href="#"><span>Αιτήσεις</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -51,10 +51,23 @@
         </ul>
       </li>
 
-      <li class="{!! classActiveSegment(1,['universities']) !!}"><a href="{{ route('admin.university.index') }}"><span>Πανεπιστήμια Erasmus</span></a></li>
+
       <li class="{!! classActiveSegment(1,['ranking']) !!}"><a href="{{ route('admin.ranking.index') }}"><span>Αποτελέσματα Κατάταξης</span></a></li>
       <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
       @endif
+      @if(EGuard::user()->type == 'Superadmin')
+      <li class="treeview {!! classActiveSegment(1,['users','universities','ranking']) !!}">
+        <a href="#"><span>Ρυθμίσεις πλατφόρμας</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="{!! classActiveSegment(2,['settings']) !!}"><a href="{{ route('superadmin.settings.ranking') }}">Ρυθμίσεις κατάταξης</a></li>
+          <li class="{!! classActiveSegment(1,['universities']) !!}"><a href="{{ route('admin.university.index') }}"><span>Πανεπιστήμια Erasmus</span></a></li>
+          <li class="{!! classActiveSegment(2,['index']) !!}"><a href="{{ route('superadmin.settings.users_index') }}">Λογαριασμοί χρηστών</a></li>
+        </ul>
+      </li>
+      <li class="{!! classActivePath('statistics') !!}"><a href="{{ route('superadmin.statistics') }}"><span>Στατιστικά χρήσης</span></a></li>
+      @endif
+
+
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->

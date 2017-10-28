@@ -1,21 +1,42 @@
 @extends('layouts.dashboard')
-@php ( $title='Πανεπιστήμια Erasmus+' )
-@php ( $description='Διαχείριση')
+@php ( $title='Πανεπιστήμια Erasmus' )
+@php ( $description='Διαχείριση Ιδρυμάτων Erasmus')
 
 @section('content')
 <div class='row'>
-  <div class='col-md-12'>
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Λίστα ιδρυμάτων Erasmus+</h3>
+  <div class="container-fluid">
+    <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+          @if(Session::has('alert-' . $msg))
 
-                  <div class="box-tools">
-                    <a href="{{route('admin.university.new')}}" class="btn btn-primary btn-sm" role="button">Προσθήκη εγγραφής</a>
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
+          <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+          @endif
+        @endforeach
+      </div> <!-- end .flash-message -->
+      <div style="margin-bottom:0px" class="panel panel-default">
+
+        <div class="panel-heading">
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xs-3">
+            <a class="btn btn-primary" href="{{route('admin.university.new')}}" role="button"><i class="fa fa-plus"></i> Νέα εγγραφή</a>
+            </div>
+            <div class="col-xs-6">
+
+            </div>
+
+
+            <div class="col-xs-3">
+              <div class="pull-right">
+              <a class="btn btn-primary" href="{{route('admin.university.index')}}" role="button"><i class='fa fa-refresh'></i></a>
+              </div>
+            </div>
+          </div>
+            </div>
+          <div style="padding:0px!important" class="panel-body">
+
+        <div class="table-responsive">
+            <table class="table table-condensed table-striped table-hover">
                     <tbody><tr>
                       <th></th>
                       <th>Όνομα</th>
@@ -41,10 +62,17 @@
                     </tr>
                     @endforeach
                   </tbody></table>
-                </div>
-                <!-- /.box-body -->
-              </div>
-              <!-- /.box -->
+                  <div style="padding-top:5px;padding-bottom:0px" class="panel-footer">
+                      <div style='padding-left:10px;padding-right:5px;padding-bottom:0px' class="row">
+                         <div class="pull-left">
+                             <h5>Σελίδα {!! $universities->currentPage() !!} ({!!  $universities->count()!!} από {!! $universities->total()!!} εγγραφές)</h5>
+                         </div>
+
+                         <div class="pull-right" style="">
+                           {!! $universities->appends(Request::only('search'))->links() !!}
+                         </div>
+                       </div>
+                   </div>
 
 
 
