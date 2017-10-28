@@ -102,36 +102,61 @@ class LoginController extends Controller
 
       if (Auth::attempt(['email' => $email, 'password' => $password]))
       {
+        if(Auth::user()->role == 2)
+        {
+          //Simulate SSO attributes
+          $user = [
+            "uid" => Auth::user()->email,
+            "mail" => Auth::user()->email,
+            "eduPersonAffiliation" => "",
+            "sn" => "",
+            "eduPersonPrimaryAffiliation" => "",
+            "eduPersonOrgUnitDN" => "",
+            "cn" => Auth::user()->name,
+            "GUStudentSemester" => "12",
+            "GUStudentDepartmentID" => "371",
+            "ou" => "ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ",
+            "GUStudentType" => "administrator",
+            "GUStudentID" => "",
+            "GUPersonID" => "",
+            "givenName" => "",
+            "authenticationMethod" => "localdb",
+            "samlAuthenticationStatementAuthMethod" => "localdb",
+          ];
 
-        if(Auth::user()->role != 2)
+          Session()->put('current_user', $user);
+          return redirect()->route('home');
+        }
+        elseif(Auth::user()->role == 3)
+        {
+          //Simulate SSO attributes
+          $user = [
+            "uid" => Auth::user()->email,
+            "mail" => Auth::user()->email,
+            "eduPersonAffiliation" => "",
+            "sn" => "",
+            "eduPersonPrimaryAffiliation" => "",
+            "eduPersonOrgUnitDN" => "",
+            "cn" => Auth::user()->name,
+            "GUStudentSemester" => "12",
+            "GUStudentDepartmentID" => "371",
+            "ou" => "ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ",
+            "GUStudentType" => "superadmin",
+            "GUStudentID" => "",
+            "GUPersonID" => "",
+            "givenName" => "",
+            "authenticationMethod" => "localdb",
+            "samlAuthenticationStatementAuthMethod" => "localdb",
+          ];
+
+          Session()->put('current_user', $user);
+          return redirect()->route('home');
+        }
+        else
         {
           Auth::logout();
           return redirect()->route('admin_login');
         }
-
-        //Simulate SSO attributes
-        $user = [
-          "uid" => Auth::user()->email,
-          "mail" => Auth::user()->email,
-          "eduPersonAffiliation" => "",
-          "sn" => "",
-          "eduPersonPrimaryAffiliation" => "",
-          "eduPersonOrgUnitDN" => "",
-          "cn" => Auth::user()->name,
-          "GUStudentSemester" => "12",
-          "GUStudentDepartmentID" => "371",
-          "ou" => "ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ",
-          "GUStudentType" => "administrator",
-          "GUStudentID" => "",
-          "GUPersonID" => "",
-          "givenName" => "",
-          "authenticationMethod" => "localdb",
-          "samlAuthenticationStatementAuthMethod" => "localdb",
-        ];
-
-        Session()->put('current_user', $user);
-
-        return redirect()->route('home');
       }
       else
         return redirect()->route('admin_login');
