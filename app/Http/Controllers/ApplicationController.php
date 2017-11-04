@@ -203,8 +203,10 @@ class ApplicationController extends Controller
         3 => "C1",
         4 => "C2"
       ];
+	  
 
-		  $application = Application::findOrFail($id)->first();
+
+		  $application = Application::findOrFail($id);
 
       return view('erasmus.viewapplicationid')->with('application',$application)
                                               ->with('universities',$universities)
