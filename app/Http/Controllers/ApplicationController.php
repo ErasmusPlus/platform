@@ -195,6 +195,8 @@ class ApplicationController extends Controller
 
     public function view_appid($id)
     {
+		
+		
       $universities = University::pluck('name', 'id');
       $languages = Language::pluck('name', 'id');
       $langlevel = [
@@ -207,6 +209,11 @@ class ApplicationController extends Controller
 
 
 		  $application = Application::findOrFail($id);
+		  
+		if ( ! $application->spec_aem == EGuard::user()->id )
+		{
+			return redirect()->back();
+		}
 
       return view('erasmus.viewapplicationid')->with('application',$application)
                                               ->with('universities',$universities)
