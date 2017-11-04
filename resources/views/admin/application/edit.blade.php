@@ -165,7 +165,7 @@
                   <div class="col-md-12">
 				   <td>
   
-		  @if($application->publictel == true)
+		  @if($application->publictel == 1 )
             {!! Form::checkbox('publictel', 1 , true ) !!}           
           @else
          {!! Form::checkbox('publictel', 1 , false ) !!}
