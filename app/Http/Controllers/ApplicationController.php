@@ -244,7 +244,7 @@ class ApplicationController extends Controller
         4 => "C2"
       ];
 	 
-	 return view('erasmus.application.edit')->with('application',$application)
+	 return view('erasmus.edit')->with('application',$application)
                                            ->with('universities',$universities)
                                            ->with('languages',$languages)
                                            ->with('langlevel',$langlevel);
