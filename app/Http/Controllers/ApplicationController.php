@@ -198,7 +198,8 @@ class ApplicationController extends Controller
 		
 				  $application = Application::findOrFail($id);
 		  
-	if (  $application->spec_aem != EGuard::user()->id )
+		  
+	if (  $application->spec_aem != EGuard::user()->id && EGuard::user()-> type == 'Undergraduate' )
 		{
 			return redirect('home');
 		}
