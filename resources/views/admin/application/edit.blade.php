@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@php ( $title='Επεξεργασία Αίτησης' )
+@php ( $title='Ξ•Ο€ΞµΞΎΞµΟΞ³Ξ±ΟƒΞ―Ξ± Ξ‘Ξ―Ο„Ξ·ΟƒΞ·Ο‚' )
 @php ( $description='')
 
 @section('css')
@@ -44,10 +44,10 @@
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#tab1">Ατομικά στοιχεία υποψηφίου</a></li>
-                <li><a data-toggle="tab" href="#tab2">Στοιχεία ακαδημαικής δραστηριότητας υποψηφίου</a></li>
-                <li><a data-toggle="tab" href="#tab3">Δικαιολογητικά</a></li>
-                <li><a data-toggle="tab" href="#tab4">Υποβολή αιτήσεως</a></li>
+                <li class="active"><a data-toggle="tab" href="#tab1">Ξ‘Ο„ΞΏΞΌΞΉΞΊΞ¬ ΟƒΟ„ΞΏΞΉΟ‡ΞµΞ―Ξ± Ο…Ο€ΞΏΟΞ·Ο†Ξ―ΞΏΟ…</a></li>
+                <li><a data-toggle="tab" href="#tab2">Ξ£Ο„ΞΏΞΉΟ‡ΞµΞ―Ξ± Ξ±ΞΊΞ±Ξ΄Ξ·ΞΌΞ±ΞΉΞΊΞ®Ο‚ Ξ΄ΟΞ±ΟƒΟ„Ξ·ΟΞΉΟΟ„Ξ·Ο„Ξ±Ο‚ Ο…Ο€ΞΏΟΞ·Ο†Ξ―ΞΏΟ…</a></li>
+                <li><a data-toggle="tab" href="#tab3">Ξ”ΞΉΞΊΞ±ΞΉΞΏΞ»ΞΏΞ³Ξ·Ο„ΞΉΞΊΞ¬</a></li>
+                <li><a data-toggle="tab" href="#tab4">Ξ¥Ο€ΞΏΞ²ΞΏΞ»Ξ® Ξ±ΞΉΟ„Ξ®ΟƒΞµΟ‰Ο‚</a></li>
               </ul>
 			  {!! Form::open(array('action' => ('ApplicationController@store') , 'files' => true)) !!}
                 <!-- text input -->
@@ -58,7 +58,7 @@
              
               <div class="row">
                   <div class="col-md-6">
-        					{!! Form::label('surname_en','Surname (όπως αναγράφεται στο διαβατήριό σας)') !!}
+        					{!! Form::label('surname_en','Surname (ΟΟ€Ο‰Ο‚ Ξ±Ξ½Ξ±Ξ³ΟΞ¬Ο†ΞµΟ„Ξ±ΞΉ ΟƒΟ„ΞΏ Ξ΄ΞΉΞ±Ξ²Ξ±Ο„Ξ®ΟΞΉΟ ΟƒΞ±Ο‚)') !!}
         					{!! Form::text('surname_en',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-6">
@@ -69,68 +69,68 @@
 
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::label('fathersname','Όνομα πατρός/Father\'s Name') !!}
+        					{!! Form::label('fathersname','ΞΞ½ΞΏΞΌΞ± Ο€Ξ±Ο„ΟΟΟ‚/Father\'s Name') !!}
         					{!! Form::text('fathersname',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
-        					{!! Form::label('mothersname','Όνομα μητρός/Mother\'s Name') !!}
+        					{!! Form::label('mothersname','ΞΞ½ΞΏΞΌΞ± ΞΌΞ·Ο„ΟΟΟ‚/Mother\'s Name') !!}
         					{!! Form::text('mothersname',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-1">
-                  {!! Form::label('age','Ηλικία/Age') !!}
+                  {!! Form::label('age','Ξ—Ξ»ΞΉΞΊΞ―Ξ±/Age') !!}
                   {!! Form::number('age',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
-                  {!! Form::label('idno','Αριθμός Δελτίου Ταυτότητας/I.D. No') !!}
+                  {!! Form::label('idno','Ξ‘ΟΞΉΞΈΞΌΟΟ‚ Ξ”ΞµΞ»Ο„Ξ―ΞΏΟ… Ξ¤Ξ±Ο…Ο„ΟΟ„Ξ·Ο„Ξ±Ο‚/I.D. No') !!}
                   {!! Form::text('idno',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
-        					{!! Form::label('iddate','Ημ/νία έκδοσης ταυτότητας') !!}
+        					{!! Form::label('iddate','Ξ—ΞΌ/Ξ½Ξ―Ξ± Ξ­ΞΊΞ΄ΞΏΟƒΞ·Ο‚ Ο„Ξ±Ο…Ο„ΟΟ„Ξ·Ο„Ξ±Ο‚') !!}
         					{!! Form::text('iddate',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::label('idloc','Αρχή Έκδοσης ταυτότητας') !!}
+                  {!! Form::label('idloc','Ξ‘ΟΟ‡Ξ® ΞΞΊΞ΄ΞΏΟƒΞ·Ο‚ Ο„Ξ±Ο…Ο„ΟΟ„Ξ·Ο„Ξ±Ο‚') !!}
                   {!! Form::text('idloc',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-4">
-                  {!! Form::label('amka','ΑΜΚΑ') !!}
+                  {!! Form::label('amka','Ξ‘ΞΞΞ‘') !!}
                   {!! Form::text('amka',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::label('birthplace','Τόπος Γεννήσεως/Place of Birth') !!}
+        					{!! Form::label('birthplace','Ξ¤ΟΟ€ΞΏΟ‚ Ξ“ΞµΞ½Ξ½Ξ®ΟƒΞµΟ‰Ο‚/Place of Birth') !!}
         					{!! Form::text('birthplace',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-3">
-        					{!! Form::label('birthdate','Ημερομηνία γεννήσεως/Birth of Birth') !!}
+        					{!! Form::label('birthdate','Ξ—ΞΌΞµΟΞΏΞΌΞ·Ξ½Ξ―Ξ± Ξ³ΞµΞ½Ξ½Ξ®ΟƒΞµΟ‰Ο‚/Birth of Birth') !!}
         					{!! Form::text('birthdate',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-2">
-                  {!! Form::label('prefecture','Νομός/Prefecture:') !!}
+                  {!! Form::label('prefecture','ΞΞΏΞΌΟΟ‚/Prefecture:') !!}
                   {!! Form::text('prefecture',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
-                  {!! Form::label('citizenship','Υπηκοότητα/Citizenship:') !!}
+                  {!! Form::label('citizenship','Ξ¥Ο€Ξ·ΞΊΞΏΟΟ„Ξ·Ο„Ξ±/Citizenship:') !!}
                   {!! Form::text('citizenship',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
 
               <div class="row">
-                <h5><b>Διεύθυνση κατοικίας</b></h5>
+                <h5><b>Ξ”ΞΉΞµΟΞΈΟ…Ξ½ΟƒΞ· ΞΊΞ±Ο„ΞΏΞΉΞΊΞ―Ξ±Ο‚</b></h5>
                   <div class="col-md-3">
 
-                  {!! Form::label('address_el','Οδός') !!}
+                  {!! Form::label('address_el','ΞΞ΄ΟΟ‚') !!}
                   {!! Form::text('address_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
-                  {!! Form::label('nο_el','Αριθμός') !!}
-                  {!! Form::number('nο_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::label('nΞΏ_el','Ξ‘ΟΞΉΞΈΞΌΟΟ‚') !!}
+                  {!! Form::number('nΞΏ_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
-                  {!! Form::label('city_el','Πόλη') !!}
+                  {!! Form::label('city_el','Ξ ΟΞ»Ξ·') !!}
                   {!! Form::text('city_el',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
@@ -138,7 +138,7 @@
                   {!! Form::number('tk',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
-                  {!! Form::label('address_en','Address (με λατινικούς χαρακτήρες)') !!}
+                  {!! Form::label('address_en','Address (ΞΌΞµ Ξ»Ξ±Ο„ΞΉΞ½ΞΉΞΊΞΏΟΟ‚ Ο‡Ξ±ΟΞ±ΞΊΟ„Ξ®ΟΞµΟ‚)') !!}
                   {!! Form::text('address_en',null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
@@ -148,15 +148,15 @@
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::label('tel','Σταθερό τηλέφωνο') !!}
+        					{!! Form::label('tel','Ξ£Ο„Ξ±ΞΈΞµΟΟ Ο„Ξ·Ξ»Ξ­Ο†Ο‰Ξ½ΞΏ') !!}
         					{!! Form::text('tel',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
-        					{!! Form::label('mobtel','Κινητό τηλέφωνο') !!}
+        					{!! Form::label('mobtel','ΞΞΉΞ½Ξ·Ο„Ο Ο„Ξ·Ξ»Ξ­Ο†Ο‰Ξ½ΞΏ') !!}
         					{!! Form::text('mobtel',null, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::label('email','Email (απαραίτητο)') !!}
+                  {!! Form::label('email','Email (Ξ±Ο€Ξ±ΟΞ±Ξ―Ο„Ξ·Ο„ΞΏ)') !!}
                   {!! Form::text('email',null, ['class' => 'form-control']) !!}
                 </div>
               </div>
@@ -164,13 +164,13 @@
               <div class="row">
                   <div class="col-md-12">
                     {!! Form::checkbox('publictel') !!}
-                  {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
+                  {!! Form::label('publictel','Ξ£Ο…ΞΌΟ†Ο‰Ξ½Ο Ξ½Ξ± Ξ΄Ξ―Ξ½ΞµΟ„Ξ±ΞΉ Ο„ΞΏ Ο„Ξ·Ξ»Ξ­Ο†Ο‰Ξ½Ο ΞΌΞΏΟ… ΟƒΞµ Ο€ΞµΟΞ―Ο€Ο„Ο‰ΟƒΞ· Ο€ΞΏΟ… Ξ¶Ξ·Ο„Ξ·ΞΈΞµΞ― Ξ±Ο€Ο Ξ¬Ξ»Ξ»ΞΏΟ…Ο‚ Ο†ΞΏΞΉΟ„Ξ·Ο„Ξ­Ο‚ ERASMUS') !!}
 
                 </div>
                   </div>
                   <div class="row">
                 <div class="col-md-12">
-                  {!! Form::label('insurance','Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό: ',['class'=>'pull-left', 'style'=>'padding-top:7px']) !!}
+                  {!! Form::label('insurance','Ξ‘ΟƒΟ†Ξ±Ξ»ΞΉΟƒΟ„ΞΉΞΊΟΟ‚ ΞΟΞ³Ξ±Ξ½ΞΉΟƒΞΌΟΟ‚ Ο€ΞΏΟ… ΞΈΞ± ΞΊΞ±Ξ»ΟΟ€Ο„ΞµΞΉ Ο„Ξ·Ξ½ ΞΉΞ±Ο„ΟΞΏΟ†Ξ±ΟΞΌΞ±ΞΊΞµΟ…Ο„ΞΉΞΊΞ® Ο€ΞµΟΞ―ΞΈΞ±Ξ»ΟΞ· Ο„ΞΏΟ… Ο…Ο€ΞΏΟΞ·Ο†Ξ―ΞΏΟ… ΟƒΟ„ΞΏ ΞµΞΎΟ‰Ο„ΞµΟΞΉΞΊΟ: ',['class'=>'pull-left', 'style'=>'padding-top:7px']) !!}
 <div class="col-md-4">
                   {!! Form::text('insurance',null, ['class' => 'form-control']) !!}
                 </div>
@@ -178,41 +178,41 @@
 
               </div>
               <hr>
-              <a id="nexttab1" href="#tab2" class="btn btn-primary pull-right" role="button">Επόμενo</a>
+              <a id="nexttab1" href="#tab2" class="btn btn-primary pull-right" role="button">Ξ•Ο€ΟΞΌΞµΞ½o</a>
             </div>
             </div>
             <div id="tab2" class="tab-pane fade">
              
               <br>
-              <h5><b>Ξένες γλώσσες και επίπεδο γλωσσομάθειας:</b></h5>
+              <h5><b>ΞΞ­Ξ½ΞµΟ‚ Ξ³Ξ»ΟΟƒΟƒΞµΟ‚ ΞΊΞ±ΞΉ ΞµΟ€Ξ―Ο€ΞµΞ΄ΞΏ Ξ³Ξ»Ο‰ΟƒΟƒΞΏΞΌΞ¬ΞΈΞµΞΉΞ±Ο‚:</b></h5>
               <div class="row">
                   <div class="col-md-4">
                     <div class="col-md-8">
-                      {!! Form::label('lang_id1','Γλώσσα') !!}
-          					  {!! Form::select('lang_id1',$languages,null, ['class' => 'form-control pull-right', 'placeholder' => "Επιλέξτε πρώτη γλώσσα"]) !!}
+                      {!! Form::label('lang_id1','Ξ“Ξ»ΟΟƒΟƒΞ±') !!}
+          					  {!! Form::select('lang_id1',$languages,null, ['class' => 'form-control pull-right', 'placeholder' => "Ξ•Ο€ΞΉΞ»Ξ­ΞΎΟ„Ξµ Ο€ΟΟΟ„Ξ· Ξ³Ξ»ΟΟƒΟƒΞ±"]) !!}
                     </div>
                     <div class="col-md-4">
-                      {!! Form::label('langlevel1','Επίπεδο') !!}
+                      {!! Form::label('langlevel1','Ξ•Ο€Ξ―Ο€ΞµΞ΄ΞΏ') !!}
                       {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
 					          </div>
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
-                      {!! Form::label('lang_id2','Γλώσσα') !!}
-          					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε δεύτερη γλώσσα"]) !!}
+                      {!! Form::label('lang_id2','Ξ“Ξ»ΟΟƒΟƒΞ±') !!}
+          					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Ξ•Ο€ΞΉΞ»Ξ­ΞΎΟ„Ξµ Ξ΄ΞµΟΟ„ΞµΟΞ· Ξ³Ξ»ΟΟƒΟƒΞ±"]) !!}
 					          </div>
                     <div class="col-md-4">
-                      {!! Form::label('langlevel2','Επίπεδο') !!}
+                      {!! Form::label('langlevel2','Ξ•Ο€Ξ―Ο€ΞµΞ΄ΞΏ') !!}
                       {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
 					          </div>
         				</div>
                   <div class="col-md-4">
                     <div class="col-md-8">
-                      {!! Form::label('lang_id3','Γλώσσα') !!}
-          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}
+                      {!! Form::label('lang_id3','Ξ“Ξ»ΟΟƒΟƒΞ±') !!}
+          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Ξ•Ο€ΞΉΞ»Ξ­ΞΎΟ„Ξµ Ο„ΟΞ―Ο„Ξ· Ξ³Ξ»ΟΟƒΟƒΞ±"]) !!}
 					</div>
                     <div class="col-md-4">
-                      {!! Form::label('langlevel3','Επίπεδο') !!}
+                      {!! Form::label('langlevel3','Ξ•Ο€Ξ―Ο€ΞµΞ΄ΞΏ') !!}
                       {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
 
 
@@ -230,99 +230,99 @@
 
 
               <br>
-              <h5><b>Επιθυμώ να πραγματοποιήσω μια περίοδο σπουδών σε ένα απο τα παρακάτω Πανεπιστήμια με σειρά προτεραιότητας:</b></h5>
+              <h5><b>Ξ•Ο€ΞΉΞΈΟ…ΞΌΟ Ξ½Ξ± Ο€ΟΞ±Ξ³ΞΌΞ±Ο„ΞΏΟ€ΞΏΞΉΞ®ΟƒΟ‰ ΞΌΞΉΞ± Ο€ΞµΟΞ―ΞΏΞ΄ΞΏ ΟƒΟ€ΞΏΟ…Ξ΄ΟΞ½ ΟƒΞµ Ξ­Ξ½Ξ± Ξ±Ο€ΞΏ Ο„Ξ± Ο€Ξ±ΟΞ±ΞΊΞ¬Ο„Ο‰ Ξ Ξ±Ξ½ΞµΟ€ΞΉΟƒΟ„Ξ®ΞΌΞΉΞ± ΞΌΞµ ΟƒΞµΞΉΟΞ¬ Ο€ΟΞΏΟ„ΞµΟΞ±ΞΉΟΟ„Ξ·Ο„Ξ±Ο‚:</b></h5>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::select('u1_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u1_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ½ΞΏΞΌΞ± Ο€Ξ±Ξ½ΞµΟ€ΞΉΟƒΟ„Ξ·ΞΌΞ―ΞΏΟ…']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::text('u1_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+                  {!! Form::text('u1_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Ξ¤ΞΏΞΌΞ­Ξ±Ο‚ Ξ£Ο€ΞΏΟ…Ξ΄ΟΞ½']) !!}
         				</div>
                 <div class="col-md-2">
-                  {!! Form::label('u1_semester','Χειμερινό') !!}
+                  {!! Form::label('u1_semester','Ξ§ΞµΞΉΞΌΞµΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u1_semester', '1') }}
-                  {!! Form::label('u1_semester','Εαρινό') !!}
+                  {!! Form::label('u1_semester','Ξ•Ξ±ΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u1_semester', '2') }}
                 </div>
                 <div class="col-md-2">
-                  {!! Form::number('u1_months',null, ['min' => '3','max' => '12' , 'class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                  {!! Form::number('u1_months',null, ['min' => '3','max' => '12' , 'class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ®Ξ½ΞµΟ‚']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::select('u2_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u2_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ½ΞΏΞΌΞ± Ο€Ξ±Ξ½ΞµΟ€ΞΉΟƒΟ„Ξ·ΞΌΞ―ΞΏΟ…']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::text('u2_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+                  {!! Form::text('u2_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Ξ¤ΞΏΞΌΞ­Ξ±Ο‚ Ξ£Ο€ΞΏΟ…Ξ΄ΟΞ½']) !!}
         				</div>
                 <div class="col-md-2">
-                  {!! Form::label('u2_semester','Χειμερινό') !!}
+                  {!! Form::label('u2_semester','Ξ§ΞµΞΉΞΌΞµΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u2_semester', '1') }}
-                  {!! Form::label('u2_semester','Εαρινό') !!}
+                  {!! Form::label('u2_semester','Ξ•Ξ±ΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u2_semester', '2') }}
                 </div>
                 <div class="col-md-2">
-                  {!! Form::text('u2_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                  {!! Form::text('u2_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ®Ξ½ΞµΟ‚']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
-        					{!! Form::select('u3_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
+        					{!! Form::select('u3_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ½ΞΏΞΌΞ± Ο€Ξ±Ξ½ΞµΟ€ΞΉΟƒΟ„Ξ·ΞΌΞ―ΞΏΟ…']) !!}
         				</div>
                 <div class="col-md-4">
-                  {!! Form::text('u3_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
+                  {!! Form::text('u3_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Ξ¤ΞΏΞΌΞ­Ξ±Ο‚ Ξ£Ο€ΞΏΟ…Ξ΄ΟΞ½']) !!}
         				</div>
                 <div class="col-md-2">
-                  {!! Form::label('u3_semester','Χειμερινό') !!}
+                  {!! Form::label('u3_semester','Ξ§ΞµΞΉΞΌΞµΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u3_semester', '1') }}
-                  {!! Form::label('u3_semester','Εαρινό') !!}
+                  {!! Form::label('u3_semester','Ξ•Ξ±ΟΞΉΞ½Ο') !!}
                   {{ Form::radio('u3_semester', '2') }}
                 </div>
                 <div class="col-md-2">
-                  {!! Form::text('u3_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
+                  {!! Form::text('u3_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'ΞΞ®Ξ½ΞµΟ‚']) !!}
                 </div>
               </div>
-              <h5><i>**Σημειώνεται ότι η αιτούμενη υποτροφία μπορεί να είναι διάρκειας 3 (τριών) έως 12 (δώδεκα) μηνών</i></h5>
+              <h5><i>**Ξ£Ξ·ΞΌΞµΞΉΟΞ½ΞµΟ„Ξ±ΞΉ ΟΟ„ΞΉ Ξ· Ξ±ΞΉΟ„ΞΏΟΞΌΞµΞ½Ξ· Ο…Ο€ΞΏΟ„ΟΞΏΟ†Ξ―Ξ± ΞΌΟ€ΞΏΟΞµΞ― Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄ΞΉΞ¬ΟΞΊΞµΞΉΞ±Ο‚ 3 (Ο„ΟΞΉΟΞ½) Ξ­Ο‰Ο‚ 12 (Ξ΄ΟΞ΄ΞµΞΊΞ±) ΞΌΞ·Ξ½ΟΞ½</i></h5>
               <hr>
             {!! Form::checkbox('l1') !!}
-            {!! Form::label('l1','Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
+            {!! Form::label('l1','Ξ£Ο…ΞΌΟ†Ο‰Ξ½Ο Ξ½Ξ± Ξ΄Ξ―Ξ½ΞµΟ„Ξ±ΞΉ Ο„ΞΏ email ΞΌΞΏΟ… ΟƒΞµ Ο€ΞµΟΞ―Ο€Ο„Ο‰ΟƒΞ· Ο€ΞΏΟ… Ξ¶Ξ·Ο„Ξ·ΞΈΞµΞ― Ξ±Ο€Ο Ξ¬Ξ»Ξ»ΞΏΟ…Ο‚ Ο†ΞΏΞΉΟ„Ξ·Ο„Ξ­Ο‚ ERASMUS') !!}
             <br>
             {!! Form::checkbox('l2') !!}
-            {!! Form::label('l2','Είμαι άτομο με αναπηρίες, σύμφωνα με τον κατάλογο που χρησιμοποιεί η Ε.Μ') !!}
+            {!! Form::label('l2','Ξ•Ξ―ΞΌΞ±ΞΉ Ξ¬Ο„ΞΏΞΌΞΏ ΞΌΞµ Ξ±Ξ½Ξ±Ο€Ξ·ΟΞ―ΞµΟ‚, ΟƒΟΞΌΟ†Ο‰Ξ½Ξ± ΞΌΞµ Ο„ΞΏΞ½ ΞΊΞ±Ο„Ξ¬Ξ»ΞΏΞ³ΞΏ Ο€ΞΏΟ… Ο‡ΟΞ·ΟƒΞΉΞΌΞΏΟ€ΞΏΞΉΞµΞ― Ξ· Ξ•.Ξ') !!}
             <br>
             {!! Form::checkbox('l3') !!}
-            {!! Form::label('l3','Έχω συμπληρώσει το 25ο έτος της ηλικίας και το ατομικό μου εισόδημα δεν ξεπερνά τα 9.000Ε') !!}
+            {!! Form::label('l3','ΞΟ‡Ο‰ ΟƒΟ…ΞΌΟ€Ξ»Ξ·ΟΟΟƒΞµΞΉ Ο„ΞΏ 25ΞΏ Ξ­Ο„ΞΏΟ‚ Ο„Ξ·Ο‚ Ξ·Ξ»ΞΉΞΊΞ―Ξ±Ο‚ ΞΊΞ±ΞΉ Ο„ΞΏ Ξ±Ο„ΞΏΞΌΞΉΞΊΟ ΞΌΞΏΟ… ΞµΞΉΟƒΟΞ΄Ξ·ΞΌΞ± Ξ΄ΞµΞ½ ΞΎΞµΟ€ΞµΟΞ½Ξ¬ Ο„Ξ± 9.000Ξ•') !!}
             <br>
 
 		   {!! Form::checkbox('l4') !!}
-            {!! Form::label('l4','Δεν έχω συμπληρώσει το 25ο έτος της ηλικίας και προέρχομαι απο οικογένεια που το οικογενειακό εισόδημα δεν υπερβαίνει τις 9.000Ε κατά το πλέον πρόσφατο οικονομικό έτος') !!}
+            {!! Form::label('l4','Ξ”ΞµΞ½ Ξ­Ο‡Ο‰ ΟƒΟ…ΞΌΟ€Ξ»Ξ·ΟΟΟƒΞµΞΉ Ο„ΞΏ 25ΞΏ Ξ­Ο„ΞΏΟ‚ Ο„Ξ·Ο‚ Ξ·Ξ»ΞΉΞΊΞ―Ξ±Ο‚ ΞΊΞ±ΞΉ Ο€ΟΞΏΞ­ΟΟ‡ΞΏΞΌΞ±ΞΉ Ξ±Ο€ΞΏ ΞΏΞΉΞΊΞΏΞ³Ξ­Ξ½ΞµΞΉΞ± Ο€ΞΏΟ… Ο„ΞΏ ΞΏΞΉΞΊΞΏΞ³ΞµΞ½ΞµΞΉΞ±ΞΊΟ ΞµΞΉΟƒΟΞ΄Ξ·ΞΌΞ± Ξ΄ΞµΞ½ Ο…Ο€ΞµΟΞ²Ξ±Ξ―Ξ½ΞµΞΉ Ο„ΞΉΟ‚ 9.000Ξ• ΞΊΞ±Ο„Ξ¬ Ο„ΞΏ Ο€Ξ»Ξ­ΞΏΞ½ Ο€ΟΟΟƒΟ†Ξ±Ο„ΞΏ ΞΏΞΉΞΊΞΏΞ½ΞΏΞΌΞΉΞΊΟ Ξ­Ο„ΞΏΟ‚') !!}
 
 		   <br>
             {!! Form::checkbox('l5') !!}
-            {!! Form::label('l5','Προέρχομαι απο πολύτεκνη οικογένεια (4 τέκνα και άνω τα οποία βρίσκονται σε κάποια βαθμίδα εκπαίδευσης) και το οικογενειακό και ατομικό μου εισόδημα δεν υπερβαίνει τις 22.000Ε κατά το πλέον πρόσφατο οικονομικό έτος.') !!}
+            {!! Form::label('l5','Ξ ΟΞΏΞ­ΟΟ‡ΞΏΞΌΞ±ΞΉ Ξ±Ο€ΞΏ Ο€ΞΏΞ»ΟΟ„ΞµΞΊΞ½Ξ· ΞΏΞΉΞΊΞΏΞ³Ξ­Ξ½ΞµΞΉΞ± (4 Ο„Ξ­ΞΊΞ½Ξ± ΞΊΞ±ΞΉ Ξ¬Ξ½Ο‰ Ο„Ξ± ΞΏΟ€ΞΏΞ―Ξ± Ξ²ΟΞ―ΟƒΞΊΞΏΞ½Ο„Ξ±ΞΉ ΟƒΞµ ΞΊΞ¬Ο€ΞΏΞΉΞ± Ξ²Ξ±ΞΈΞΌΞ―Ξ΄Ξ± ΞµΞΊΟ€Ξ±Ξ―Ξ΄ΞµΟ…ΟƒΞ·Ο‚) ΞΊΞ±ΞΉ Ο„ΞΏ ΞΏΞΉΞΊΞΏΞ³ΞµΞ½ΞµΞΉΞ±ΞΊΟ ΞΊΞ±ΞΉ Ξ±Ο„ΞΏΞΌΞΉΞΊΟ ΞΌΞΏΟ… ΞµΞΉΟƒΟΞ΄Ξ·ΞΌΞ± Ξ΄ΞµΞ½ Ο…Ο€ΞµΟΞ²Ξ±Ξ―Ξ½ΞµΞΉ Ο„ΞΉΟ‚ 22.000Ξ• ΞΊΞ±Ο„Ξ¬ Ο„ΞΏ Ο€Ξ»Ξ­ΞΏΞ½ Ο€ΟΟΟƒΟ†Ξ±Ο„ΞΏ ΞΏΞΉΞΊΞΏΞ½ΞΏΞΌΞΉΞΊΟ Ξ­Ο„ΞΏΟ‚.') !!}
             <br>
             {!! Form::checkbox('l6') !!}
-            {!! Form::label('l6','Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη') !!}
+            {!! Form::label('l6','ΞΟ‡Ο‰ Ξ±ΞΊΟ…ΟΟΟƒΞµΞΉ Ο„Ξ· ΟƒΟ…ΞΌΞΌΞµΟ„ΞΏΟ‡Ξ® ΞΌΞΏΟ… ΟƒΟ„ΞΏ Ξ ΟΟΞ³ΟΞ±ΞΌΞΌΞ± Ξ£Ο€ΞΏΟ…Ξ΄ΟΞ½ LLP/ERASMUS ΞΊΞ±Ο„Ξ¬ Ο„Ξ± Ο€ΟΞΏΞ·Ξ³ΞΏΟΞΌΞµΞ½Ξ± Ξ±ΞΊΞ±Ξ΄Ξ·ΞΌΞ±ΞΉΞΊΞ¬ Ξ­Ο„Ξ·') !!}
 
             <hr>
-            <a id="nexttab2" href="#tab3" class="btn btn-primary pull-right" role="button">Επόμενo</a>
+            <a id="nexttab2" href="#tab3" class="btn btn-primary pull-right" role="button">Ξ•Ο€ΟΞΌΞµΞ½o</a>
 
 
             </div>
             <div id="tab3" class="tab-pane fade">
               <br>
-            <h4><b>Δικαιολογητικά υποβολής αίτησης</b></h4>
+            <h4><b>Ξ”ΞΉΞΊΞ±ΞΉΞΏΞ»ΞΏΞ³Ξ·Ο„ΞΉΞΊΞ¬ Ο…Ο€ΞΏΞ²ΞΏΞ»Ξ®Ο‚ Ξ±Ξ―Ο„Ξ·ΟƒΞ·Ο‚</b></h4>
               <h5>
-                Για την αξιολόγηση της αιτήσεως σας απαιτούνται τα ακόλουθα πιστοποιητικά:
+                Ξ“ΞΉΞ± Ο„Ξ·Ξ½ Ξ±ΞΎΞΉΞΏΞ»ΟΞ³Ξ·ΟƒΞ· Ο„Ξ·Ο‚ Ξ±ΞΉΟ„Ξ®ΟƒΞµΟ‰Ο‚ ΟƒΞ±Ο‚ Ξ±Ο€Ξ±ΞΉΟ„ΞΏΟΞ½Ο„Ξ±ΞΉ Ο„Ξ± Ξ±ΞΊΟΞ»ΞΏΟ…ΞΈΞ± Ο€ΞΉΟƒΟ„ΞΏΟ€ΞΏΞΉΞ·Ο„ΞΉΞΊΞ¬:
                 <br><br>
-                α) Σύντομο βιογραφικό σημείωμα
+                Ξ±) Ξ£ΟΞ½Ο„ΞΏΞΌΞΏ Ξ²ΞΉΞΏΞ³ΟΞ±Ο†ΞΉΞΊΟ ΟƒΞ·ΞΌΞµΞ―Ο‰ΞΌΞ±
                 <br>
-                β) Αντίγραφα πιστοιποιητικών γλωσσομάθειας
+                Ξ²) Ξ‘Ξ½Ο„Ξ―Ξ³ΟΞ±Ο†Ξ± Ο€ΞΉΟƒΟ„ΞΏΞΉΟ€ΞΏΞΉΞ·Ο„ΞΉΞΊΟΞ½ Ξ³Ξ»Ο‰ΟƒΟƒΞΏΞΌΞ¬ΞΈΞµΞΉΞ±Ο‚
                 <br>
-                γ) Οποιαδήποτε βεβαίωση/πιστοποιητικό (αντίγραφο) για απόδειξη εμπειρίας ή συμμετοχής σε συνέδρια, θερινά σχολεία, προγράμματα επιμόρφωσης
+                Ξ³) ΞΟ€ΞΏΞΉΞ±Ξ΄Ξ®Ο€ΞΏΟ„Ξµ Ξ²ΞµΞ²Ξ±Ξ―Ο‰ΟƒΞ·/Ο€ΞΉΟƒΟ„ΞΏΟ€ΞΏΞΉΞ·Ο„ΞΉΞΊΟ (Ξ±Ξ½Ο„Ξ―Ξ³ΟΞ±Ο†ΞΏ) Ξ³ΞΉΞ± Ξ±Ο€ΟΞ΄ΞµΞΉΞΎΞ· ΞµΞΌΟ€ΞµΞΉΟΞ―Ξ±Ο‚ Ξ® ΟƒΟ…ΞΌΞΌΞµΟ„ΞΏΟ‡Ξ®Ο‚ ΟƒΞµ ΟƒΟ…Ξ½Ξ­Ξ΄ΟΞΉΞ±, ΞΈΞµΟΞΉΞ½Ξ¬ ΟƒΟ‡ΞΏΞ»ΞµΞ―Ξ±, Ο€ΟΞΏΞ³ΟΞ¬ΞΌΞΌΞ±Ο„Ξ± ΞµΟ€ΞΉΞΌΟΟΟ†Ο‰ΟƒΞ·Ο‚
             </h5>
             <br>
-            Συγκεντρώστε τα δικαιολογητικά σας σε ενα αρχείο συμπίεσης (zip) και επιλέξτε το.
+            Ξ£Ο…Ξ³ΞΊΞµΞ½Ο„ΟΟΟƒΟ„Ξµ Ο„Ξ± Ξ΄ΞΉΞΊΞ±ΞΉΞΏΞ»ΞΏΞ³Ξ·Ο„ΞΉΞΊΞ¬ ΟƒΞ±Ο‚ ΟƒΞµ ΞµΞ½Ξ± Ξ±ΟΟ‡ΞµΞ―ΞΏ ΟƒΟ…ΞΌΟ€Ξ―ΞµΟƒΞ·Ο‚ (zip) ΞΊΞ±ΞΉ ΞµΟ€ΞΉΞ»Ξ­ΞΎΟ„Ξµ Ο„ΞΏ.
         			<div class="row">
         				<div class="col-md-12">
         					<input type="file" name="documents"  />
@@ -331,17 +331,17 @@
 
 
 
-              <a id="nexttab3" href="#tab4" class="btn btn-primary pull-right" role="button">Επόμενo</a>
+              <a id="nexttab3" href="#tab4" class="btn btn-primary pull-right" role="button">Ξ•Ο€ΟΞΌΞµΞ½o</a>
             </div>
 
             <div id="tab4" class="tab-pane fade">
               <br>
-              <h4><b>Με την υποβολή της αίτησης μου δηλώνω υπεύθυνα ότι:</b></h4>
+              <h4><b>ΞΞµ Ο„Ξ·Ξ½ Ο…Ο€ΞΏΞ²ΞΏΞ»Ξ® Ο„Ξ·Ο‚ Ξ±Ξ―Ο„Ξ·ΟƒΞ·Ο‚ ΞΌΞΏΟ… Ξ΄Ξ·Ξ»ΟΞ½Ο‰ Ο…Ο€ΞµΟΞΈΟ…Ξ½Ξ± ΟΟ„ΞΉ:</b></h4>
 
                 <h5>
-                α) Δεν έχω τύχει υποτροφίας Erasmus κατά τα προηγούμενα ακαδημαικά Έτη, η οποία αθροιζόμενη με το παρόν αίτημα μετακίνησής μου να υπερβαίνει τους 12 μήνες
+                Ξ±) Ξ”ΞµΞ½ Ξ­Ο‡Ο‰ Ο„ΟΟ‡ΞµΞΉ Ο…Ο€ΞΏΟ„ΟΞΏΟ†Ξ―Ξ±Ο‚ Erasmus ΞΊΞ±Ο„Ξ¬ Ο„Ξ± Ο€ΟΞΏΞ·Ξ³ΞΏΟΞΌΞµΞ½Ξ± Ξ±ΞΊΞ±Ξ΄Ξ·ΞΌΞ±ΞΉΞΊΞ¬ ΞΟ„Ξ·, Ξ· ΞΏΟ€ΞΏΞ―Ξ± Ξ±ΞΈΟΞΏΞΉΞ¶ΟΞΌΞµΞ½Ξ· ΞΌΞµ Ο„ΞΏ Ο€Ξ±ΟΟΞ½ Ξ±Ξ―Ο„Ξ·ΞΌΞ± ΞΌΞµΟ„Ξ±ΞΊΞ―Ξ½Ξ·ΟƒΞ®Ο‚ ΞΌΞΏΟ… Ξ½Ξ± Ο…Ο€ΞµΟΞ²Ξ±Ξ―Ξ½ΞµΞΉ Ο„ΞΏΟ…Ο‚ 12 ΞΌΞ®Ξ½ΞµΟ‚
                 <br>
-                β) Όλες οι πληροφορίες που παρέχονται είναι ακριβείς.
+                Ξ²) ΞΞ»ΞµΟ‚ ΞΏΞΉ Ο€Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ Ο€ΞΏΟ… Ο€Ξ±ΟΞ­Ο‡ΞΏΞ½Ο„Ξ±ΞΉ ΞµΞ―Ξ½Ξ±ΞΉ Ξ±ΞΊΟΞΉΞ²ΞµΞ―Ο‚.
 
               </h5>
                 <br>
@@ -349,7 +349,7 @@
 
 
 
-               {!! Form::submit('Υποβολή αίτησης',array('class' => 'btn btn-primary')) !!}
+               {!! Form::submit('Ξ¥Ο€ΞΏΞ²ΞΏΞ»Ξ® Ξ±Ξ―Ο„Ξ·ΟƒΞ·Ο‚',array('class' => 'btn btn-primary')) !!}
             </div>
 
 
