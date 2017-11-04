@@ -26,5 +26,24 @@ class UserController extends Controller
     		$users = User::paginate(15);
         return view('superadmin.settings.users_index')->with('users',$users);
     }
+	
+   public function edit($id)
+    {
+        $user = user::findOrFail($id);
+		
+	
+        
+       // return view('university.edit')->with('languages',$languages)->with('university',$university);
+        return view('superadmin.settings.edit_users')->with('user',$user);
+    }
+	
+	
+	public function update(Request $request)
+	{
+			$user -> name = $request->input('name');
+			//$user -> password = $request->input('password');
+		    $user -> save();
+	    return redirect()->route('superadmin.user.index');
+	}
 
 }
