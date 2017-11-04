@@ -28,14 +28,6 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-	 
-	 public function edit($id)
-    {
-        $application = Application::findOrFail($request->input('id'));    
-       // return view('university.edit')->with('languages',$languages)->with('university',$university);
-        return view('admin.application.edit')->with('application',$application);
-    }
-	 
     public function unconfirmed()
     {
       $applications = Application::whereYear('created_at', '=', date('Y'))->where('confirmed',false)->get();
