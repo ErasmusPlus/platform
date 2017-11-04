@@ -63,7 +63,9 @@ class ApplicationController extends Controller
         3 => "C1",
         4 => "C2"
       ];
+		
 
+	  
       return view('admin.application.index')->with('applications',$applications)
                                             ->with('universities',$universities)
                                             ->with('languages',$languages)
