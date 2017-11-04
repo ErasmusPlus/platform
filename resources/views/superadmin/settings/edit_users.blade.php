@@ -19,14 +19,17 @@
 		
 		<hr>
 		
+	
 		 {{ Form::submit('Ενημέρωση εγγραφής',array('class' => 'btn btn-primary')) }}
-
+		<a href="{{route('superadmin.users.delete',$user->id)}}" class="btn btn-danger btn-md" role="button">Διαγραφή</a>
+	
 	
     
 	
 
       <!-- /.box-body -->
     </form>
+	
 </div>
   </div>
 </div>

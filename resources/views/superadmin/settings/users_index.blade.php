@@ -19,7 +19,7 @@
       		<div class="clearfix"></div>
       		<div class="row">
       		  <div class="col-xs-3">
-      			<a class="btn btn-primary" href="#" role="button"><i class="fa fa-plus"></i> Νέα εγγραφή</a>
+      			<a class="btn btn-primary" href="{{route('superadmin.settings.add_user')}}" role="button"><i class="fa fa-plus"></i> Νέα εγγραφή</a>
       		  </div>
       		  <div class="col-xs-6">
 
@@ -108,8 +108,10 @@
                         <td width="80px">
 
                           <a class="btn btn-default btn-xs" href="{{route('superadmin.settings.edit_user', $user->id )}}" role="button">Επεξεργασία</a>
+					
+					
 
-                        </td>
+					</td>
                     </tr>
                     @empty
                         <tr>

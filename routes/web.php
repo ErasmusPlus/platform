@@ -81,6 +81,11 @@ Route::group(['middleware' => ['cas.guard']], function () {
 
 	Route::get('/users/edit_users/{id}','Superadmin\UserController@edit')->name('superadmin.settings.edit_user');
 	Route::post('/users/edit_users','Superadmin\UserController@update');
-
+	
+	Route::get('/users/new','Superadmin\UserController@newuser')->name('superadmin.settings.add_user');
+	Route::post('/users/new','Superadmin\UserController@create');
+	Route::get('/users/delete/{id}','Superadmin\UserController@delete')->name('superadmin.users.delete');
+	
+	
   Route::get('/ranking','RankingController@index')->name('admin.ranking.index');
 });
