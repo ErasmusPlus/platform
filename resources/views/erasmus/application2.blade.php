@@ -55,16 +55,7 @@
                 <div class="tab-content">
                   <div id="tab1" class="tab-pane fade in active">
                 <div class='col-md-12'>
-              <div class="row">
-                  <div class="col-md-6">
-        					{!! Form::label('surname_el','Επώνυμο') !!}
-        					{!! Form::text('surname_el',EGuard::user()->lastname, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
-        				</div>
-                <div class="col-md-6">
-        					{!! Form::label('name_el','Όνομα') !!}
-        					{!! Form::text('name_el',EGuard::user()->firstname, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
-        				</div>
-              </div>
+             
               <div class="row">
                   <div class="col-md-6">
         					{!! Form::label('surname_en','Surname (όπως αναγράφεται στο διαβατήριό σας)') !!}
@@ -191,20 +182,7 @@
             </div>
             </div>
             <div id="tab2" class="tab-pane fade">
-              <div class="row">
-                  <div class="col-md-6">
-        					{!! Form::label('department','Τμήμα/Department') !!}
-        					{!! Form::text('department',$stdata->depname, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
-        				</div>
-                <div class="col-md-2">
-        					{!! Form::label('semester','Εξάμηνο σπουδών') !!}
-        					{!! Form::text('semester',$stdata->curr_semester, ['class' => 'form-control', 'readonly'=>'readonly']) !!}
-        				</div>
-                <div class="col-md-4">
-                  {!! Form::label('stlevel','Επίπεδο σπουδών') !!}
-                  {!! Form::text('stlevel',EGuard::user()->type , ['class' => 'form-control', 'readonly'=>'readonly']) !!}
-                </div>
-              </div>
+
               <br>
               <h5><b>Ξένες γλώσσες και επίπεδο γλωσσομάθειας:</b></h5>
               <div class="row">
