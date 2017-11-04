@@ -45,6 +45,17 @@ class UserController extends Controller
 	    public function create(Request $request)
     {
 
+	$validator = Validator::make($request->all(), [
+		 'name' => 'required',
+		 'password' => 'required|min:6',
+		 'email' => 'required|email',
+	 ]);
+	 
+	 if ($validator->fails()){
+		  return redirect()->back()->withErrors($validator)->withInput();
+	  }
+	
+	
       $user = new user();
       $user -> name = $request->input('name');
       $user -> password= $request->input('password');
@@ -73,6 +84,15 @@ class UserController extends Controller
 	
 	public function update(Request $request)
 	{
+			$validator = Validator::make($request->all(), [
+		 'name' => 'required',
+		 'password' => 'required|min:6',		 
+	 ]);
+	 
+	 if ($validator->fails()){
+		  return redirect()->back()->withErrors($validator)->withInput();
+	  }
+		
 		$user = user::findOrFail($request->input('id'));
 			$user -> name = $request->input('name');
 			$user -> password = $request->input('pass');

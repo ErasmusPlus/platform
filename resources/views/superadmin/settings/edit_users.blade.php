@@ -6,7 +6,16 @@
 <div class='row'>
   <div class='col-md-12'>
     <div class="panel panel-default">
-
+@if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+	
         <div class="panel-body">
 {{ Form::model( $user, array('action' => 'Superadmin\UserController@update')) }}
      {{ Form::hidden('id', $user->id) }}
@@ -15,7 +24,7 @@
         {{ Form::text('name', $user->name, array('class' => 'form-control') ) }}
 
         {{ Form::label('Κωδικός χρήστη') }}
-		{{ Form::text('pass',null, array('class' => 'form-control', 'placeholder' => 'Νέος κωδικός' )) }}
+		{{ Form::password('pass', array('class' => 'form-control', 'placeholder' => 'Νέος κωδικός' )) }}
 		
 		<hr>
 		

@@ -55,6 +55,15 @@ class UniversityController extends Controller
     public function create(Request $request)
     {
 
+			$validator = Validator::make($request->all(), [
+		 'name' => 'required',
+		 'cap' => 'required|numeric',		 
+	 ]);
+	 
+	 if ($validator->fails()){
+		  return redirect()->back()->withErrors($validator)->withInput();
+	  }	
+	
       $university = new University();
       $university -> name = $request->input('name');
       $university -> cap = $request->input('cap');
@@ -67,6 +76,14 @@ class UniversityController extends Controller
 
     public function update(Request $request)
     {
+					$validator = Validator::make($request->all(), [
+		 'name' => 'required',
+		 'cap' => 'required|numeric',		 
+	 ]);
+	 
+	 if ($validator->fails()){
+		  return redirect()->back()->withErrors($validator)->withInput();
+	  }	
 
       $university = University::findOrFail($request->input('id'));
       $university -> name = $request->input('name');
