@@ -165,7 +165,7 @@
                   <div class="col-md-12">
 				   <td>
   
-				$test = true;
+  {{ $test = true; }}
                     {!! Form::checkbox('publictel', 1 , $test ) !!}
                   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
 
