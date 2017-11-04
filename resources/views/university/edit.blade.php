@@ -6,7 +6,8 @@
 <div class='row'>
   <div class='col-md-12'>
     <div class="panel panel-default">
-@if ($errors->any())
+	
+       @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)

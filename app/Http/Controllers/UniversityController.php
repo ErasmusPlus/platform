@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Classes\Students;
 use App\University;
 use App\Language;
+use Illuminate\Support\Facades\Validator;
 
 class UniversityController extends Controller
 {
@@ -76,7 +77,8 @@ class UniversityController extends Controller
 
     public function update(Request $request)
     {
-					$validator = Validator::make($request->all(), [
+		
+	$validator = Validator::make($request->all(), [
 		 'name' => 'required',
 		 'cap' => 'required|numeric',		 
 	 ]);
