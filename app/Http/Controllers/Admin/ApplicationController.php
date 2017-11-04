@@ -43,7 +43,7 @@ class ApplicationController extends Controller
         4 => "C2"
       ];
 	 
-	 return view('admin.application.edit')->with('applications',$applications)
+	 return view('admin.application.edit')->with('application',$application)
                                            ->with('universities',$universities)
                                            ->with('languages',$languages)
                                            ->with('langlevel',$langlevel);
