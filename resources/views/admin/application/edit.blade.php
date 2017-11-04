@@ -157,7 +157,7 @@
         				</div>
                 <div class="col-md-4">
                   {!! Form::label('email','Email (απαραίτητο)') !!}
-                  {!! Form::text('email',$application -> publictel, ['class' => 'form-control']) !!}
+                  {!! Form::text('email',$application-> email, ['class' => 'form-control']) !!}
                 </div>
               </div>
 
@@ -165,9 +165,8 @@
                   <div class="col-md-12">
 				   <td>
   
-					
-					
-                    {!! Form::checkbox('publictel', 1 , true ) !!}
+		  
+                    {!! Form::checkbox('publictel', 1 ,$application -> publictel ) !!}
                   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
 
                 </div>
