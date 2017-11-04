@@ -291,7 +291,7 @@ font-weight: bold;
 {{Form::label('additional_pts', 'Επιπρόσθετα μόρια λόγω επισυναπτόμενων πιστοποιητικών: ')}}
 {{Form::number('additional_pts', $application->additional_pts, ['style' => 'width:100px', 'class'=>'form-control', 'readonly' => 'readonly'])}}
 
-@if($application->confirmed == false)
+@if($application->confirmed == true)
 {!! Form::submit('Ακύρωση εγκρισης της αίτησης',array('class' => 'btn btn-danger pull-right')) !!}
 @endif
 
