@@ -273,7 +273,7 @@ font-weight: bold;
 
 @if (EGuard::user()->type == 'Undergraduate')
 
-<a class="btn btn-default btn-xs" href="{{route('application.edit', $application->id )}}" role="button">Επεξεργασία Αίτησης</a>
+<a class="btn btn-info btn-xs" href="{{route('application.edit', $application->id )}}" role="button">Επεξεργασία Αίτησης</a>
 
 @endif
 
