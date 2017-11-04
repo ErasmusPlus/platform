@@ -270,6 +270,11 @@ font-weight: bold;
 
 </div>
 </div>
+
+@if (EGuard::user()->type == 'Undergraduated')
+<a class="btn btn-default btn-xs" href="{{ 'application.edit' , $application->id )}}" role="button">Επεξεργασία</a>
+@endif
+
 {!! Form::close() !!}
 
 @if(EGuard::user()->type == 'Administrator')
@@ -295,6 +300,7 @@ font-weight: bold;
 @if($application->confirmed == true)
 {!! Form::submit('Ακύρωση εγκρισης της αίτησης',array('class' => 'btn btn-danger pull-right')) !!}
 @endif
+
 
 {!! Form::close() !!}
 
