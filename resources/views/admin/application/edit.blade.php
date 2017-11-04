@@ -165,11 +165,8 @@
                   <div class="col-md-12">
 				   <td>
   
-		  @if($application->publictel == 1 )
-            {!! Form::checkbox('publictel', 1 , true ) !!}           
-          @else
-         {!! Form::checkbox('publictel', 1 , false ) !!}
-          @endif
+	
+           {!! Form::checkbox('publictel', 1 , {{ application -> publictel == true ? 0:1) }} ) !!}
 		   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
                     
 
