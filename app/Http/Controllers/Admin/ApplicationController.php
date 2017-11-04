@@ -31,7 +31,7 @@ class ApplicationController extends Controller
 	 
 	 public function edit($id)
     {
-        $application = Application::findOrFail($request->input('id'));    
+        $application = Application::findOrFail($id);    
        // return view('university.edit')->with('languages',$languages)->with('university',$university);
       $universities = University::pluck('name', 'id');
       $languages = Language::pluck('name', 'id');

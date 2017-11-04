@@ -280,7 +280,9 @@ font-weight: bold;
 
 @if($application->confirmed == false)
 {!! Form::submit('Έγκριση αίτησης',array('class' => 'btn btn-success pull-right')) !!}
-<a class="btn btn-warning" href="{{route('admin.application.edit',$application->id)}}" role="button"><i class="fa fa-plus"></i> Επεξεργασία</a>
+
+<a class="btn btn-warning" href="{{route('admin.application.edit' , $application->id)}}" role="button"><i class="fa fa-plus"></i> Επεξεργασία</a>
+
 @endif
 
 {!! Form::close() !!}
