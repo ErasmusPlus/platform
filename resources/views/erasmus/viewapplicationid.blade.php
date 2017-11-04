@@ -299,16 +299,18 @@ font-weight: bold;
 {!! Form::close() !!}
 
 <!--Edit Application -->
+
 <!-- AKYROSH EGKRISHS -->
+@if( EGuard::user()-> type == 'Undergraduate')
 {!! Form::open(array('action' => ('ApplicationController@edit'))) !!}
 {{Form::hidden('id', $application->id)}}
 <div class='form-inline'>
-@if( EGuard::user()-> type == 'Undergraduate')
+
 {!! Form::submit('Επεξεργασία Αίτησης',array('class' => 'btn btn-info pull-right')) !!}
-@endif
+
 
 {!! Form::close() !!}
-
+@endif
 
 
 
