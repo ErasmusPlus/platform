@@ -78,43 +78,43 @@
         				</div>
                 <div class="col-md-1">
                   {!! Form::label('age','Ηλικία/Age') !!}
-                  {!! Form::number('age',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('age',$application-> age, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('idno','Αριθμός Δελτίου Ταυτότητας/I.D. No') !!}
-                  {!! Form::text('idno',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('idno',$application-> idno, ['class' => 'form-control']) !!}
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
         					{!! Form::label('iddate','Ημ/νία έκδοσης ταυτότητας') !!}
-        					{!! Form::text('iddate',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('iddate',$application-> iddate, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
                   {!! Form::label('idloc','Αρχή Έκδοσης ταυτότητας') !!}
-                  {!! Form::text('idloc',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('idloc',$application-> idloc, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-4">
                   {!! Form::label('amka','ΑΜΚΑ') !!}
-                  {!! Form::text('amka',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('amka',$application-> amka, ['class' => 'form-control']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
         					{!! Form::label('birthplace','Τόπος Γεννήσεως/Place of Birth') !!}
-        					{!! Form::text('birthplace',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('birthplace',$application-> birthplace, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-3">
         					{!! Form::label('birthdate','Ημερομηνία γεννήσεως/Birth of Birth') !!}
-        					{!! Form::text('birthdate',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('birthdate',$application-> birthdate, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-2">
                   {!! Form::label('prefecture','Νομός/Prefecture:') !!}
-                  {!! Form::text('prefecture',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('prefecture',$application-> prefecture, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('citizenship','Υπηκοότητα/Citizenship:') !!}
-                  {!! Form::text('citizenship',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('citizenship',$application-> citizenship, ['class' => 'form-control']) !!}
                 </div>
               </div>
 
@@ -123,47 +123,50 @@
                   <div class="col-md-3">
 
                   {!! Form::label('address_el','Οδός') !!}
-                  {!! Form::text('address_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('address_el',$application-> address_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('nο_el','Αριθμός') !!}
-                  {!! Form::number('nο_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('nο_el',$application-> no_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_el','Πόλη') !!}
-                  {!! Form::text('city_el',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('city_el',$application-> city_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('tk','TK') !!}
-                  {!! Form::number('tk',null, ['class' => 'form-control']) !!}
+                  {!! Form::number('tk',$application-> tk, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('address_en','Address (με λατινικούς χαρακτήρες)') !!}
-                  {!! Form::text('address_en',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('address_en',$application-> address_en, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_en','City') !!}
-                  {!! Form::text('city_en',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('city_en',$application-> city_en, ['class' => 'form-control']) !!}
                 </div>
               </div>
               <div class="row">
                   <div class="col-md-4">
         					{!! Form::label('tel','Σταθερό τηλέφωνο') !!}
-        					{!! Form::text('tel',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('tel',$application-> tel, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
         					{!! Form::label('mobtel','Κινητό τηλέφωνο') !!}
-        					{!! Form::text('mobtel',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('mobtel',$application-> mobtel, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
                   {!! Form::label('email','Email (απαραίτητο)') !!}
-                  {!! Form::text('email',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('email',$application-> email, ['class' => 'form-control']) !!}
                 </div>
               </div>
 
               <div class="row">
                   <div class="col-md-12">
-                    {!! Form::checkbox('publictel') !!}
+				   <td>
+  
+		  
+                    {!! Form::checkbox('publictel', $application -> publictel ) !!}
                   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
 
                 </div>
@@ -172,7 +175,7 @@
                 <div class="col-md-12">
                   {!! Form::label('insurance','Ασφαλιστικός Οργανισμός που θα καλύπτει την ιατροφαρμακευτική περίθαλψη του υποψηφίου στο εξωτερικό: ',['class'=>'pull-left', 'style'=>'padding-top:7px']) !!}
 <div class="col-md-4">
-                  {!! Form::text('insurance',null, ['class' => 'form-control']) !!}
+                  {!! Form::text('insurance',$application-> insurance, ['class' => 'form-control']) !!}
                 </div>
                 </div>
 
