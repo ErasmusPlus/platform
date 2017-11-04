@@ -166,7 +166,7 @@
 				   <td>
   
 	
-           {!! Form::checkbox('publictel', $application -> publictel == true ? 0:1)   !!}
+           {!! Form::checkbox('publictel', 1 ,$application -> publictel == true ? 0:1)   !!}
 		   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
                     
 
@@ -288,24 +288,24 @@
               </div>
               <h5><i>**Σημειώνεται ότι η αιτούμενη υποτροφία μπορεί να είναι διάρκειας 3 (τριών) έως 12 (δώδεκα) μηνών</i></h5>
               <hr>
-            {!! Form::checkbox('l1', $application -> l1 == true ? 0:1) !!}
+            {!! Form::checkbox('l1', 1 ,$application -> l1 == true ? 0:1) !!}
             {!! Form::label('l1','Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
             <br>
-            {!! Form::checkbox('l2', $application -> l2 == true ? 0:1) !!}
+            {!! Form::checkbox('l2', 1 ,$application -> l2 == true ? 0:1) !!}
             {!! Form::label('l2','Είμαι άτομο με αναπηρίες, σύμφωνα με τον κατάλογο που χρησιμοποιεί η Ε.Μ') !!}
             <br>
-            {!! Form::checkbox('l3', $application -> l3 == true ? 0:1) !!}
+            {!! Form::checkbox('l3', 1 ,$application -> l3 == true ? 0:1) !!}
             {!! Form::label('l3','Έχω συμπληρώσει το 25ο έτος της ηλικίας και το ατομικό μου εισόδημα δεν ξεπερνά τα 9.000Ε') !!}
             <br>
 
-		   {!! Form::checkbox('l4', $application -> l4 == true ? 0:1) !!}
+		   {!! Form::checkbox('l4', 1 ,$application -> l4 == true ? 0:1) !!}
             {!! Form::label('l4','Δεν έχω συμπληρώσει το 25ο έτος της ηλικίας και προέρχομαι απο οικογένεια που το οικογενειακό εισόδημα δεν υπερβαίνει τις 9.000Ε κατά το πλέον πρόσφατο οικονομικό έτος') !!}
 
 		   <br>
-            {!! Form::checkbox('l5', $application -> l5 == true ? 0:1) !!}
+            {!! Form::checkbox('l5', 1 ,$application -> l5 == true ? 0:1) !!}
             {!! Form::label('l5','Προέρχομαι απο πολύτεκνη οικογένεια (4 τέκνα και άνω τα οποία βρίσκονται σε κάποια βαθμίδα εκπαίδευσης) και το οικογενειακό και ατομικό μου εισόδημα δεν υπερβαίνει τις 22.000Ε κατά το πλέον πρόσφατο οικονομικό έτος.') !!}
             <br>
-            {!! Form::checkbox('l6',$application -> l6 == true ? 0:1) !!}
+            {!! Form::checkbox('l6', 1 , $application -> l6 == true ? 0:1) !!}
             {!! Form::label('l6','Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη') !!}
 
             <hr>
