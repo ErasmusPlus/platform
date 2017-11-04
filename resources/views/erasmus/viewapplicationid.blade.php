@@ -306,7 +306,19 @@ font-weight: bold;
 </div>
 @endif
 
+@if(EGuard::user()->type == 'Undergraduate')
+
+{!! Form::open(array('action' => ('ApplicationController@edit'))) !!}
+{{Form::hidden('id', $application->id)}}
+<div class='form-inline'>
 
 
+{!! Form::submit('Επεξεργασία Αίτησης',array('class' => 'btn btn-danger pull-right')) !!}
+
+
+{!! Form::close() !!}
+
+	
+@endif
 
 @endsection
