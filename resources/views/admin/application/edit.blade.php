@@ -166,7 +166,7 @@
 				   <td>
   
 		 
-            {!! Form::checkbox('publictel', {{ if ($application->publictell) != 0 echo true }} ) !!}           
+            {!! Form::checkbox('publictel', {{ if (application->publictell) != 0 echo true }} ) !!}           
 		   {!! Form::label('publictel','Συμφωνώ να δίνεται το τηλέφωνό μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
                     
 
