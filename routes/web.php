@@ -89,7 +89,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
 	Route::get('/users/delete/{id}','Superadmin\UserController@delete')->name('superadmin.users.delete');
 	
 	//EDIT Application
-	Route::get('/erasmus/view_application/edit/{id}','Admin\ApplicationController@edit')->name('admin.application.edit');
+	Route::get('/erasmus/view_application/edit/{id}','ApplicationController@edit')->name('application.edit');
 	//EDIT Apllication
 	
   Route::get('/ranking','RankingController@index')->name('admin.ranking.index');

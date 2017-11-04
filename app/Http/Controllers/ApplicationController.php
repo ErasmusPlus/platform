@@ -222,5 +222,33 @@ class ApplicationController extends Controller
                                               ->with('languages',$languages)
                                               ->with('langlevel',$langlevel);
     }
+	
+		 public function edit($id)
+    {
+        $application = Application::findOrFail($id);  
+
+	if (  $application->spec_aem != EGuard::user()->id && EGuard::user()-> type == 'Undergraduate' )
+		{
+			return redirect('home');
+		}
+
+		
+       // return view('university.edit')->with('languages',$languages)->with('university',$university);
+      $universities = University::pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+
+      $langlevel = [
+        1 => "B1",
+        2 => "B2",
+        3 => "C1",
+        4 => "C2"
+      ];
+	 
+	 return view('erasmus.application.edit')->with('application',$application)
+                                           ->with('universities',$universities)
+                                           ->with('languages',$languages)
+                                           ->with('langlevel',$langlevel);
+   
+   }
 
 }
