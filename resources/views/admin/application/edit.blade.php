@@ -59,22 +59,22 @@
               <div class="row">
                   <div class="col-md-6">
         					{!! Form::label('surname_en','Surname (όπως αναγράφεται στο διαβατήριό σας)') !!}
-        					{!! Form::text('surname_en',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('surname_en',$application-> surname_en , ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-6">
         					{!! Form::label('name_en','Name') !!}
-        					{!! Form::text('name_en',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('name_en',$application-> name_en, ['class' => 'form-control']) !!}
         				</div>
               </div>
 
               <div class="row">
                   <div class="col-md-4">
         					{!! Form::label('fathersname','Όνομα πατρός/Father\'s Name') !!}
-        					{!! Form::text('fathersname',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('fathersname',$application-> fathersname, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-4">
         					{!! Form::label('mothersname','Όνομα μητρός/Mother\'s Name') !!}
-        					{!! Form::text('mothersname',null, ['class' => 'form-control']) !!}
+        					{!! Form::text('mothersname',$application-> mothersname, ['class' => 'form-control']) !!}
         				</div>
                 <div class="col-md-1">
                   {!! Form::label('age','Ηλικία/Age') !!}
