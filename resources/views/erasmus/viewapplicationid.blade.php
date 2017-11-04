@@ -288,8 +288,6 @@ font-weight: bold;
 {!! Form::open(array('action' => ('Admin\ApplicationController@unverify'))) !!}
 {{Form::hidden('id', $application->id)}}
 <div class='form-inline'>
-{{Form::label('additional_pts', 'Επιπρόσθετα μόρια λόγω επισυναπτόμενων πιστοποιητικών: ')}}
-{{Form::number('additional_pts', $application->additional_pts, ['style' => 'width:100px', 'class'=>'form-control', 'readonly' => 'readonly'])}}
 
 @if($application->confirmed == true)
 {!! Form::submit('Ακύρωση εγκρισης της αίτησης',array('class' => 'btn btn-danger pull-right')) !!}
