@@ -70,7 +70,7 @@ class ApplicationController extends Controller
 	  'citizenship' => 'required',
 	  'address_el' =>'required',
 	  'address_en' => 'required',
-	  'nο_el' => 'Αριθμός',
+	  'nο_el' => 'required',
 	  'city_el' =>'required',
 	  'city_en' =>'required',
 	  'tk' => 'numeric|required',
