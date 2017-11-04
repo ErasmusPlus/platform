@@ -79,5 +79,17 @@ class ApplicationController extends Controller
 
       return redirect()->back();
     }
+	
+	    public function unverify(Request $request)
+    {
+      $application = Application::findOrFail($request->input('id'));
+      $application -> additional_pts = $request->input('additional_pts');
+      $application -> confirmed = false;
+      $application -> save();
+
+      return redirect()->back();
+    }
+	
+	
 
 }

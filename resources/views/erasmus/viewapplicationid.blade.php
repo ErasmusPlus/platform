@@ -281,7 +281,23 @@ font-weight: bold;
 @if($application->confirmed == false)
 {!! Form::submit('Έγκριση αίτησης',array('class' => 'btn btn-success pull-right')) !!}
 @endif
+
 {!! Form::close() !!}
+
+<!-- AKYROSH EGKRISHS -->
+{!! Form::open(array('action' => ('Admin\ApplicationController@unverify'))) !!}
+{{Form::hidden('id', $application->id)}}
+<div class='form-inline'>
+{{Form::label('additional_pts', 'Επιπρόσθετα μόρια λόγω επισυναπτόμενων πιστοποιητικών: ')}}
+{{Form::number('additional_pts', $application->additional_pts, ['style' => 'width:100px', 'class'=>'form-control', 'readonly' => 'readonly'])}}
+
+@if($application->confirmed == false)
+{!! Form::submit('Ακύρωση εγκρισης της αίτησης',array('class' => 'btn btn-danger pull-right')) !!}
+@endif
+
+{!! Form::close() !!}
+
+
 </div>
 @endif
 @endsection
