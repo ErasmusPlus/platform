@@ -75,7 +75,7 @@ class UniversityController extends Controller
       //TODO: Handle failures here
       $university -> save();
 
-      return redirect()->route('admin.university.index');
+      return redirect()->route('superadmin.settings.users_index');
     }
 
 }

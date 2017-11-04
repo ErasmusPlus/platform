@@ -1,35 +1,34 @@
 @extends('layouts.dashboard')
-@php ( $title='Πανεπιστήμια Erasmus+' )
-@php ( $description='Διαχείριση')
+@php ( $title='Ξ§ΟΞ®ΟƒΟ„ΞµΟ‚ Erasmus+' )
+@php ( $description='Ξ”ΞΉΞ±Ο‡ΞµΞ―ΟΞΉΟƒΞ· Ξ§ΟΞ·ΟƒΟ„ΟΞ½ Ξ Ξ»Ξ±Ο„Ο†ΟΟΞΌΞ±Ο‚')
 
 @section('content')
-
+<div class='row'>
   <div class='col-md-12'>
     <div class="panel panel-default">
 
         <div class="panel-body">
-    {{ Form::model( $user, array('action' => 'Superadmin\UserController@update')) }}
+{{ Form::model( $user, array('action' => 'Superadmin\UserController@update')) }}
+     {{ Form::hidden('id', $user->id) }}
+
+	         {{ Form::label('ΞΞ½ΞΏΞΌΞ± Ξ§ΟΞ®ΟƒΟ„Ξ·') }}
+        {{ Form::text('name', $user->name, array('class' => 'form-control') ) }}
+
+        {{ Form::label('ΞΟ‰Ξ΄ΞΉΞΊΟΟ‚ Ο‡ΟΞ®ΟƒΟ„Ξ·') }}
+		{{ Form::text('pass',null, array('class' => 'form-control', 'placeholder' => 'ΞΞ­ΞΏΟ‚ ΞΊΟ‰Ξ΄ΞΉΞΊΟΟ‚' )) }}
+		
+		<hr>
+		
+		 {{ Form::submit('Ξ•Ξ½Ξ·ΞΌΞ­ΟΟ‰ΟƒΞ· ΞµΞ³Ξ³ΟΞ±Ο†Ξ®Ο‚',array('class' => 'btn btn-primary')) }}
+
 	
+    
 	
-		{{ Form::hidden('id', $user->id) }}
-       
-
-        {{ Form::label('Όνομα χρήστη') }}
-        {{ Form::text('name', $user->name ) }}
-
-        {{ Form::label('Κωδικός Πρόσβασης') }}
-		{{ Form::text('pass', 'enter new password') }}
-
-   
-
-       
-      {{ Form::submit('Ενημέρωση εγγραφής',array('class' => 'btn btn-primary')) }}
 
       <!-- /.box-body -->
-	  </form>
-
+    </form>
+</div>
+  </div>
 </div>
 </div>
-</div>  
-
 @endsection

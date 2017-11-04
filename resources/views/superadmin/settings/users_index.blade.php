@@ -107,7 +107,7 @@
                         </td>
                         <td width="80px">
 
-                          <a class="btn btn-default btn-xs" href="{{route('superadmin.settings.edit_users', $user->id )}}" role="button">Επεξεργασία</a>
+                          <a class="btn btn-default btn-xs" href="{{route('superadmin.settings.edit_user', $user->id )}}" role="button">Επεξεργασία</a>
 
                         </td>
                     </tr>
