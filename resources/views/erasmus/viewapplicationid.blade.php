@@ -267,6 +267,7 @@ font-weight: bold;
 
 </div>
 
+
 </div>
 </div>
 {!! Form::close() !!}
@@ -306,19 +307,6 @@ font-weight: bold;
 </div>
 @endif
 
-@if(EGuard::user()->type == 'Undergraduate')
 
-{!! Form::open(array('action' => ('ApplicationController@edit'))) !!}
-{{Form::hidden('id', $application->id)}}
-<div class='form-inline'>
-
-
-<a class="btn btn-default btn-xs" href="{{application.edit, $application->id )}}" role="button">Επεξεργασία</a>
-
-
-{!! Form::close() !!}
-
-	
-@endif
 
 @endsection
