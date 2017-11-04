@@ -306,7 +306,7 @@ font-weight: bold;
 </div>
 @endif
 
-@if(EGuard::user()->type == 'Undergraduate')
+
 
 {!! Form::open(array('action' => ('ApplicationController@edit'))) !!}
 {{Form::hidden('id', $application->id)}}
@@ -319,6 +319,6 @@ font-weight: bold;
 {!! Form::close() !!}
 
 	
-@endif
+
 
 @endsection
