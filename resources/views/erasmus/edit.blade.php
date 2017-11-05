@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('citizenship','Υπηκοότητα/Citizenship:') !!}
-                  {!! Form::text('citizenship',$application-> citizenship, ['class' => 'form-control']) !!}
+                  {!! Form::text('citizenship',intval($application-> citizenship), ['class' => 'form-control']) !!}
                 </div>
               </div>
 
@@ -123,6 +123,8 @@
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('nο_el','Αριθμός') !!}
+				  
+				  
                   {!! Form::number('nο_el',$application-> no_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
