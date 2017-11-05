@@ -23,8 +23,11 @@
             <span class="hidden-xs">{{ EGuard::user()->email }}</span>
           </a>
           <ul class="dropdown-menu">
-
+		@if(EGuard::user()->type == 'Undergraduate')
               <li><a href="{{ route('profile') }}">Προφίλ</a></li>
+		@else
+			  <li><a href="{{ route('profile.admin') }}">Προφίλ</a></li>	
+		@endif
               <li><a href="#">Ρυθμίσεις</a></li>
               <li class="divider"></li>
               <li><a href="{{ route('logout') }}">Αποσύνδεση</a></li>
