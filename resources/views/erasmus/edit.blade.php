@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-md-3">
                   {!! Form::label('citizenship','Υπηκοότητα/Citizenship:') !!}
-                  {!! Form::text('citizenship',intval($application-> citizenship), ['class' => 'form-control']) !!}
+                  {!! Form::text('citizenship',$application-> citizenship, ['class' => 'form-control']) !!}
                 </div>
               </div>
 
@@ -126,7 +126,7 @@
 				  
 				  
                  
-				  {!! Form::number('no_el',$application-> no_el, ['class' => 'form-control']) !!}
+				  {!! Form::text('no_el',intval($application-> no_el), ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_el','Πόλη') !!}
