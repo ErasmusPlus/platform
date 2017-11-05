@@ -177,7 +177,7 @@
 
               </div>
               <hr>
-              <a id="nexttab1" href="#tab2" class="btn btn-primary pull-right" role="button">Επόμενo</a>
+             
             </div>
         
 
@@ -213,6 +213,7 @@
             </div>
            
               <br>
+			  	<div class="row">
             <h4><b>Δικαιολογητικά υποβολής αίτησης</b></h4>
               <h5>
                 Για την αξιολόγηση της αιτήσεως σας απαιτούνται τα ακόλουθα πιστοποιητικά:
@@ -225,7 +226,7 @@
             </h5>
             <br>
             Συγκεντρώστε τα δικαιολογητικά σας σε ενα αρχείο συμπίεσης (zip) και επιλέξτε το.
-        			<div class="row">
+        		
         				<div class="col-md-12">
         					<input type="file" name="documents"  />
         				</div>
