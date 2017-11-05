@@ -1,30 +1,59 @@
 @extends('layouts.dashboard')
 @php ( $title='Στοιχεία φοιτητή' )
 @php ( $description='')
+
+@section('css')
+<style>
+.row{
+  padding-top:10px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+</style>
+
 @section('content')
  <!-- Profile Image -->
           <div class="box box-primary ">
             <div class="box-body box-profile">
 			
 			
+		 <div class="row">
+			
 		
-
 					<img class="profile-user-img img-responsive img-circle img-center" src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User profile picture">
 
-					
+		
+		
 				<!-- Button UploadImage -->
-						
-					<button type="button" class="btn-custom btn-info btn-lg" data-toggle="modal" data-target="#myModal">Upload</button>
-            	
+	
+			
+					<button type="button" class="btn btn-info btn-md center-block" data-toggle="modal" data-target="#myModal">Upload</button>
+            	</div>
 				<!-- Button UploadImage -->	
 				
 
+
 				
 
 				
-			  <h3 class="profile-username text-center">gav</h3>
+			  <h3 class="profile-username text-center">{{ EGuard::user()->fullname }}</h3>
 
-              <p class="text-muted text-center">gav</p>
+              <p class="text-muted text-center">{{ EGuard::user()->type }}</p>
             </div>
 
 
@@ -40,7 +69,7 @@
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
-                 gav 
+                 {{EGuard::user()->education}} 
               </p>
 
               <hr>
