@@ -286,28 +286,6 @@ class ApplicationController extends Controller
       $application -> publictel = ($request->input('publictel') == true ? 0:1);
       $application -> insurance = $request->input('insurance'); 
 	   
-	  //EDIT TAB 2
-	  $application -> lang_id1 = $request->input('lang_id1');
-      $application -> langlevel1 = $request->input('langlevel1');
-      $application -> lang_id2 = $request->input('lang_id2');
-      $application -> langlevel2 = $request->input('langlevel2');
-      $application -> lang_id3 = $request->input('lang_id3');
-      $application -> langlevel3 = $request->input('langlevel3');
-	  
-	  $application -> u1_id = $request->input('u1_id');
-      $application -> u1_studies = $request->input('u1_studies');
-      $application -> u1_semester = $request->input('u1_semester');
-      $application -> u1_months = $request->input('u1_months');
-
-      $application -> u2_id = $request->input('u2_id');
-      $application -> u2_studies = $request->input('u2_studies');
-      $application -> u2_semester = $request->input('u2_semester');
-      $application -> u2_months = $request->input('u2_months');
-
-      $application -> u3_id = $request->input('u3_id');
-      $application -> u3_studies = $request->input('u3_studies');
-      $application -> u3_semester = $request->input('u3_semester');
-      $application -> u3_months = $request->input('u3_months');
 
       $application -> l1 = ($request->input('l1') == true ? 0:1);
       $application -> l2 = ($request->input('l2') == true ? 0:1);
