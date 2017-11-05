@@ -30,7 +30,7 @@
  <!-- Profile Image -->
           <div class="box box-primary ">
             <div class="box-body box-profile">
-			
+			<a href="{{route('profile.edit'}}" class="btn btn-success btn-md pull-left">Επεξεργασία</a>
 			
 		 <div class="row">
 			
@@ -61,7 +61,7 @@
 
 <div class="box box-primary">
 	<div class="box-header with-border">
-	<h3 class="box-title">About Me </h3>
+	<h3 class="box-title">Σχετικά με εμένα: </h3>
 	</div>
 
  <!-- /.box-header -->
@@ -74,27 +74,23 @@
 
               <hr>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+              <strong><i class="fa fa-map-marker margin-r-5"></i> Περιοχή </strong>
 
-              <p class="text-muted"> Kozani </p>
+              <p class="text-muted"> -Περιοχή Χρήστη- </p>
 
               <hr>
 
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+              <strong><i class="fa fa-pencil margin-r-5"></i> Γλώσσες </strong>
 
               <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
+                <span class="label label-danger">Γλώσσα 1</span>
+                <span class="label label-success">Γλώσσα 2</span>
+                <span class="label label-info">Γλώσσα 3</span>
               </p>
 
               <hr>
 
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+             
             </div>
             <!-- /.box-body -->
           </div>

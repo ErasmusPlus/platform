@@ -52,6 +52,10 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::get('/profile', function () {
       return view('profile')->with("stdata",EGuard::getApiDetails());
   })->name('profile');
+  
+    Route::get('/profile/edit', function () {
+      return view('profile_edit');
+  })->name('profile.edit');
 
   Route::get('/settings', function () {
       return view('settings');
