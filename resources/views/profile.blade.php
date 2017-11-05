@@ -22,7 +22,7 @@
 				
 
 				
-			  <h3 class="profile-username text-center">{{ Auth::User()->name }}</h3>
+			  <h3 class="profile-username text-center">{{ EGuard::user()->fullname }}</h3>
 
               <p class="text-muted text-center">{{ Auth::User()->education }}</p>
             </div>
@@ -40,14 +40,14 @@
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
-                {{ Auth::User()->education }}
+                {{ EGuard::user()->education }}
               </p>
 
               <hr>
 
               <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
-              <p class="text-muted">{{ Auth::User()->location }}</p>
+              <p class="text-muted"> Kozani </p>
 
               <hr>
 
