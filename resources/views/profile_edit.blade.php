@@ -8,19 +8,7 @@
 
 	
         <div class="panel-body">
-	{{ Form::open() }}
-    
-
-	    {{ Form::label('Περιοχή') }}
-        {{ Form::text('location', array('class' => 'form-control') ) }}
-
-        {{ Form::label('Γλώσσες') }}
-		{{ Form::text('pass', array('class' => 'form-control', 'placeholder' => 'Νέος κωδικός' )) }}
-		
-		<hr>
-		
 	
-		
       <!-- /.box-body -->
     </form>
 	
