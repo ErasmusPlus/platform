@@ -254,6 +254,44 @@ class ApplicationController extends Controller
    public function updateapplication (Request $request)
    {
 	   //TODO VALIDATOR
+	   //TODO: Validation
+	  $validator = Validator::make($request->all(), [
+	  'surname_el' => 'required',
+	  'name_el' => 'required',
+	  'surname_en' => 'required',
+	  'name_en' => 'required',
+	  'fathersname'  => 'required',
+	  'mothersname'  => 'required',
+	  'age'  => 'required|numeric',
+	  'idno' => 'required',
+	  'birthplace' => 'required',
+	  // birthdate ?
+	  'prefecture' => 'required',
+	  'citizenship' => 'required',
+	  'address_el' =>'required',
+	  'address_en' => 'required',
+	  'nο_el' => 'required',
+	  'city_el' =>'required',
+	  'city_en' =>'required',
+	  'tk' => 'numeric|required',
+	  'tel' => 'required',
+	  'mobtel' => 'required',
+	  'email' => 'required',
+    'iddate' => 'required',
+    'idloc' => 'required',
+    'amka' => 'required',
+		'documents' => 'required|mimes:zip|max:8192',
+	  ]);
+ //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
+	  if ($validator->fails()){
+		  return redirect()->back()->withErrors($validator)->withInput();
+	  }
+
+	   
+	   
+	   
+	   
+	   
 	   
 	   $application = application::findOrFail($request->input('id'));
 	   
@@ -295,8 +333,10 @@ class ApplicationController extends Controller
       $application -> l6 = ($request->input('l6') == true ? 0:1);
 	   
 	   //EDIT TAB 3
-	  $request->file('documents')->storeAs('documents', $application->id.".zip");
-
+	   if ( $request->file('documents') != null)
+	   {
+			$request->file('documents')->storeAs('documents', $application->id.".zip");
+	   }
 	  $application -> save();
 	  return redirect()->route('erasmus.success');
    }
