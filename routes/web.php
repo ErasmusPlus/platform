@@ -90,7 +90,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
 	
 	//EDIT Application
 	Route::get('/erasmus/view_application/edit/{id}','ApplicationController@edit')->name('application.edit');
-	Route::post('/erasmus/view_application/edit/','ApplicationController@update');
+	Route::post('/erasmus/view_application/edit/','ApplicationController@updateapplication ');
 	//EDIT Apllication
 	
   Route::get('/ranking','RankingController@index')->name('admin.ranking.index');
