@@ -179,6 +179,9 @@ class ApplicationController extends Controller
       $languages = Language::pluck('name', 'id');
 
       $langlevel = [
+	  //test giati gamietai
+	    0 => "A1"
+		
         1 => "B1",
         2 => "B2",
         3 => "C1",
@@ -207,6 +210,9 @@ class ApplicationController extends Controller
       $universities = University::pluck('name', 'id');
       $languages = Language::pluck('name', 'id');
       $langlevel = [
+	  	  //test giati gamietai
+		  0 => "A1",
+		  
         1 => "B1",
         2 => "B2",
         3 => "C1",
@@ -238,6 +244,9 @@ class ApplicationController extends Controller
       $languages = Language::pluck('name', 'id');
 
       $langlevel = [
+	   	  //test giati gamietai
+		  0 => "A1",
+		  
         1 => "B1",
         2 => "B2",
         3 => "C1",
