@@ -49,9 +49,11 @@
                 <li><a data-toggle="tab" href="#tab3">Δικαιολογητικά</a></li>
                 <li><a data-toggle="tab" href="#tab4">Υποβολή αιτήσεως</a></li>
               </ul>
-			  {!! Form::open(array('action' => ('ApplicationController@store') , 'files' => true)) !!}
+			  {!! Form::open(array('action' => ('ApplicationController@updateapplication') , 'files' => true)) !!}
                 <!-- text input -->
-
+				{{ Form::hidden('id', $application->id) }}
+				
+				
                 <div class="tab-content">
                   <div id="tab1" class="tab-pane fade in active">
                 <div class='col-md-12'>
@@ -353,7 +355,7 @@
 
 
 
-               {!! Form::submit('Υποβολή αίτησης',array('class' => 'btn btn-primary')) !!}
+               {!! Form::submit('Ενημέρωση αίτησης',array('class' => 'btn btn-primary')) !!}
             </div>
 
 
