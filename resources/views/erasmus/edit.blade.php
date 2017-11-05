@@ -125,7 +125,8 @@
                   {!! Form::label('nο_el','Αριθμός') !!}
 				  
 				  
-                  {!! Form::number('nο_el',$application-> no_el, ['class' => 'form-control']) !!}
+                 
+				  {!! Form::number('no_el',$application-> no_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_el','Πόλη') !!}
