@@ -43,12 +43,7 @@
 
             <!-- /.box-header -->
             <div class="box-body">
-              <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#tab1">Ατομικά στοιχεία υποψηφίου</a></li>
-                <li><a data-toggle="tab" href="#tab2">Στοιχεία ακαδημαικής δραστηριότητας υποψηφίου</a></li>
-                <li><a data-toggle="tab" href="#tab3">Δικαιολογητικά</a></li>
-                <li><a data-toggle="tab" href="#tab4">Υποβολή αιτήσεως</a></li>
-              </ul>
+
 			  {!! Form::open(array('action' => ('ApplicationController@updateapplication') , 'files' => true)) !!}
                 <!-- text input -->
 				{{ Form::hidden('id', $application->id) }}
@@ -146,7 +141,6 @@
                   {!! Form::label('city_en','City') !!}
                   {!! Form::text('city_en',$application-> city_en, ['class' => 'form-control']) !!}
                 </div>
-              </div>
               <div class="row">
                   <div class="col-md-4">
         					{!! Form::label('tel','Σταθερό τηλέφωνο') !!}
@@ -214,11 +208,10 @@
             {!! Form::label('l6','Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη') !!}
 
      
-            <a id="nexttab2" href="#tab3" class="btn btn-primary pull-right" role="button">Επόμενo</a>
-
+          
 
             </div>
-            <div id="tab3" class="tab-pane fade">
+           
               <br>
             <h4><b>Δικαιολογητικά υποβολής αίτησης</b></h4>
               <h5>
@@ -240,26 +233,16 @@
 
 
 
-              <a id="nexttab3" href="#tab4" class="btn btn-primary pull-right" role="button">Επόμενo</a>
-            </div>
-
-            <div id="tab4" class="tab-pane fade">
+           
+       
               <br>
-              <h4><b>Με την υποβολή της αίτησης μου δηλώνω υπεύθυνα ότι:</b></h4>
 
-                <h5>
-                α) Δεν έχω τύχει υποτροφίας Erasmus κατά τα προηγούμενα ακαδημαικά Έτη, η οποία αθροιζόμενη με το παρόν αίτημα μετακίνησής μου να υπερβαίνει τους 12 μήνες
-                <br>
-                β) Όλες οι πληροφορίες που παρέχονται είναι ακριβείς.
-
-              </h5>
-                <br>
 
 
 
 
                {!! Form::submit('Ενημέρωση αίτησης',array('class' => 'btn btn-primary')) !!}
-            </div>
+          
 
 
 				</div>
