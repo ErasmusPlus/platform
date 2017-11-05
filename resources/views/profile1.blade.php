@@ -9,7 +9,7 @@
 			
 		
 
-					<img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture">
+				<!-- 	<img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture"> -->
 
 					
 				<!-- Button UploadImage -->

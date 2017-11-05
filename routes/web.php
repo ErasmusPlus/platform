@@ -50,8 +50,8 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::get('/erasmus/getpdf','ViewApplicationController@getPDF');
 
   Route::get('/profile', function () {
-      return view('profile');
-  })->name('profile');
+      return view('profile1');
+  })->name('profile1');
 
   Route::get('/settings', function () {
       return view('settings');
