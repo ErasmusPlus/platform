@@ -256,8 +256,6 @@ class ApplicationController extends Controller
 	   //TODO VALIDATOR
 	   //TODO: Validation
 	  $validator = Validator::make($request->all(), [
-	  'surname_el' => 'required',
-	  'name_el' => 'required',
 	  'surname_en' => 'required',
 	  'name_en' => 'required',
 	  'fathersname'  => 'required',
@@ -280,7 +278,7 @@ class ApplicationController extends Controller
     'iddate' => 'required',
     'idloc' => 'required',
     'amka' => 'required',
-		'documents' => 'required|mimes:zip|max:8192',
+		'documents' => 'mimes:zip|max:8192',
 	  ]);
  //'certficatelang' => 'required|mimes:jpeg,jpg,pdf|max:2048',
 	  if ($validator->fails()){
