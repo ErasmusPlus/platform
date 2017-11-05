@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-md-1">
                   {!! Form::label('nο_el','Αριθμός') !!}
-                  {!! Form::number('nο_el',$application-> no_el, ['class' => 'form-control']) !!}
+                  {!! Form::text('nο_el',$application->nο_el, ['class' => 'form-control']) !!}
                 </div>
                 <div class="col-md-2">
                   {!! Form::label('city_el','Πόλη') !!}
