@@ -9,7 +9,7 @@
 			
 		
 
-					<img class="profile-user-img img-responsive img-circle img-center" src="{{ Auth::User()->photo }}" alt="User profile picture">
+					<img class="profile-user-img img-responsive img-circle img-center" src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User profile picture">
 
 					
 				<!-- Button UploadImage -->
@@ -22,9 +22,9 @@
 				
 
 				
-			  <h3 class="profile-username text-center">{{ EGuard::user()->fullname }}</h3>
+			  <h3 class="profile-username text-center">gav</h3>
 
-              <p class="text-muted text-center">{{ EGuard::user()->education }}</p>
+              <p class="text-muted text-center">gav</p>
             </div>
 
 
@@ -40,7 +40,7 @@
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
-                {{ EGuard::user()->education }}
+                 gav 
               </p>
 
               <hr>
