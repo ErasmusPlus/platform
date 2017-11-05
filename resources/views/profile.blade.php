@@ -30,7 +30,7 @@
  <!-- Profile Image -->
           <div class="box box-primary ">
             <div class="box-body box-profile">
-			<a href="{{route('profile.edit'}}" class="btn btn-success btn-md pull-left">Επεξεργασία</a>
+			<a href="{{route('profile.edit')}}" class="btn btn-success btn-md" role="button">Επεξεργασία</a>
 			
 		 <div class="row">
 			
