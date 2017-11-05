@@ -54,8 +54,7 @@
 				{{ Form::hidden('id', $application->id) }}
 				
 				
-                <div class="tab-content">
-                  <div id="tab1" class="tab-pane fade in active">
+
                 <div class='col-md-12'>
              
               <div class="row">
@@ -186,110 +185,14 @@
               <hr>
               <a id="nexttab1" href="#tab2" class="btn btn-primary pull-right" role="button">Επόμενo</a>
             </div>
-            </div>
-            <div id="tab2" class="tab-pane fade">
+        
+
              
-              <br>
-              <h5><b>Ξένες γλώσσες και επίπεδο γλωσσομάθειας:</b></h5>
-              <div class="row">
-                  <div class="col-md-4">
-                    <div class="col-md-8">
-                      {!! Form::label('lang_id1','Γλώσσα') !!}
-          					  {!! Form::select('lang_id1',$languages,null, ['class' => 'form-control pull-right', 'placeholder' => "Επιλέξτε πρώτη γλώσσα"]) !!}
-                    </div>
-                    <div class="col-md-4">
-                      {!! Form::label('langlevel1','Επίπεδο') !!}
-                      {!! Form::select('langlevel1',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-					          </div>
-        				</div>
-                  <div class="col-md-4">
-                    <div class="col-md-8">
-                      {!! Form::label('lang_id2','Γλώσσα') !!}
-          					  {!! Form::select('lang_id2',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε δεύτερη γλώσσα"]) !!}
-					          </div>
-                    <div class="col-md-4">
-                      {!! Form::label('langlevel2','Επίπεδο') !!}
-                      {!! Form::select('langlevel2',$langlevel,null, ['class' => 'form-control pull-right']) !!}
-					          </div>
-        				</div>
-                  <div class="col-md-4">
-                    <div class="col-md-8">
-                      {!! Form::label('lang_id3','Γλώσσα') !!}
-          			  {!! Form::select('lang_id3',$languages,null, ['class' => 'form-control pull-right','placeholder' => "Επιλέξτε τρίτη γλώσσα"]) !!}
-					</div>
-                    <div class="col-md-4">
-                      {!! Form::label('langlevel3','Επίπεδο') !!}
-                      {!! Form::select('langlevel3',$langlevel,null, ['class' => 'form-control pull-right']) !!}
 
 
 
 
-					</div>
-        				</div>
-
-
-
-</div>
-
-
-
-
-
-              <br>
-              <h5><b>Επιθυμώ να πραγματοποιήσω μια περίοδο σπουδών σε ένα απο τα παρακάτω Πανεπιστήμια με σειρά προτεραιότητας:</b></h5>
-              <div class="row">
-                  <div class="col-md-4">
-        					{!! Form::select('u1_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
-        				</div>
-                <div class="col-md-4">
-                  {!! Form::text('u1_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
-        				</div>
-                <div class="col-md-2">
-                  {!! Form::label('u1_semester','Χειμερινό') !!}
-                  {{ Form::radio('u1_semester', '1') }}
-                  {!! Form::label('u1_semester','Εαρινό') !!}
-                  {{ Form::radio('u1_semester', '2') }}
-                </div>
-                <div class="col-md-2">
-                  {!! Form::number('u1_months',null, ['min' => '3','max' => '12' , 'class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-4">
-        					{!! Form::select('u2_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
-        				</div>
-                <div class="col-md-4">
-                  {!! Form::text('u2_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
-        				</div>
-                <div class="col-md-2">
-                  {!! Form::label('u2_semester','Χειμερινό') !!}
-                  {{ Form::radio('u2_semester', '1') }}
-                  {!! Form::label('u2_semester','Εαρινό') !!}
-                  {{ Form::radio('u2_semester', '2') }}
-                </div>
-                <div class="col-md-2">
-                  {!! Form::text('u2_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-4">
-        					{!! Form::select('u3_id',$universities,null, ['class' => 'form-control pull-right' ,'placeholder' => 'Όνομα πανεπιστημίου']) !!}
-        				</div>
-                <div class="col-md-4">
-                  {!! Form::text('u3_studies',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Τομέας Σπουδών']) !!}
-        				</div>
-                <div class="col-md-2">
-                  {!! Form::label('u3_semester','Χειμερινό') !!}
-                  {{ Form::radio('u3_semester', '1') }}
-                  {!! Form::label('u3_semester','Εαρινό') !!}
-                  {{ Form::radio('u3_semester', '2') }}
-                </div>
-                <div class="col-md-2">
-                  {!! Form::text('u3_months',null, ['class' => 'form-control pull-right' ,'placeholder' => 'Μήνες']) !!}
-                </div>
-              </div>
-              <h5><i>**Σημειώνεται ότι η αιτούμενη υποτροφία μπορεί να είναι διάρκειας 3 (τριών) έως 12 (δώδεκα) μηνών</i></h5>
-              <hr>
+            
             {!! Form::checkbox('l1', 1 ,$application -> l1 == true ? 0:1) !!}
             {!! Form::label('l1','Συμφωνώ να δίνεται το email μου σε περίπτωση που ζητηθεί από άλλους φοιτητές ERASMUS') !!}
             <br>
@@ -310,7 +213,7 @@
             {!! Form::checkbox('l6', 1 , $application -> l6 == true ? 0:1) !!}
             {!! Form::label('l6','Έχω ακυρώσει τη συμμετοχή μου στο Πρόγραμμα Σπουδών LLP/ERASMUS κατά τα προηγούμενα ακαδημαικά έτη') !!}
 
-            <hr>
+     
             <a id="nexttab2" href="#tab3" class="btn btn-primary pull-right" role="button">Επόμενo</a>
 
 
