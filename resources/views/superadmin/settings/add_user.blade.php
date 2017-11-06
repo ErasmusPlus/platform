@@ -18,6 +18,7 @@
             @endif
         <div class="panel-body">
 		{{ Form::open( array('action' => 'Superadmin\UserController@create')) }}
+		{{ csrf_field() }}
 		
 		{{ Form::label('Όνομα Χρήστη') }}
         {{ Form::text('name',null,array('class' => 'form-control')) }}

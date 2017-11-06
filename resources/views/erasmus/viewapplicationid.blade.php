@@ -281,6 +281,7 @@ font-weight: bold;
 
 @if(EGuard::user()->type == 'Administrator')
 {!! Form::open(array('action' => ('Admin\ApplicationController@verify'))) !!}
+{{ csrf_field() }}
 {{Form::hidden('id', $application->id)}}
 <div class='form-inline'>
 {{Form::label('additional_pts', 'Επιπρόσθετα μόρια λόγω επισυναπτόμενων πιστοποιητικών: ')}}
@@ -296,6 +297,7 @@ font-weight: bold;
 
 <!-- AKYROSH EGKRISHS -->
 {!! Form::open(array('action' => ('Admin\ApplicationController@unverify'))) !!}
+{{ csrf_field() }}
 {{Form::hidden('id', $application->id)}}
 <div class='form-inline'>
 

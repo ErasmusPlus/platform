@@ -20,7 +20,7 @@
 	
         <div class="panel-body">
     {{ Form::model( $university, array('action' => 'UniversityController@update')) }}
-
+		{{ csrf_field() }}
         {{ Form::hidden('id', $university->id) }}
 
         {{ Form::label('Όνομα πανεπιστημίου') }}

@@ -19,7 +19,7 @@
 			
         <div class="panel-body">
     {{ Form::open( array('action' => 'UniversityController@create')) }}
-
+		{{ csrf_field() }}
 
 
         {{ Form::label('Όνομα πανεπιστημίου') }}

@@ -17,10 +17,11 @@
             @endif
 	
         <div class="panel-body">
-{{ Form::model( $user, array('action' => 'Superadmin\UserController@update')) }}
-     {{ Form::hidden('id', $user->id) }}
+		{{ Form::model( $user, array('action' => 'Superadmin\UserController@update')) }}
+		{{ csrf_field() }}
+		{{ Form::hidden('id', $user->id) }}
 
-	         {{ Form::label('Όνομα Χρήστη') }}
+	    {{ Form::label('Όνομα Χρήστη') }}
         {{ Form::text('name', $user->name, array('class' => 'form-control') ) }}
 
         {{ Form::label('Κωδικός χρήστη') }}

@@ -50,6 +50,7 @@
                 <li><a data-toggle="tab" href="#tab4">Υποβολή αιτήσεως</a></li>
               </ul>
 			  {!! Form::open(array('action' => ('ApplicationController@store') , 'files' => true)) !!}
+			  {{ csrf_field() }}
                 <!-- text input -->
 
                 <div class="tab-content">
