@@ -53,7 +53,6 @@
 
 
       <li class="{!! classActiveSegment(1,['ranking']) !!}"><a href="{{ route('admin.ranking.index') }}"><span>Αποτελέσματα Κατάταξης</span></a></li>
-      <li class="{!! classActivePath('settings') !!}"><a href="{{ route('settings') }}"><span>Ρυθμίσεις</span></a></li>
       @endif
       @if(EGuard::user()->type == 'Superadmin')
       <li class="treeview {!! classActiveSegment(1,['users','universities','ranking']) !!}">
