@@ -22,12 +22,15 @@
 @endsection
 
 @section('content')
+
+@include('flash::message')
+
 <div class='row'>
   <div class='col-md-12'>
     <div class="panel panel-default">
 
      <div class="panel-body">
-       {{ Form::model( $settings, array('action' => 'Superadmin\RankingController@update')) }}
+       {{ Form::model( $settings, array('action' => 'Superadmin\RankingController@update','onsubmit' => 'return confirm("Θέλετε σίγουρα να αποθηκεύσετε τις νέες παραμέτρους;")')) }}
 
       <div class='col-md-4'>
        {{Form::label('appl_finaldate', 'Τελική ημερομηνία κατάταξης:')}}
@@ -51,21 +54,44 @@
      <div class='col-md-4'>
       {{Form::label('appl_status', 'Κατάσταση υποβολής αιτήσεων:')}}
       <br>
-      {{Form::radio('appl_status', 'open', false)}}
+      @if($appl_status=='open')
+
+      {{Form::radio('appl_status', 'open', true)}}
       {{Form::label('appl_status', 'Ανοιχτές')}}
       &nbsp;
       {{Form::radio('appl_status', 'closed', false)}}
       {{Form::label('appl_status', 'Κλειστές')}}
+      @else
+      {{Form::radio('appl_status', 'open', false)}}
+      {{Form::label('appl_status', 'Ανοιχτές')}}
+      &nbsp;
+      {{Form::radio('appl_status', 'closed', true)}}
+      {{Form::label('appl_status', 'Κλειστές')}}
+      @endif
     </div>
+
+
     <div class='col-md-4'>
+      @if($platform_status=='open')
+     {{Form::label('platform_status', 'Κατάσταση πλατφόρμας:')}}
+     <br>
+     {{Form::radio('platform_status', 'open',true)}}
+     {{Form::label('platform_status', 'Είσοδος μόνο σε ακαδημαϊκούς')}}
+     &nbsp;
+     <br>
+     {{Form::radio('platform_status', 'closed',false)}}
+     {{Form::label('platform_status', 'Να επιτρέπεται η είσοδος σε όλους')}}
+     @else
      {{Form::label('platform_status', 'Κατάσταση πλατφόρμας:')}}
      <br>
      {{Form::radio('platform_status', 'open',false)}}
      {{Form::label('platform_status', 'Είσοδος μόνο σε ακαδημαϊκούς')}}
      &nbsp;
      <br>
-     {{Form::radio('platform_status', 'closed',false)}}
+     {{Form::radio('platform_status', 'closed',true)}}
      {{Form::label('platform_status', 'Να επιτρέπεται η είσοδος σε όλους')}}
+
+     @endif
    </div>
    <div class='col-md-12'>
    {{ Form::submit('Ενημέρωση παραμέτρων',array('class' => 'btn btn-success')) }}

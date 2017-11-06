@@ -25,10 +25,10 @@ class RankingController extends Controller
     {
         $settings = Setting::all();
 
-        $appl_finaldate = Setting::find('appl_finaldate')->value;
-
         return view('superadmin.settings.ranking')->with('settings',$settings)
-                                                  ->with('appl_finaldate',$appl_finaldate);
+                                                  ->with('appl_finaldate', Setting::find('appl_finaldate')->value)
+                                                  ->with('appl_status', Setting::find('appl_status')->value)
+                                                  ->with('platform_status', Setting::find('platform_status')->value);
     }
 
 
@@ -37,6 +37,17 @@ class RankingController extends Controller
       $appl_finaldate = Setting::find('appl_finaldate');
       $appl_finaldate -> value = $request -> appl_finaldate;
       $appl_finaldate -> save();
+
+
+      $appl_status = Setting::find('appl_status');
+      $appl_status -> value = $request -> appl_status;
+      $appl_status -> save();
+
+      $platform_status = Setting::find('platform_status');
+      $platform_status -> value = $request -> platform_status;
+      $platform_status -> save();
+
+      flash()->success('Οι αλλαγές σας αποθηκεύθηκαν με επιτυχία!');
       return redirect()->back();
     }
 
