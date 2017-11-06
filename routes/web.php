@@ -40,6 +40,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
   })->name('profile.ects');
 
   Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.success');
+  Route::get('/erasmus/closed', 'HomeController@closed')->name('erasmus.closed');
 
   Route::get('/erasmus/application2', 'ApplicationController@index')->name('erasmus.application2');
   Route::post('/erasmus/application2', 'ApplicationController@store');
@@ -66,6 +67,8 @@ Route::group(['middleware' => ['cas.guard']], function () {
   })->name('settings');
 
   Route::get('/time','HomeController@time');
+  Route::get('/notify','HomeController@notify');
+
 
   Route::get('/upload','UploadImageController@index');
   Route::post('/upload','UploadImageController@upload');

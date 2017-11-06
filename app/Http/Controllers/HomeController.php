@@ -34,7 +34,10 @@ class HomeController extends Controller
     {
         return view('erasmus.success');
     }
-
+    public function closed()
+    {
+        return view('erasmus.closed');
+    }
 
     public function logintype()
     {
@@ -62,4 +65,10 @@ class HomeController extends Controller
 	{
 		 return \Carbon\Carbon::now('Europe/Athens')->format("H:i:s");
 	}
+
+  public function notify()
+  {
+
+     return \Carbon\Carbon::now('Europe/Athens')->format("H:i:s");
+  }
 }

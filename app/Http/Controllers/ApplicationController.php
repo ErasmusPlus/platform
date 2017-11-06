@@ -7,6 +7,7 @@ use App\Classes\EGuard;
 use App\University;
 use App\Language;
 use App\Application;
+use App\Setting;
 use Illuminate\Support\Facades\Validator;
 
 class ApplicationController extends Controller
@@ -28,6 +29,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+        if(Setting::find('appl_status')->value == 'closed')
+        return redirect()->route('erasmus.closed');
+
         if(EGuard::isEligible())
         {
           $universities = University::pluck('name', 'id');
@@ -195,15 +199,15 @@ class ApplicationController extends Controller
 
     public function view_appid($id)
     {
-		
+
 				  $application = Application::findOrFail($id);
-		  
-		  
+
+
 	if (  $application->spec_aem != EGuard::user()->id && EGuard::user()-> type == 'Undergraduate' )
 		{
 			return redirect('home');
 		}
-		
+
       $universities = University::pluck('name', 'id');
       $languages = Language::pluck('name', 'id');
       $langlevel = [
@@ -212,7 +216,7 @@ class ApplicationController extends Controller
         3 => "C1",
         4 => "C2"
       ];
-	  
+
 
 
 
@@ -222,17 +226,17 @@ class ApplicationController extends Controller
                                               ->with('languages',$languages)
                                               ->with('langlevel',$langlevel);
     }
-	
+
 		 public function edit($id)
     {
-        $application = Application::findOrFail($id);  
+        $application = Application::findOrFail($id);
 
 	if (  $application->spec_aem != EGuard::user()->id && EGuard::user()-> type == 'Undergraduate' )
 		{
 			return redirect('home');
 		}
 
-		
+
        // return view('university.edit')->with('languages',$languages)->with('university',$university);
       $universities = University::pluck('name', 'id');
       $languages = Language::pluck('name', 'id');
@@ -243,14 +247,14 @@ class ApplicationController extends Controller
         3 => "C1",
         4 => "C2"
       ];
-	 
+
 	 return view('erasmus.edit')->with('application',$application)
                                            ->with('universities',$universities)
                                            ->with('languages',$languages)
                                            ->with('langlevel',$langlevel);
-   
+
    }
-   
+
    public function updateapplication (Request $request)
    {
 	   //TODO VALIDATOR
@@ -285,15 +289,15 @@ class ApplicationController extends Controller
 		  return redirect()->back()->withErrors($validator)->withInput();
 	  }
 
-	   
-	   
-	   
-	   
-	   
-	   
+
+
+
+
+
+
 	   $application = application::findOrFail($request->input('id'));
-	   
-	   
+
+
 	   //EDIT TAB 1
 	  $application -> surname_el = $request ->input('surname_el');
       $application -> name_el = $request ->input('name_el');
@@ -320,8 +324,8 @@ class ApplicationController extends Controller
       $application -> mobtel = $request ->input('mobtel');
       $application -> email = $request ->input('email');
       $application -> publictel = ($request->input('publictel') == true ? 0:1);
-      $application -> insurance = $request->input('insurance'); 
-	   
+      $application -> insurance = $request->input('insurance');
+
 
       $application -> l1 = ($request->input('l1') == true ? 0:1);
       $application -> l2 = ($request->input('l2') == true ? 0:1);
@@ -329,7 +333,7 @@ class ApplicationController extends Controller
       $application -> l4 = ($request->input('l4') == true ? 0:1);
       $application -> l5 = ($request->input('l5') == true ? 0:1);
       $application -> l6 = ($request->input('l6') == true ? 0:1);
-	   
+
 	   //EDIT TAB 3
 	   if ( $request->file('documents') != null)
 	   {

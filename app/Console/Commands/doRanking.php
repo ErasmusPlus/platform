@@ -138,6 +138,12 @@ class doRanking extends Command
         //TODO: Schedule this as cronjob
         $this->info("do:Ranking job started");
 
+        $this->info("Restricting further application submits");
+        $setting = Setting::find('appl_status');
+        $setting -> value = 'closed';
+        $setting -> save();
+
+
         $this->info("Resetting table for debugging");
         DB::table('ranks')->delete();
 
