@@ -25,8 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('do:Ranking')->withoutOverlapping()->when(function () {
+            //TODO: Compare local time with ranking time
+            return false;
+        });
     }
 
     /**
