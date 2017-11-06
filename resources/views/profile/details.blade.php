@@ -49,55 +49,43 @@
 
 
 
-              </table>
+                    <tr>
+                      <td>Αριθμός Τμήματος</td>
+                      <td>{{$stdata->depID}}</td>
+                    </tr>
+                    <tr>
+                      <td>Περιγραφή Τμήματος</td>
+                      <td>{{$stdata->depname}}</td>
+                    </tr>
+                    <tr>
+                      <td>ECTS</td>
+                      <td>{{$stdata->ects_passed_total}}</td>
+                    </tr>
+                    <tr>
+                      <td>Σύνολο περασμένων μαθημάτων</td>
+                      <td>{{$stdata->cources_passed_num}}</td>
+                    </tr>
+                    <tr>
+                      <td>Μέσος Όρος</td>
+                      <td>{{$stdata->Avg}}</td>
+                    </tr>
 
+
+                  </table>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
             </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
+
         <div class='col-md-6'>
-                  <div class="box">
-                    <div class="box-header">
-                      <h3 class="box-title"></h3>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body no-padding">
-                      <table class="table table-condensed">
-                        <tr>
-                          <td>Αριθμός Τμήματος</td>
-                          <td>{{$stdata->depID}}</td>
-                        </tr>
-                        <tr>
-                          <td>Περιγραφή Τμήματος</td>
-                          <td>{{$stdata->depname}}</td>
-                        </tr>
-                        <tr>
-                          <td>ECTS</td>
-                          <td>{{$stdata->ects_passed_total}}</td>
-                        </tr>
-                        <tr>
-                          <td>Σύνολο περασμένων μαθημάτων</td>
-                          <td>{{$stdata->cources_passed_num}}</td>
-                        </tr>
-                        <tr>
-                          <td>Μέσος Όρος</td>
-                          <td>{{$stdata->Avg}}</td>
-                        </tr>
+          @if(EGuard::isEligible())
+          <h4 style="margin-top:200px;"><center>Έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus</center></h4>
+          @else
+          <h4 style="margin-top:200px;"><center>Δεν έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus</center></h4>
+          @endif
 
-
-                      </table>
-
-                    </div>
-                    <!-- /.box-body -->
-                  </div>
-                  <!-- /.box -->
                 </div>
 </div><!-- /.row -->
-<hr>
-@if(EGuard::isEligible())
-<h4><center>Έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus+</center></h4>
-@else
-<h4><center>Δεν έχετε την δυνατότητα να αιτηθείτε συμμετοχή στο πρόγραμμα Erasmus+</center></h4>
-@endif
-@endsection
+
+  @endsection
