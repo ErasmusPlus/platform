@@ -58,5 +58,8 @@ class HomeController extends Controller
 	}
 
 
-
+  public function time()
+	{
+		 return \Carbon\Carbon::now('Europe/Athens')->format("H:i:s");
+	}
 }

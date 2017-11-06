@@ -65,6 +65,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
       return view('settings');
   })->name('settings');
 
+  Route::get('/time','HomeController@time');
 
   Route::get('/upload','UploadImageController@index');
   Route::post('/upload','UploadImageController@upload');

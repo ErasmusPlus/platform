@@ -51,27 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </h1>
           <!-- You can dynamically generate breadcrumbs here -->
           <ol class="breadcrumb">
-          <li><a href=" {{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-
-          <?php
-           $path = app('request')->path();
-           $segments = explode("/", $path);
-           $len = count($segments);
-           $i=0;
-
-            foreach($segments as $segment)
-            {
-              if($segment != 'home')
-                if ($i != $len - 1)
-                  echo "<li><a href='".  $path = app('request')->root().'/'.$segment ."'>".ucfirst($segment)."</a></li>";
-                else
-                  echo '<li class="active">' .ucfirst($segment).'</li>';
-
-              $i++;
-            }
-
-            ?>
-
+            Ώρα διακομιστή:<b> <span class='localtime'>{{\Carbon\Carbon::now('Europe/Athens')->format("H:i:s")}} </p></b>
 
           </ol>
         </section>
@@ -100,6 +80,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="{{ asset ("js/app.js") }}" type="text/javascript"></script>
     <script>$('#flash-overlay-modal').modal();</script>
+
+
+
+    <script type="text/javascript">
+
+setInterval(function(){
+
+  $.get(
+    "{{ url('/time')}}",
+    function(data) {
+       $('.localtime').text(data);
+    }
+);
+
+}
+
+
+, 1000);
+
+
+
+</script>
+
+
     @yield('js')
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the
