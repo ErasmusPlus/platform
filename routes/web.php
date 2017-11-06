@@ -52,11 +52,11 @@ Route::group(['middleware' => ['cas.guard']], function () {
   Route::get('/profile', function () {
       return view('profile')->with("stdata",EGuard::getApiDetails());
   })->name('profile');
-  
+
     Route::get('/profileAd', function () {
       return view('profile_admin');
   })->name('profile.admin');
-  
+
     Route::get('/profile/edit', function () {
       return view('profile_edit');
   })->name('profile.edit');
@@ -79,6 +79,9 @@ Route::group(['middleware' => ['cas.guard']], function () {
 
   Route::get('/users/index','Superadmin\UserController@index')->name('superadmin.settings.users_index');
   Route::get('/ranking/settings','Superadmin\RankingController@index')->name('superadmin.settings.ranking');
+  Route::post('/ranking/update','Superadmin\RankingController@update')->name('superadmin.settings.ranking.update');
+
+
   Route::get('/statistics','Superadmin\StatisticsController@index')->name('superadmin.statistics');
 
 
@@ -91,15 +94,15 @@ Route::group(['middleware' => ['cas.guard']], function () {
 
 	Route::get('/users/edit_users/{id}','Superadmin\UserController@edit')->name('superadmin.settings.edit_user');
 	Route::post('/users/edit_users','Superadmin\UserController@update');
-	
+
 	Route::get('/users/new','Superadmin\UserController@newuser')->name('superadmin.settings.add_user');
 	Route::post('/users/new','Superadmin\UserController@create');
 	Route::get('/users/delete/{id}','Superadmin\UserController@delete')->name('superadmin.users.delete');
-	
+
 	//EDIT Application
 	Route::get('/erasmus/view_application/edit/{id}','ApplicationController@edit')->name('application.edit');
 	Route::post('/erasmus/view_application/edit/','ApplicationController@updateapplication');
 	//EDIT Apllication
-	
+
   Route::get('/ranking','RankingController@index')->name('admin.ranking.index');
 });

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Classes\EGuard;
 use App\User;
 use Illuminate\Support\Facades\Validator;
-
+use App\Setting;
 
 class RankingController extends Controller
 {
@@ -23,7 +23,21 @@ class RankingController extends Controller
 
     public function index()
     {
-        return view('superadmin.settings.ranking');
+        $settings = Setting::all();
+
+        $appl_finaldate = Setting::find('appl_finaldate')->value;
+
+        return view('superadmin.settings.ranking')->with('settings',$settings)
+                                                  ->with('appl_finaldate',$appl_finaldate);
+    }
+
+
+    public function update(Request $request)
+    {
+      $appl_finaldate = Setting::find('appl_finaldate');
+      $appl_finaldate -> value = $request -> appl_finaldate;
+      $appl_finaldate -> save();
+      return redirect()->back();
     }
 
 }

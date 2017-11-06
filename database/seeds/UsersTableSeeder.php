@@ -30,6 +30,8 @@ class UsersTableSeeder extends Seeder
           'name' => 'Demo Admin',
           'email' => 'admin@uowm.gr',
           'role' => 2,
+          'depID' => 604,
+          'depName' => 'Τμήμα Μηχανικών Πληροφορικής & Τηλεπικοινωνιών',
           'password' => bcrypt('admin'),
       ]);
 

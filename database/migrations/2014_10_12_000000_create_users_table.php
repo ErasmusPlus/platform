@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
       			$table->string('education')->nullable();
       			$table->string('location')->nullable();
+            $table->integer('depID')->nullable();
+            $table->string('depName')->nullable();
       			$table->smallInteger('role')->default(1);
             $table->string('photo')->default('img/avatar_default.jpg');
       			$table->rememberToken();
