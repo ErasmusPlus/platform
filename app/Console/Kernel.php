@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
             $datetime = Carbon::parse(Setting::find('appl_finaldate')->value);
             $now = Carbon::now('Europe/Athens');
 
-            if($now > $datetime)
+            if($now.gte($datetime))
               return true;
             else
               return false;
