@@ -413,4 +413,75 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
 })
 
 </script>
+
+
+
+<script>
+function preventDuplicatesLang( select, index ) {
+    var options = select.options,
+        len = options.length;
+    while( len-- ) {
+        options[ len ].disabled = false;
+    }
+    //select.options[ index ].disabled = true;
+    if( index === select.selectedIndex && index != 0) {
+        alert('Έχετε ήδη επιλέξει την γλώσσα "' + select.options[index].text + '".\n\nΠαρακαλώ επιλέξτε μια άλλη');
+        this.selectedIndex = 0;
+    }
+}
+
+var select1 = select = document.getElementById( 'lang_id1' );
+var select2 = select = document.getElementById( 'lang_id2' );
+var select3 = select = document.getElementById( 'lang_id3' );
+
+select1.onchange = function() {
+    preventDuplicatesLang.call(this, select2, this.selectedIndex );
+    preventDuplicatesLang.call(this, select3, this.selectedIndex );
+};
+
+select2.onchange = function() {
+    preventDuplicatesLang.call(this, select1, this.selectedIndex );
+    preventDuplicatesLang.call(this, select3, this.selectedIndex );
+};
+
+select3.onchange = function() {
+    preventDuplicatesLang.call(this, select1, this.selectedIndex );
+    preventDuplicatesLang.call(this, select2, this.selectedIndex );
+};
+</script>
+
+
+<script>
+function preventDuplicatesLang( select, index ) {
+    var options = select.options,
+        len = options.length;
+    while( len-- ) {
+        options[ len ].disabled = false;
+    }
+    //select.options[ index ].disabled = true;
+    if( index === select.selectedIndex && index != 0) {
+        alert('Έχετε ήδη επιλέξει το ίδρυμα "' + select.options[index].text + '".\n\nΠαρακαλώ επιλέξτε ένα άλλο');
+        this.selectedIndex = 0;
+    }
+}
+
+var select1 = select = document.getElementById( 'u1_id' );
+var select2 = select = document.getElementById( 'u2_id' );
+var select3 = select = document.getElementById( 'u3_id' );
+
+select1.onchange = function() {
+    preventDuplicatesLang.call(this, select2, this.selectedIndex );
+    preventDuplicatesLang.call(this, select3, this.selectedIndex );
+};
+
+select2.onchange = function() {
+    preventDuplicatesLang.call(this, select1, this.selectedIndex );
+    preventDuplicatesLang.call(this, select3, this.selectedIndex );
+};
+
+select3.onchange = function() {
+    preventDuplicatesLang.call(this, select1, this.selectedIndex );
+    preventDuplicatesLang.call(this, select2, this.selectedIndex );
+};
+</script>
 @endsection
