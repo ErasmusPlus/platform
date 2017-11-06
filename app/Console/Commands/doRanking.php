@@ -138,6 +138,12 @@ class doRanking extends Command
         //TODO: Schedule this as cronjob
         $this->info("do:Ranking job started");
 
+        $this->info("Removing previous final date...");
+        $setting = Setting::find('appl_finaldate');
+        $setting -> value = '';
+        $setting -> save();
+
+
         $this->info("Restricting further application submits");
         $setting = Setting::find('appl_status');
         $setting -> value = 'closed';
