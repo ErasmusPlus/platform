@@ -8,6 +8,8 @@ use App\University;
 use App\Rank;
 use Illuminate\Database\Eloquent\Collection;
 use DB;
+use App\Setting;
+
 
 class doRanking extends Command
 {
@@ -134,7 +136,6 @@ class doRanking extends Command
     public function handle()
     {
         //TODO: Schedule this as cronjob
-
         $this->info("do:Ranking job started");
 
         $this->info("Resetting table for debugging");

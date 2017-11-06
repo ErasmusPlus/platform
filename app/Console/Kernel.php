@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Setting;
+use Carbon\Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,8 +28,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('do:Ranking')->withoutOverlapping()->when(function () {
-            //TODO: Compare local time with ranking time
-            return false;
+            $datetime = Carbon::parse(Setting::find('appl_finaldate')->value);
+            $now = Carbon::now('Europe/Athens');
+
+            if($now > $datetime)
+              return true;
+            else
+              return false;
         });
     }
 
