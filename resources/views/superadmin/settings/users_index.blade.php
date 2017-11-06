@@ -65,7 +65,7 @@
                     @endif
 
                         <td>{{str_pad($user->id, 5, "0", STR_PAD_LEFT)}}</td>
-                        <td><a href="{{superadmin.settings.edit_user',$user->id}}">{{$user->name}}</a></td>
+                        <td><a href="{{route('profile',$user->id)}}">{{$user->name}}</a></td>
                         <td>{{$user->email}}</td>
                         <td>
                           @if($user->role == 1)
