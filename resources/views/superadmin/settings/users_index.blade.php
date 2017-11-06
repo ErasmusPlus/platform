@@ -44,7 +44,6 @@
                         <th>EMAIL</th>
                         <th>ΙΔΙΟΤΗΤΑ</th>
                         <th>ΠΕΡΙΓΡΑΦΗ</th>
-                        <th>ΤΕΛ. ΣΥΝΔΕΣΗ</th>
                         <th class="text-center">ΠΡΟΣΒΑΣΗ</th>
                         <th class="text-center">ΕΝΕΡΓΕΙΕΣ</th>
                     </tr>
@@ -87,15 +86,6 @@
                           @endif
                         </td>
 
-
-                        @if(!$ls && $diff>20)
-                        <td>{{\Carbon\Carbon::parse($user->lastseen)->timezone('Europe/Athens')->format('d/m/Y H:i')}}</td>
-                        @elseif(!$ls)
-                        <td>ΣΕ ΣΥΝΔΕΣΗ</td>
-                        @else
-                        <td>ΠΟΤΕ</td>
-                        @endif
-
                         <td>
                           <center>
                           @if($user->status != 3)
@@ -108,8 +98,8 @@
                         <td width="80px">
 
                           <a class="btn btn-default btn-xs" href="{{route('superadmin.settings.edit_user', $user->id )}}" role="button">Επεξεργασία</a>
-					
-					
+
+
 
 					</td>
                     </tr>
