@@ -45,6 +45,7 @@
             <div class="box-body">
 
 			  {!! Form::open(array('action' => ('ApplicationController@updateapplication') , 'files' => true)) !!}
+			  {{ csrf_field() }}
                 <!-- text input -->
 				{{ Form::hidden('id', $application->id) }}
 				
