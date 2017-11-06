@@ -14,6 +14,7 @@
     $(function () {
         $('#datetimepicker1').datetimepicker({
             defaultDate: '{{$appl_finaldate}}',
+            format: 'D/M/Y H:mm',
         });
     });
 </script>
