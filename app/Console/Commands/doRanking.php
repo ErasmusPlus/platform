@@ -294,7 +294,7 @@ class doRanking extends Command
               $rank = new Rank();
               $rank -> uni_id = $university -> id;
               $rank -> app_id = $application -> id;
-              $rank -> pts = $current_pts;
+              $rank -> pts = $current_pts + $application->additional_pts;
               $rank -> year = $current_year;
               $rank -> priority = 3;
               $rank -> assigned = 0;
