@@ -465,9 +465,9 @@ function preventDuplicatesLang( select, index ) {
     }
 }
 
-var select1 = select = document.getElementById( 'u1_id' );
-var select2 = select = document.getElementById( 'u2_id' );
-var select3 = select = document.getElementById( 'u3_id' );
+var select1 = select = document.getElementsByName( 'u1_id' )[0];
+var select2 = select = document.getElementsByName( 'u2_id' )[0];
+var select3 = select = document.getElementsByName( 'u3_id' )[0];
 
 select1.onchange = function() {
     preventDuplicatesLang.call(this, select2, this.selectedIndex );
