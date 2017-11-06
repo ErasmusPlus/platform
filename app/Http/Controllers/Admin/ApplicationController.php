@@ -20,7 +20,11 @@ class ApplicationController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth.cas');
+      $this->middleware(function ($request, $next) {
+          if(EGuard::user()->type != 'Administrator')
+            abort(403, 'Access denied');
+          return $next($request);
+      });
     }
 
     /**
@@ -28,9 +32,9 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-	 
 
-	 
+
+
     public function unconfirmed()
     {
       $applications = Application::whereYear('created_at', '=', date('Y'))->where('confirmed',false)->get();
@@ -44,9 +48,9 @@ class ApplicationController extends Controller
         3 => "C1",
         4 => "C2"
       ];
-		
 
-	  
+
+
       return view('admin.application.index')->with('applications',$applications)
                                             ->with('universities',$universities)
                                             ->with('languages',$languages)
@@ -84,7 +88,7 @@ class ApplicationController extends Controller
 
       return redirect()->back();
     }
-	
+
 	    public function unverify(Request $request)
     {
       $application = Application::findOrFail($request->input('id'));
@@ -94,7 +98,7 @@ class ApplicationController extends Controller
 
       return redirect()->back();
     }
-	
-	
+
+
 
 }

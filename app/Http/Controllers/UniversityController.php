@@ -7,6 +7,7 @@ use App\Classes\Students;
 use App\University;
 use App\Language;
 use Illuminate\Support\Facades\Validator;
+use EGuard;
 
 class UniversityController extends Controller
 {
@@ -17,7 +18,11 @@ class UniversityController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth.cas');
+        $this->middleware(function ($request, $next) {
+            if(EGuard::user()->type != 'Superadmin')
+              abort(403, 'Access denied');
+            return $next($request);
+        });
     }
 
     /**
@@ -58,13 +63,13 @@ class UniversityController extends Controller
 
 			$validator = Validator::make($request->all(), [
 		 'name' => 'required',
-		 'cap' => 'required|numeric',		 
+		 'cap' => 'required|numeric',
 	 ]);
-	 
+
 	 if ($validator->fails()){
 		  return redirect()->back()->withErrors($validator)->withInput();
-	  }	
-	
+	  }
+
       $university = new University();
       $university -> name = $request->input('name');
       $university -> cap = $request->input('cap');
@@ -77,15 +82,15 @@ class UniversityController extends Controller
 
     public function update(Request $request)
     {
-		
+
 	$validator = Validator::make($request->all(), [
 		 'name' => 'required',
-		 'cap' => 'required|numeric',		 
+		 'cap' => 'required|numeric',
 	 ]);
-	 
+
 	 if ($validator->fails()){
 		  return redirect()->back()->withErrors($validator)->withInput();
-	  }	
+	  }
 
       $university = University::findOrFail($request->input('id'));
       $university -> name = $request->input('name');

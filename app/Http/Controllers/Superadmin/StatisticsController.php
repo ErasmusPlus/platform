@@ -18,7 +18,11 @@ class StatisticsController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth.cas');
+      $this->middleware(function ($request, $next) {
+          if(EGuard::user()->type != 'Superadmin')
+            abort(403, 'Access denied');
+          return $next($request);
+      });
     }
 
     public function index()
