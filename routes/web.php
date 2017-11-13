@@ -41,6 +41,7 @@ Route::group(['middleware' => ['cas.guard']], function () {
 
   Route::get('/erasmus/success', 'HomeController@success')->name('erasmus.success');
   Route::get('/erasmus/closed', 'HomeController@closed')->name('erasmus.closed');
+  Route::get('/erasmus/noteligible', 'HomeController@noteligible')->name('erasmus.noteligible');
 
   Route::get('/erasmus/application2', 'ApplicationController@index')->name('erasmus.application2');
   Route::post('/erasmus/application2', 'ApplicationController@store');

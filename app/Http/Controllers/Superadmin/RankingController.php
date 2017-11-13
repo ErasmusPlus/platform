@@ -8,6 +8,7 @@ use App\Classes\EGuard;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use App\Setting;
+use Carbon\Carbon;
 
 class RankingController extends Controller
 {
@@ -28,9 +29,12 @@ class RankingController extends Controller
     public function index()
     {
         $settings = Setting::all();
-
+        $finaldate = Setting::find('appl_finaldate')->value;
+        if($finaldate)
+            $finaldate = Carbon::createFromFormat('d/m/Y H:i', $finaldate)->toDateTimeString();
+            
         return view('superadmin.settings.ranking')->with('settings',$settings)
-                                                  ->with('appl_finaldate', Setting::find('appl_finaldate')->value)
+                                                  ->with('appl_finaldate', $finaldate)
                                                   ->with('appl_status', Setting::find('appl_status')->value)
                                                   ->with('platform_status', Setting::find('platform_status')->value);
     }
@@ -40,6 +44,7 @@ class RankingController extends Controller
     {
       $appl_finaldate = Setting::find('appl_finaldate');
       $appl_finaldate -> value = $request -> appl_finaldate;
+      //dd($appl_finaldate -> value);
       $appl_finaldate -> save();
 
 

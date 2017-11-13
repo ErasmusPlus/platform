@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('do:Ranking')->withoutOverlapping()->when(function () {
-            $datetime = Carbon::parse(Setting::find('appl_finaldate')->value);
+           $datetime = Carbon::createFromFormat('d/m/Y H:i',Setting::find('appl_finaldate')->value,'Europe/Athens');
             $now = Carbon::now('Europe/Athens');
 
             if($now->gte($datetime) && $datetime != "")

@@ -285,7 +285,7 @@ font-weight: bold;
 {{Form::hidden('id', $application->id)}}
 <div class='form-inline'>
 {{Form::label('additional_pts', 'Επιπρόσθετα μόρια λόγω επισυναπτόμενων πιστοποιητικών: ')}}
-{{Form::number('additional_pts', $application->additional_pts, ['style' => 'width:100px', 'class'=>'form-control', 'readonly' => 'readonly'])}}
+{{Form::number('additional_pts', $application->additional_pts, ['style' => 'width:100px', 'class'=>'form-control'])}}
 
 @if($application->confirmed == false)
 {!! Form::submit('Έγκριση αίτησης',array('class' => 'btn btn-success pull-right')) !!}

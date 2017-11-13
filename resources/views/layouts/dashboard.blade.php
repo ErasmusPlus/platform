@@ -100,6 +100,16 @@ setInterval(function(){
 , 1000);
 
 
+$(document).ready(function() {
+$('.inner').slimScroll({
+//your options
+opacity: 0
+}).mouseover(function() {
+$(this).next('.slimScrollBar').css('opacity', 0.4);
+});
+});
+
+
 
 </script>
 
@@ -110,3 +120,4 @@ setInterval(function(){
           user experience -->
   </body>
 </html>
+

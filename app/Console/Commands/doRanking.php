@@ -9,7 +9,7 @@ use App\Rank;
 use Illuminate\Database\Eloquent\Collection;
 use DB;
 use App\Setting;
-
+use Carbon\Carbon;
 
 class doRanking extends Command
 {
@@ -94,7 +94,7 @@ class doRanking extends Command
       $current_year = date("Y");
 
       //Check if cap exceeds
-      $total_cap = University::findOrFail($uni_id)->first()->cap;
+      $total_cap = University::findOrFail($uni_id)->cap;
 
       $current_cap = Rank::whereYear('created_at', $current_year)->where('assigned', $uni_id)->where('uni_id',$uni_id)->where('priority',$priority)->count();
       $this->info("Current cap: $current_cap/$total_cap");
@@ -216,7 +216,7 @@ class doRanking extends Command
               $rank = new Rank();
               $rank -> uni_id = $university -> id;
               $rank -> app_id = $application -> id;
-              $rank -> pts = $current_pts;
+              $rank -> pts = $current_pts + $application->additional_pts;
               $rank -> year = $current_year;
               $rank -> priority = 1;
               $rank -> assigned = 0;
@@ -261,7 +261,7 @@ class doRanking extends Command
               $rank = new Rank();
               $rank -> uni_id = $university -> id;
               $rank -> app_id = $application -> id;
-              $rank -> pts = $current_pts;
+              $rank -> pts = $current_pts + $application->additional_pts;
               $rank -> year = $current_year;
               $rank -> priority = 2;
               $rank -> assigned = 0;

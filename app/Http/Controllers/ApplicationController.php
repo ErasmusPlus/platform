@@ -51,7 +51,8 @@ class ApplicationController extends Controller
         }
         else
         {
-          return "NOT ELIGIBLE";
+          //return "NOT ELIGIBLE
+          return view('erasmus.noteligible');
         }
     }
 

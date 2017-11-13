@@ -20,7 +20,7 @@ if (typeof jQuery === "undefined") {
 var customScroll = $('.content-wrapper').slimScroll({
     //size: '6px',
     height: $(this).height() - $(".main-footer").height() - 10,
-    alwaysVisible: false,
+    alwaysVisible: true,
     keepFocus: true,
 });
 
