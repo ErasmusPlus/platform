@@ -45,7 +45,9 @@ body {
     <h3><b>Είσοδος ως </b></h3>
     <a href="{{route('admin_login')}}" class="btn btn-primary btn-block" role="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Ακαδημαϊκός</a>
     <a href="{{route('login')}}" class="btn btn-primary btn-block" role="button"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Φοιτητής</a>
-  </div>
+	 <a href="{{route('login')}}" class="btn btn-primary btn-block" role="button"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Μεταπτυχιακός Φοιτητής</a>
+ 
+ </div>
 </div>
 
 </div>
