@@ -110,4 +110,8 @@ Route::group(['middleware' => ['cas.guard']], function () {
 	//EDIT Apllication
 
   Route::get('/ranking','RankingController@index')->name('admin.ranking.index');
+  
+    Route::get('/json','jsontest@index');
+
+  
 });
