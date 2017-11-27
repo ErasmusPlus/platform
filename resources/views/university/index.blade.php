@@ -40,7 +40,8 @@
                     <tbody><tr>
                       <th></th>
                       <th>Όνομα</th>
-                      <th>Γλώσσα</th>
+                      <th>Τμήμα</th>
+					  <th>Γλώσσα</th>
                       <th>Ενεργό</th>
                       <th>Εισακτέοι</th>
                       <th>Ημ/νία</th>
@@ -51,7 +52,8 @@
                     <tr>
                       <td>{{$university->id}}</td>
                       <td>{{$university->name}}</td>
-                      <td>{{$languages[$university->lang_id]}}</td>
+                      <td>{{$university->tmhma}}</td>
+					  <td> to do </td>
                       <td><span class="label label-success">NAI</span></td>
                       <td>{{$university->cap}}</td>
                       <td>{{$university->updated_at->format('d/m/Y H:i:s')}}</td>

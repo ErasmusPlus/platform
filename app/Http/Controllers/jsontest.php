@@ -20,10 +20,10 @@ class jsontest extends Controller
 			$test1 = $univer->university;
 			$test2 = $univer->out_students;
 			//print_r($univer->out_students.study_circle);
-				echo $test1 . "<br>";
+			
 			foreach ( $test2 as $obj2)
 			{
-				
+				echo $test1 . "<br>";	
 			echo $obj2->students_number . " ";
 			echo $obj2->department[0] . " ";
 			echo $obj2->study_circle[0] . " ";
