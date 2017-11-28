@@ -67,9 +67,9 @@ class UniversityController extends Controller
 			->where('cap','=',$obj2->students_number)
 			->where('tmhma','=',$obj2->department[0])
 			->exists();
-			
+			 
 		
-			if ($uni_exist == null)
+			if ($uni_exist == null && $obj2->study_circle[0] == "pregrad" )
 			{
 				
 				$university -> save();
