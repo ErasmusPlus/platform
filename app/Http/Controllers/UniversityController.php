@@ -148,7 +148,10 @@ class UniversityController extends Controller
       $university -> lang_id = $request->input('lang_id');
       //TODO: Handle failures here
       $university -> save();
-
+	  
+	  //patenta 
+	  //DB::table('universities')->where('name','=',$request->input('name'))->update('lang_id','=',$request->input('lang_id'));
+		University::where('name','=',$request->input('name'))->update(['lang_id' => $request->input('lang_id')]);
       return redirect()->route('superadmin.settings.users_index');
     }
 
