@@ -53,7 +53,13 @@
                       <td>{{$university->id}}</td>
                       <td>{{$university->name}}</td>
                       <td>{{$university->tmhma}}</td>
-					  <td> to do </td>
+					  <td>					  
+						
+					 @if( isset($languages[$university->lang_id]) )
+					  {{ $languages[$university->lang_id] }} 
+					  @endif
+				
+					  </td>
                       <td><span class="label label-success">NAI</span></td>
                       <td>{{$university->cap}}</td>
                       <td>{{$university->updated_at->format('d/m/Y H:i:s')}}</td>
