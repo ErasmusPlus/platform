@@ -246,7 +246,7 @@ class ApplicationController extends Controller
 		  $depname = "icte";
 	  }
 	  
-	  $universities = University::where($depname,'tmhma')->pluck('name', 'id')->;
+	  $universities = University::where($depname,'tmhma')->pluck('name', 'id');
       $languages = Language::pluck('name', 'id');
 
       $langlevel = [
