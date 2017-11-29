@@ -29,6 +29,8 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+		//API INFO
+		$stdata = EGuard::getApiDetails();
         if(Setting::find('appl_status')->value == 'closed')
         return redirect()->route('erasmus.closed');
 
