@@ -35,6 +35,7 @@ class ApplicationController extends Controller
         if(EGuard::isEligible())
         {
           $universities = University::pluck('name', 'id');
+		   //mia where pou tha emfanizei sthn lista MONO TA PANEPISTHMIA TOU TMHMATOS
           $languages = Language::pluck('name', 'id');
 
           $langlevel = [
@@ -45,7 +46,8 @@ class ApplicationController extends Controller
           ];
 
           return view('erasmus.application2') ->with("stdata",EGuard::getApiDetails())
-                                              ->with('universities',$universities)
+                                              ->with('universities',$universities) 
+											  //mia where pou tha emfanizei sthn lista MONO TA PANEPISTHMIA TOU TMHMATOS
                                               ->with('languages',$languages)
                                               ->with('langlevel',$langlevel);
         }
