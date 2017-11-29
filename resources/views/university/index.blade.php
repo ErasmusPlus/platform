@@ -28,7 +28,7 @@
 
             <div class="col-xs-3">
               <div class="pull-right">
-              <a class="btn btn-primary" href="{{route('admin.university.index')}}" role="button"><i class='fa fa-refresh'></i></a>
+              <a class="btn btn-primary" href="{{route('admin.university.jsonget')}}" role="button"><i class='fa fa-refresh'></i></a>
               </div>
             </div>
           </div>
