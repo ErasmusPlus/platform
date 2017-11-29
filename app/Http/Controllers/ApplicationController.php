@@ -49,10 +49,30 @@ class ApplicationController extends Controller
 			
 			*/
 			
-			 if ($stdata -> depID == 604)
+	  if ($stdata -> depID == 604)
 	  {
 		  $depname = "icte";
+	  } elseif ( $stdata -> depID == 601 )
+	  {
+		  $depname = "eetf";
 	  }
+	   elseif ( $stdata -> depID == 605 )
+	  {
+		  $depname = "mech";
+	  }
+	   elseif ( $stdata -> depID == 606 )
+	  {
+		  $depname = "enveng";
+	  }
+	     elseif ( $stdata -> depID == 600 )
+	  {
+		  $depname = "eled";
+	  }
+	       elseif ( $stdata -> depID == 602 )
+	  {
+		  $depname = "nured";
+	  }
+	  
 	  
           $universities = University::where('tmhma','=',$depname)->pluck('name', 'id');
 		   //mia where pou tha emfanizei sthn lista MONO TA PANEPISTHMIA TOU TMHMATOS
