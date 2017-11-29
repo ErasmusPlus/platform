@@ -241,7 +241,12 @@ class ApplicationController extends Controller
 
 
        // return view('university.edit')->with('languages',$languages)->with('university',$university);
-      $universities = University::pluck('name', 'id');
+      if ($stdata -> depID == 604)
+	  {
+		  depname = "icte";
+	  }
+	  
+	  $universities = University::where($depname,'=','tmhma')->pluck('name', 'id')->;
       $languages = Language::pluck('name', 'id');
 
       $langlevel = [
