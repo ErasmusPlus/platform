@@ -34,7 +34,25 @@ class ApplicationController extends Controller
 
         if(EGuard::isEligible())
         {
-          $universities = University::pluck('name', 'id');
+			
+			/*
+			 if ($stdata -> depID == 604)
+	  {
+		  $depname = "icte";
+	  }
+	  
+	  $universities = University::where($depname,'tmhma')->pluck('name', 'id');
+      $languages = Language::pluck('name', 'id');
+			
+			
+			*/
+			
+			 if ($stdata -> depID == 604)
+	  {
+		  $depname = "icte";
+	  }
+	  
+          $universities = University::where($depname,'tmhma')->pluck('name', 'id');
 		   //mia where pou tha emfanizei sthn lista MONO TA PANEPISTHMIA TOU TMHMATOS
           $languages = Language::pluck('name', 'id');
 
