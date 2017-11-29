@@ -54,7 +54,7 @@ class ApplicationController extends Controller
 		  $depname = "icte";
 	  }
 	  
-          $universities = University::where($depname,'tmhma')->pluck('name', 'id');
+          $universities = University::where('tmhma',$depname)->pluck('name', 'id');
 		   //mia where pou tha emfanizei sthn lista MONO TA PANEPISTHMIA TOU TMHMATOS
           $languages = Language::pluck('name', 'id');
 
